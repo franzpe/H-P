@@ -1,0 +1,7 @@
+#CLIENT
+
+#SERVER
+server/package-lock.json
+server/node_modules
+server/dist
+server/__coverage
