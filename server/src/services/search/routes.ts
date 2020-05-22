@@ -23,7 +23,6 @@ export default [
     handler: [
       checkSearchParams,
       async ({ query }: Request, res: Response) => {
-        console.log(query.q);
         res.send('Hello world!');
       }
     ]
