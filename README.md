@@ -1,6 +1,6 @@
 # Hackers & painters
 
-Server - Nodejs, Express, Typescript, Redis, PostgresSQL, Swagger (docs), pm2, PM2
+Server - Nodejs, Express, Typescript, Redis (for caching only), PostgresSQL, Swagger (docs), pm2, PM2
 
 NPM SCRIPTS:
 npm run dev - runs development server and watches for every .ts file change
