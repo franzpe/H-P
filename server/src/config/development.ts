@@ -1,5 +1,3 @@
 import { Config } from './base';
 
-const config: Partial<Config> = {};
-
-export default config;
+export default {} as Partial<Config>;

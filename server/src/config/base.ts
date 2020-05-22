@@ -31,6 +31,4 @@ try {
 // merge the two config files together
 // the envConfig file will overwrite properties
 // on the config object
-const mergedConfig: Config = { ...config, ...envConfig.default };
-
-export default mergedConfig;
+export default { ...config, ...envConfig.default } as Config;
