@@ -1,21 +1,24 @@
-import { Response, NextFunction } from 'express';
+import { Response, Request, NextFunction } from 'express';
 import { HTTPClientError, HTTP404Error } from './httpErrors';
+import logger from './Logger';
+import LoggerFormatter from './LoggerFormatter';
 
 export const notFoundError = () => {
   throw new HTTP404Error('Method not found.');
 };
 
-export const clientError = (err: Error, res: Response, next: NextFunction) => {
+export const clientError = (err: Error, req: Request, res: Response, next: NextFunction) => {
   if (err instanceof HTTPClientError) {
-    console.warn(err);
+    logger.error(LoggerFormatter.combinedFormat(err, req, res));
     res.status(err.statusCode).send(err.message);
   } else {
     next(err);
   }
 };
 
-export const serverError = (err: Error, res: Response, next: NextFunction) => {
-  console.error(err);
+export const serverError = (err: Error, req: Request, res: Response, next: NextFunction) => {
+  logger.error(LoggerFormatter.combinedFormat(err, req, res));
+
   if (process.env.NODE_ENV === 'production') {
     res.status(500).send('Internal Server Error');
   } else {

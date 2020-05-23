@@ -19,5 +19,11 @@ COPY . .
 # Create production build
 RUN npm run build
 
+# Tests check
+RUN npm run test
+
+# Gets rid of any development dependencies
+RUN npm prune --production
+
 EXPOSE 3000
 CMD ["pm2-runtime","pm2.yaml"]
