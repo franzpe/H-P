@@ -22,3 +22,14 @@ export const applyRoutes = (routes: Route[], router: Router, basePath: string = 
     (router as any)[method](basePath + path, handler);
   }
 };
+
+export const tryParseJSON = (json: string) => {
+  try {
+    const o = JSON.parse(json);
+    if (o && typeof o === 'object') {
+      return o;
+    }
+  } catch (e) {
+    return false;
+  }
+};

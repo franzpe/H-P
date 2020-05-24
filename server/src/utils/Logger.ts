@@ -18,10 +18,16 @@ class Logger {
   };
 
   /**
-   * Write stream for morgana
+   * Write stream for morgana and transport stream only for 2xx & 3xx req. status codes. 4xx & 5xx are logged by winston
    */
-  write = (message: string) => {
-    this._instance.info(message);
+  write = (json: string) => {
+    const obj = JSON.parse(json);
+
+    if (obj) {
+      if (obj.statusCode.startsWith('2') || obj.statusCode.startsWith('3')) {
+        this._instance.info(json);
+      }
+    }
   };
 }
 

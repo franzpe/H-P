@@ -9,7 +9,7 @@ export const notFoundError = () => {
 
 export const clientError = (err: Error, req: Request, res: Response, next: NextFunction) => {
   if (err instanceof HTTPClientError) {
-    logger.error(LoggerFormatter.combinedFormat(err, req, res));
+    logger.error(LoggerFormatter.httpErrorFormat(err, req, res));
     res.status(err.statusCode).send(err.message);
   } else {
     next(err);
@@ -17,7 +17,7 @@ export const clientError = (err: Error, req: Request, res: Response, next: NextF
 };
 
 export const serverError = (err: Error, req: Request, res: Response, next: NextFunction) => {
-  logger.error(LoggerFormatter.combinedFormat(err, req, res));
+  logger.error(LoggerFormatter.httpErrorFormat(err, req, res));
 
   if (process.env.NODE_ENV === 'production') {
     res.status(500).send('Internal Server Error');
