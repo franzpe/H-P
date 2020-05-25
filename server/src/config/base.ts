@@ -3,13 +3,25 @@ export type Config = {
   dev: string;
   prod: string;
   port: string;
+  auth: {
+    accessTokenSecret: string;
+    accessTokenExpiration: string;
+    refreshTokenSecret: string;
+    refreshTokenExpiration: string;
+  };
 };
 
 const config: Config = {
   dev: 'development',
   prod: 'production',
   env: '',
-  port: process.env.PORT || '3000'
+  port: process.env.PORT || '3000',
+  auth: {
+    accessTokenSecret: process.env.ACCESS_TOKEN_SECRET || 'accessTokenSecret',
+    accessTokenExpiration: process.env.ACCESS_TOKEN_EXPIRATION || '15m',
+    refreshTokenSecret: process.env.REFRESH_TOKEN_SECRET || 'refreshTokenSecret',
+    refreshTokenExpiration: process.env.REFRESH_TOKEN_EXPIRATION || '7d'
+  }
 };
 
 process.env.NODE_ENV = process.env.NODE_ENV || config.dev;

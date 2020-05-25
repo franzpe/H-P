@@ -3,3 +3,16 @@ LOGGING:
 	✔ unite loggin formats between morgan and winston @done(20-05-24 02:03)
 	☐ Create types for loggin params
 	☐ Add some usefull props to logs for better tracing ref: https://www.loggly.com/ultimate-guide/access-and-error-logs/
+	☐ use just console.log in development
+
+	SENTRI.IO:
+		☐ great error tracking system, very good for production
+		☐ capture errors from frondend or backend
+
+AUTHENTICATION:
+	☐ revoke refresh token
+	☐ logout
+
+CHECK:
+	☐ TypeORM with TypeGraphQL https://typegraphql.com/
+	☐ Sentry error tracking sentry.io

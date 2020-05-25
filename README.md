@@ -1,6 +1,6 @@
 # Hackers & painters
 
-Server - Nodejs, Express, Typescript, Redis (for caching only), PostgresSQL, Swagger (docs), PM2, morgana + winston (logging)
+Server - Nodejs, Express, Apollo-server-express (GraphQl), Typescript, Redis (for caching only), MySQL, Swagger (docs), PM2, morgana + winston (logging)
 
 NPM SCRIPTS:
 npm run dev - runs development server and watches for every .ts file change
@@ -15,6 +15,6 @@ Tests files - {filename}.test.{extension}
 Unit-testing - jest
 Integration-testing - supertest
 
-cross-cutting concernes:
+cross-cutting concerns:
 
 Logging - JSON Format - Logging each request with Morgan

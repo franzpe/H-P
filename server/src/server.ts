@@ -1,27 +1,43 @@
-import http from 'http';
-import express from 'express';
+import 'reflect-metadata';
+import { Express } from 'express';
+import { ApolloServer } from 'apollo-server-express';
+import { buildSchema } from 'type-graphql';
 
 import { applyMiddleware, applyRoutes } from './utils';
 import middleware from './middleware';
-import routes from './services';
+import { routes, resolvers } from './services';
 import errorHandlers from './middleware/errorHandlers';
-import config from './config';
 
-process.on('uncaughtException', e => {
-  console.log(e);
-  process.exit(1);
-});
+export default class Server {
+  private _app: Express;
 
-process.on('unhandledRejection', e => {
-  console.log(e);
-  process.exit(1);
-});
+  constructor(app: Express) {
+    this._app = app;
+  }
 
-const router = express();
-applyMiddleware(middleware, router);
-applyRoutes(routes, router, '/api/v1');
-applyMiddleware(errorHandlers, router);
+  setup = async () => {
+    this.setupRest();
+    await this.setupGraphql();
+    applyMiddleware(errorHandlers, this._app);
+  };
 
-const server = http.createServer(router);
+  private setupRest = () => {
+    applyMiddleware(middleware, this._app);
+    applyRoutes(routes, this._app, '/api/v1');
+  };
 
-server.listen(config.port, () => console.log(`Server is running http://localhost:${config.port}...`));
+  private setupGraphql = async () => {
+    const apolloServer = new ApolloServer({
+      schema: await buildSchema({
+        resolvers: resolvers
+      }),
+      context: ({ req, res }) => ({ req, res })
+    });
+
+    apolloServer.applyMiddleware({ app: this._app, cors: { credentials: true, origin: 'localhost:3000' } });
+  };
+
+  start = (port: string) => {
+    this._app.listen(port, () => console.log(`Server is running http://localhost:${port}...`));
+  };
+}

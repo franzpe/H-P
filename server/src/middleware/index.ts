@@ -1,5 +1,12 @@
-import { handleCors, handleBodyRequestParsing, handleCompression } from './common';
+import { handleCors, handleBodyRequestParsing, handleCompression, handleCookieParsing } from './common';
 import { handleAPIDocs } from './apiDocs';
 import { handleHTTPLogging } from './logging';
 
-export default [handleCors, handleBodyRequestParsing, handleCompression, handleHTTPLogging, handleAPIDocs];
+export default [
+  handleCors,
+  handleBodyRequestParsing,
+  handleCookieParsing,
+  handleCompression,
+  handleHTTPLogging,
+  handleAPIDocs
+];
