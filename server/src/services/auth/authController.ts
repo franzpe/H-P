@@ -4,10 +4,16 @@ import { hash, compare } from 'bcryptjs';
 import { createRefreshToken, createAccessToken, setRefreshToken } from './auth';
 import { User } from '../user/UserEntity';
 import { Context } from '../../utils/Context';
+import { getConnection } from 'typeorm';
 
 const refreshToken = async (req: Request, res: Response) => {
   setRefreshToken(res, createRefreshToken(req.locals.user));
   return res.send({ ok: true, accessToken: createAccessToken(req.locals.user) });
+};
+
+const revokeRefreshTokens = async (userId: number) => {
+  await getConnection().getRepository(User).increment({ id: userId }, 'tokenVersion', 1);
+  return true;
 };
 
 const login = async (email: string, password: string, { res }: Context) => {
@@ -31,6 +37,11 @@ const login = async (email: string, password: string, { res }: Context) => {
   };
 };
 
+const logout = (res: Response) => {
+  setRefreshToken(res, '');
+  return true;
+};
+
 const register = async (email: string, password: string) => {
   const hashedPassword = await hash(password, 12);
 
@@ -46,6 +57,8 @@ const register = async (email: string, password: string) => {
 
 export default {
   refreshToken,
+  revokeRefreshTokens,
   register,
-  login
+  login,
+  logout
 };

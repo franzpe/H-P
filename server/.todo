@@ -10,8 +10,8 @@ LOGGING:
 		☐ capture errors from frondend or backend
 
 AUTHENTICATION:
-	☐ revoke refresh token
-	☐ logout
+	✔ revoke refresh token @done(20-05-26 19:16)
+	✔ logout @done(20-05-26 19:16)
 
 CHECK:
 	☐ TypeORM with TypeGraphQL https://typegraphql.com/

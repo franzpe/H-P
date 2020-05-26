@@ -68,7 +68,6 @@ export const isAuth: MiddlewareFn<Context> = ({ context }, next) => {
     const payload = verify(token, config.auth.accessTokenSecret);
     context.payload = payload as any;
   } catch (err) {
-    console.log(err);
     throw new UnauthorizedError();
   }
 
