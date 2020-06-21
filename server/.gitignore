@@ -1,0 +1,10 @@
+#CLIENT-LANDING
+
+
+#SERVER
+package-lock.json
+node_modules
+dist
+__coverage
+__logs
+.env

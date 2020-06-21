@@ -16,5 +16,12 @@ Unit-testing - jest
 Integration-testing - supertest
 
 cross-cutting concerns:
-
+Authentication
+Monitoring
 Logging - JSON Format - Logging each request with Morgan
+Validation
+Error handling
+
+DB Setup
+Graphql Setup
+Dockerization
