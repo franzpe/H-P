@@ -1,0 +1,17 @@
+@media only screen and (max-width: 1023px) {
+  .listWrapper {
+    left: 0;
+    right: 0;
+    position: fixed;
+    background-color: white;
+    padding: 1rem;
+    transform: translateY(-130%);
+    transition: transform cubic-bezier(0.24, 0.88, 0.47, 1) 0.35s;
+    box-shadow: 0 4px 20px 0 rgba(41, 41, 41, 0.07);
+    top: 5rem;
+  }
+
+  .open {
+    transform: translateY(0%);
+  }
+}

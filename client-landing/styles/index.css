@@ -1,3 +1,19 @@
 @import 'tailwindcss/base';
+
+html {
+  font-family: 'Avenir', 'system-ui', '-apple-system', 'Segoe UI', 'Roboto', 'Ubuntu', 'Cantarell', 'Noto Sans',
+    'sans-serif';
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Helvetica', 'system-ui', '-apple-system', 'Segoe UI', 'Roboto', 'Ubuntu', 'Cantarell', 'Noto Sans',
+    'sans-serif';
+}
+
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
