@@ -14,8 +14,8 @@ const Nav = () => {
   };
 
   return (
-    <nav className="h-full mx-auto max-w-6xl px-4 flex flex-row items-center justify-between flex-wrap">
-      <div className="w-full h-full x lg:w-auto flex justify-between z-20 items-center bg-white">
+    <nav className="h-full mx-auto max-w-screen-xl lg:px-8 flex flex-row items-center justify-between flex-wrap">
+      <div className="px-8 lg:px-0 w-full h-full x lg:w-auto flex justify-between z-20 items-center bg-white">
         <Link href="/">
           <img alt="Logo" />
         </Link>

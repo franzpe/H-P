@@ -5,12 +5,12 @@ import Footer from './Footer';
 import SiteHead from './SiteHead';
 
 const SiteLayout = ({ children }) => (
-  <Fragment>
+  <div className="flex flex-col h-full">
     <SiteHead />
     <Header />
-    <div>{children}</div>
+    <div className="flex-1">{children}</div>
     <Footer />
-  </Fragment>
+  </div>
 );
 
 export const getLayout = page => <SiteLayout>{page}</SiteLayout>;
