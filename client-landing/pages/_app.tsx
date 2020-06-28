@@ -2,7 +2,7 @@ import { AppProps } from 'next/app';
 import { FC } from 'react';
 
 import { CustomNextComponentType } from '../types/common';
-import SiteLayout from '../components/main/SiteLayout';
+import SiteLayout from '../components/layouts/SiteLayout';
 
 import '../styles/index.css';
 

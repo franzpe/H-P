@@ -2,8 +2,9 @@ import React, { useState } from 'react';
 import cx from 'classnames';
 
 import Link from 'next/link';
-import Icon from '../Icon';
+import MaterialIcon from '../MaterialIcon';
 
+import Logo from '../../assets/images/svgs/logo.svg';
 import styles from './Nav.module.css';
 
 const Nav = () => {
@@ -17,12 +18,14 @@ const Nav = () => {
     <nav className="h-full mx-auto max-w-screen-xl lg:px-8 flex flex-row items-center justify-between flex-wrap">
       <div className="px-8 lg:px-0 w-full h-full x lg:w-auto flex justify-between z-20 items-center bg-white">
         <Link href="/">
-          <img alt="Logo" />
+          <a>
+            <Logo />
+          </a>
         </Link>
 
         <div className="block lg:hidden">
           <button className="flex items-center px-3 py-2 focus:outline-none" onClick={handleToggleMenuClick}>
-            <Icon>menu</Icon>
+            <MaterialIcon>menu</MaterialIcon>
           </button>
         </div>
       </div>
@@ -53,7 +56,7 @@ const Nav = () => {
             </Link>
           </li>
           <li className="inline-block">
-            <Link href="#">
+            <Link href="/sign-up/info">
               <button className="ml-4 lg:ml-0 py-1 px-4 text-white rounded-full bg-primary-3-turq focus:outline-none focus:shadow-outline hover:bg-primary-3-shade">
                 Sign up
               </button>

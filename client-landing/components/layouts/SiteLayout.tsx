@@ -1,8 +1,6 @@
-import { Fragment } from 'react';
-
-import Header from './Header';
-import Footer from './Footer';
-import SiteHead from './SiteHead';
+import Header from '../main/Header';
+import Footer from '../main/Footer';
+import SiteHead from '../main/SiteHead';
 
 const SiteLayout = ({ children }) => (
   <div className="flex flex-col h-full">

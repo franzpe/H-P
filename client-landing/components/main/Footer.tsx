@@ -1,6 +1,8 @@
 import React from 'react';
 import Link from 'next/link';
 
+import Logo from '../../assets/images/svgs/logo.svg';
+
 const Footer = () => {
   const handleMailClick = e => {
     e.preventDefault();
@@ -10,9 +12,11 @@ const Footer = () => {
   return (
     <footer className="max-w-screen-xl mx-auto px-8 py-8 text-primary-2-shade">
       <div className="grid grid-cols-2 xl:grid-cols-6 lg:grid-cols-4 gap-8 mb-16">
-        <div>
-          <img alt="Logo" />
-        </div>
+        <ul>
+          <li className="py-1" style={{ height: '25%' }}>
+            <Logo preserveAspectRatio="xMinYMin meet" viewBox="0 0 225 47" height="100%" width="100%" />
+          </li>
+        </ul>
         <div>
           <ul>
             <li className="font-medium py-2">Company</li>

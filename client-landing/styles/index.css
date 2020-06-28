@@ -1,3 +1,20 @@
+:root {
+  --primary-1-white: #ffffff;
+  --primary-1-tint: #cbcbcb;
+  --primary-1-shade: #292929;
+  --primary-2-navy: #212353;
+  --primary-2-tint: #797a92;
+  --primary-2-shade: #00034f;
+  --accent-orange: #ff882c;
+  --accent-tint: #ffb881;
+  --primary-3: #10828c;
+  --primary-3-shade: #199fb2;
+  --primary-3-turq: #39bacd;
+  --primary-3-tint: #a2c7cc;
+  --error: #eb5757;
+  --accent-shade: #ff6f00;
+}
+
 @import 'tailwindcss/base';
 
 html {
@@ -19,10 +36,50 @@ h5,
 h6 {
   font-family: 'Helvetica', 'system-ui', '-apple-system', 'Segoe UI', 'Roboto', 'Ubuntu', 'Cantarell', 'Noto Sans',
     'sans-serif';
+  @apply text-primary-2-shade;
+}
+
+h1 {
+  @apply text-6xl;
+}
+h2 {
+  @apply text-4xl;
+}
+h3 {
+  @apply text-3xl;
+}
+h4 {
+  @apply text-2xl;
+}
+h5 {
+  @apply text-xl;
+}
+h6 {
+  @apply text-lg;
 }
 
 button:focus {
   @apply outline-none;
+}
+
+/** Cols & Gradients **/
+.bg-gradient-to-primary-3-shade {
+  background-image: linear-gradient(to right, #58cadb, var(--primary-3-shade));
+}
+
+/** Forms **/
+input:focus-within ~ label,
+input:not(:placeholder-shown) ~ label {
+  @apply transform scale-75 -translate-y-6 duration-300;
+}
+
+input:focus-within ~ label {
+  @apply text-accent-shade font-bold;
+}
+
+.outline input:focus-within ~ label,
+.outline input:not(:placeholder-shown) ~ label {
+  @apply transform scale-75 -translate-y-3 z-0 ml-3 px-1 py-0;
 }
 
 @import 'tailwindcss/components';

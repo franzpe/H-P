@@ -22,7 +22,7 @@ type Props = {
   type?: MaterialIconType;
 } & HTMLProps<HTMLElement>;
 
-const Icon: FC<Props> = ({ children, type, className, ...restProps }) => {
+const MaterialIcon: FC<Props> = ({ children, type, className, ...restProps }) => {
   return (
     <i
       className={cx('material-icons', className, {
@@ -35,4 +35,4 @@ const Icon: FC<Props> = ({ children, type, className, ...restProps }) => {
   );
 };
 
-export default Icon;
+export default MaterialIcon;
