@@ -2,11 +2,12 @@ import React, { FC } from 'react';
 import cx from 'classnames';
 
 import MaterialIcon from '../MaterialIcon';
-import { wrap } from 'module';
 
 type Props = {
   wrapperClassName?: string;
   error?: string;
+  icon?: string;
+  onIconClick?: (e: React.MouseEvent<HTMLButtonElement>) => void;
 } & React.HTMLProps<HTMLInputElement>;
 
 const Input: FC<Props> = ({
@@ -16,17 +17,20 @@ const Input: FC<Props> = ({
   error,
   value,
   label,
+  icon,
+  onIconClick,
   placeholder = ' ',
   ...restProps
 }) => {
   return (
     <div
       className={cx(
-        'outline relative border border-primary-1-tint focus-within:border-accent-shade rounded-lg mb-4',
+        'outline relative border border-primary-1-tint focus-within:border-accent-shade rounded-lg mb-6',
         wrapperClassName,
         {
           ['border-primary-2-shade']: value,
-          ['border-error']: error
+          ['border-error']: error,
+          ['pr-8']: icon
         }
       )}
     >
@@ -48,9 +52,20 @@ const Input: FC<Props> = ({
         </label>
       )}
       {error && (
-        <span className="absolute left-1 mt-1 ml-2 text-error text-xs flex flex-row items-center">
+        <span className="absolute left-1 mt-0 ml-2 text-error text-xs flex flex-row items-center">
           <MaterialIcon className="text-xs mr-1 ">error</MaterialIcon>
-          Please fill out this field.
+          {error}
+        </span>
+      )}
+      {icon && (
+        <span className="z-10 h-full leading-snug font-normal absolute text-center text-gray-400 absolute bg-transparent rounded text-base items-center justify-center w-8 right-0 pr-2 py-2 top-0">
+          {onIconClick ? (
+            <button onClick={onIconClick}>
+              <MaterialIcon>{icon}</MaterialIcon>
+            </button>
+          ) : (
+            <MaterialIcon>{icon}</MaterialIcon>
+          )}
         </span>
       )}
     </div>

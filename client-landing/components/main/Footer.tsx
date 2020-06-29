@@ -89,9 +89,11 @@ const Footer = () => {
         </div>
         <div>
           <ul>
-            <li className="font-medium py-2">Stay in Touch</li>
-            <li className="py-2">
-              <button onClick={handleMailClick}>info@hackersandpainters.io</button>
+            <li className="font-medium py-2 ">Stay in Touch</li>
+            <li className="py-2 break-all">
+              <button className="text-left" onClick={handleMailClick}>
+                info@hackersandpainters.io
+              </button>
             </li>
           </ul>
         </div>

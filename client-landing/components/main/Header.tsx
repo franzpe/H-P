@@ -4,7 +4,7 @@ import Nav from './Nav';
 
 const Header = () => {
   return (
-    <header className="sticky top-0 h-20 shadow-header">
+    <header className="sticky top-0 h-20 shadow-header bg-white z-10">
       <Nav />
     </header>
   );

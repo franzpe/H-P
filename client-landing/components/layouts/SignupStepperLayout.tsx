@@ -47,8 +47,8 @@ const SignupStepperLayout = ({ children }) => {
           <SignupBackBtn className="absolute" />
         </Link>
       )}
-      <div className="flex flex-col items-center justify-start">
-        <div className="max-w-xl w-full text-center">
+      <div className="flex flex-col items-center justify-start w-full max-w-screen-xl mx-auto">
+        <div className="max-w-xl w-full text-center mb-8">
           <h2 className="font-semibold mb-4">{currStep.heading}</h2>
           <ProgressBar value={currStepIndex / (steps.length - 1)} labels={steps.map(s => s.label)} />
         </div>

@@ -7,4 +7,8 @@ declare module '*.svg' {
   export default content;
 }
 
+declare module '*.png';
+declare module '*.jpg';
+declare module '*.gif';
+
 /// <reference types="next-images" />
