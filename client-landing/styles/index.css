@@ -16,6 +16,7 @@
 }
 
 @import 'tailwindcss/base';
+@import './form.css';
 
 html {
   font-family: 'Avenir', 'system-ui', '-apple-system', 'Segoe UI', 'Roboto', 'Ubuntu', 'Cantarell', 'Noto Sans',
@@ -40,16 +41,16 @@ h6 {
 }
 
 h1 {
-  @apply text-6xl;
+  @apply text-7xl;
 }
 h2 {
-  @apply text-4xl;
+  @apply text-5xl;
 }
 h3 {
-  @apply text-3xl;
+  @apply text-4xl;
 }
 h4 {
-  @apply text-2xl;
+  @apply text-3xl;
 }
 h5 {
   @apply text-xl;
@@ -60,6 +61,16 @@ h6 {
 
 button:focus {
   @apply outline-none;
+}
+
+.main-padding {
+  @apply px-4 py-6;
+}
+
+@screen md {
+  .main-padding {
+    @apply px-8 py-8;
+  }
 }
 
 /** Cols & Gradients **/

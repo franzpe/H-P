@@ -1,0 +1,43 @@
+.react-select-container {
+  @apply mb-6;
+}
+
+.react-select-container-w-value {
+}
+
+.react-select-container .react-select__control {
+  @apply border-primary-1-tint rounded-lg;
+}
+
+.react-select-container .react-select__control:hover {
+  @apply border-primary-1-tint;
+}
+
+.react-select-container-w-value .react-select__control {
+  @apply border-primary-2-shade;
+}
+
+.react-select-container-w-value .react-select__control:hover {
+  @apply border-primary-2-shade;
+}
+
+.react-select-container .react-select__control--is-focused {
+  @apply border-accent-shade !important;
+  box-shadow: none;
+}
+
+.react-select-container .react-select__value-container {
+  @apply px-4 py-2;
+}
+
+.react-select-container .react-select__value-container > div:not(.react-select__placeholder):first-child {
+  @apply text-primary-2-shade;
+}
+
+.react-select-container .react-select__indicator-separator {
+  display: none;
+}
+
+.react-select-container .react-select__placeholder {
+  @apply text-primary-1-tint;
+}

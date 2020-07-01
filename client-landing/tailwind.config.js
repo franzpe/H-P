@@ -42,6 +42,9 @@ module.exports = {
           'sans-serif'
         ]
       },
+      fontSize: {
+        '7xl': '5rem'
+      },
       borderWidth: {
         '1.5': '1.5px'
       },
