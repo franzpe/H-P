@@ -1,3 +1,6 @@
+General:
+	☐ container on smaller screens should possibly fill 100% of the screen, so we don't see footer
+
 Signup flow - Pricing:
 	☐ Responsivness
 
@@ -6,4 +9,4 @@ Signup flow - Pricing:
 
 DONE:
 	✔ Signup/info - user type dropdown added @done(20-07-01 15:25)
-	☐ 404 Page
+	✔ 404 Page @done(20-07-01 17:23)

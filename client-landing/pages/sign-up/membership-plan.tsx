@@ -1,15 +1,18 @@
-import React, { useState } from 'react';
+import React, { useState, FC } from 'react';
 import cx from 'classnames';
 
-import { getSignupStepperLayout } from '../../components/layouts/SignupStepperLayout';
+import { getSignupStepperLayout, SignupStepProps } from '../../components/layouts/SignupStepperLayout';
 
 import PuzzleStarter from '../../assets/images/svgs/puzzle-starter.svg';
 import PuzzlePro from '../../assets/images/svgs/puzzle-pro.svg';
 import PuzzleGrowth from '../../assets/images/svgs/puzzle-growth.svg';
 import PuzzleEnterprise from '../../assets/images/svgs/puzzle-enterprise.svg';
 import MaterialIcon from '../../components/MaterialIcon';
+import Link from 'next/link';
 
-const MembershipPlan = () => {
+type Props = SignupStepProps;
+
+const MembershipPlan: FC<Props> = ({ previousStep, nextStep }) => {
   const [state, setState] = useState(true);
 
   return (
@@ -124,9 +127,11 @@ const MembershipPlan = () => {
             <MaterialIcon>done</MaterialIcon>
           </li>
           <li className="h-14 ">
-            <button className="block w-full text-center py-2 font-medium text-white rounded-full bg-accent-orange  hover:bg-accent-shade">
-              Select
-            </button>
+            <Link href={nextStep}>
+              <button className="block w-full text-center py-2 font-medium text-white rounded-full bg-accent-orange  hover:bg-accent-shade">
+                Select
+              </button>
+            </Link>
           </li>
         </ul>
       </div>
@@ -181,9 +186,11 @@ const MembershipPlan = () => {
             <MaterialIcon>done</MaterialIcon>
           </li>
           <li className="h-14 ">
-            <button className="block w-full text-center py-2 font-medium text-white rounded-full bg-accent-orange  hover:bg-accent-shade">
-              Select
-            </button>
+            <Link href={nextStep}>
+              <button className="block w-full text-center py-2 font-medium text-white rounded-full bg-accent-orange  hover:bg-accent-shade">
+                Select
+              </button>
+            </Link>
           </li>
         </ul>
       </div>
@@ -238,9 +245,11 @@ const MembershipPlan = () => {
             <MaterialIcon>done</MaterialIcon>
           </li>
           <li className="h-14">
-            <button className="block w-full text-center py-2 font-medium text-white rounded-full bg-accent-orange  hover:bg-accent-shade">
-              Select
-            </button>
+            <Link href={nextStep}>
+              <button className="block w-full text-center py-2 font-medium text-white rounded-full bg-accent-orange  hover:bg-accent-shade">
+                Select
+              </button>
+            </Link>
           </li>
         </ul>
       </div>
@@ -294,9 +303,11 @@ const MembershipPlan = () => {
             <MaterialIcon>done</MaterialIcon>
           </li>
           <li className="h-14">
-            <button className="block w-full text-center py-2 font-medium text-white rounded-full bg-accent-orange  hover:bg-accent-shade">
-              Select
-            </button>
+            <Link href={nextStep}>
+              <button className="block w-full text-center py-2 font-medium text-white rounded-full bg-accent-orange  hover:bg-accent-shade">
+                Select
+              </button>
+            </Link>
           </li>
         </ul>
       </div>
@@ -304,6 +315,6 @@ const MembershipPlan = () => {
   );
 };
 
-MembershipPlan.getLayout = getSignupStepperLayout;
+(MembershipPlan as any).getLayout = getSignupStepperLayout;
 
 export default MembershipPlan;

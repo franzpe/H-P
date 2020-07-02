@@ -20,7 +20,7 @@ export type SignupStepProps = {
 const steps: SignupStep[] = [
   { path: '/sign-up/info', heading: 'Join Hackers & Painters', label: 'My Info' },
   { path: '/sign-up/membership-plan', heading: 'Select Membership Plan', label: 'Membership Plan' },
-  { path: '#', heading: '#', label: 'Payment' }
+  { path: '/sign-up/payment', heading: 'Enter Payment Details', label: 'Payment' }
 ];
 
 const getAdjacentSteps = (step: number) => {

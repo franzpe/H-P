@@ -58,11 +58,15 @@ module.exports = {
           '-1': '-1'
         }
       },
+      minHeight: {
+        auto: 'auto'
+      },
       height: {
         '12': '3rem',
         '14': '3.5rem'
       },
       width: {
+        '1px': '1px',
         '72': '18rem',
         '84': '21rem',
         '96': '24rem',
