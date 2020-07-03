@@ -1,11 +1,17 @@
 General:
 	☐ container on smaller screens should possibly fill 100% of the screen, so we don't see footer
 
-Signup flow - Pricing:
-	☐ Responsivness
+Pages:
 
-404:
-	☐ Get help redirect
+	Signup flow:
+	✔ membership-plan @done(20-07-03 14:07)
+		☐ Responsivness
+	☐ payment
+	✔ payment-complete @done(20-07-03 14:05)
+	✔ activation-complete @done(20-07-03 16:39)
+
+	✔ 404 @done(20-07-03 14:07)
+		☐ Get help redirect
 
 DONE:
 	✔ Signup/info - user type dropdown added @done(20-07-01 15:25)

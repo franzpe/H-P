@@ -6,7 +6,7 @@ const SiteLayout = ({ children }) => (
   <div className="flex flex-col h-full">
     <SiteHead />
     <Header />
-    <div className="flex-1 main-padding">{children}</div>
+    <div className="flex-1 main-padding max-w-screen-xl  mx-auto">{children}</div>
     <Footer />
   </div>
 );

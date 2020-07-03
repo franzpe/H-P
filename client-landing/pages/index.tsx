@@ -1,6 +1,6 @@
 const Home = () => {
   return (
-    <div className="mx-auto max-w-screen-xl">
+    <div>
       <h1>Lorem ipsum dolor sit amet </h1>
       <h2>Lorem ipsum dolor sit amet </h2>
       <h3>Lorem ipsum dolor sit amet </h3>
