@@ -1,0 +1,3 @@
+.wrapper .active {
+  @apply border-accent-shade;
+}

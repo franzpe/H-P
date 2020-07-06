@@ -4,11 +4,12 @@ General:
 Pages:
 
 	Signup flow:
-	✔ membership-plan @done(20-07-03 14:07)
+	✔ membership-plan /sign-up/membership-plan @done(20-07-03 14:07)
 		☐ Responsivness
-	☐ payment
-	✔ payment-complete @done(20-07-03 14:05)
-	✔ activation-complete @done(20-07-03 16:39)
+	✔ payment @done(20-07-06 09:07)
+		✔ Responsivness @done(20-07-06 09:07)
+	✔ payment-complete /sign-up/payment-complete @done(20-07-03 14:05)
+	✔ activation-complete /sign-up/activation-complete @done(20-07-03 16:39)
 
 	✔ 404 @done(20-07-03 14:07)
 		☐ Get help redirect

@@ -38,7 +38,7 @@ const Input: FC<Props> = ({
         {...(value && { value: value })}
         id={id}
         placeholder={placeholder}
-        className="block px-4 py-2 w-full text appearance-none focus:outline-none bg-transparent rounded-lg text-primary-2-shade"
+        className="block px-4 py-2 w-full text appearance-none focus:outline-none bg-transparent rounded-lg text-primary-2-shade placeholder-primary-1-tint"
         {...restProps}
       />
       {label && (

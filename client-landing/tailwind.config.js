@@ -7,6 +7,7 @@ module.exports = {
     extend: {
       colors: {
         'primary-1-tint': 'var(--primary-1-tint)',
+        'primary-1-shade': 'var(--primary-1-shade)',
         'primary-2-tint': 'var(--primary-2-tint)',
         'primary-2-navy': 'var(--primary-2-navy)',
         'primary-2-shade': 'var(--primary-2-shade)',
@@ -15,6 +16,7 @@ module.exports = {
         'primary-3-shade': 'var(--primary-3-shade)',
         'primary-3-tint-50': 'rgba(162, 199, 204, 0.5)',
         'accent-orange': 'var(--accent-orange)',
+        'accent-orange-7': 'rgba(255,136,44,0.07)',
         'accent-shade': 'var(--accent-shade)',
         error: 'var(--error)'
       },
@@ -43,6 +45,7 @@ module.exports = {
         ]
       },
       fontSize: {
+        // ''
         '7xl': '5rem'
       },
       borderWidth: {
@@ -52,7 +55,7 @@ module.exports = {
         header: '0 4px 20px 0 rgba(41, 41, 41, 0.07)',
         card: '0 1px 10px 0 rgba(203, 203, 203, 0.3)',
         'card-medium': '0 1px 10px 0 rgba(203, 203, 203, 0.5)',
-        'card-medium-hov': '0 1px 20px 0 rgba(203, 203, 203, 0.8)'
+        'card-medium-hov': '0 1px 16px 0 rgba(203, 203, 203, 0.75)'
       },
       transformOrigin: {
         '0': '0%',
@@ -64,7 +67,7 @@ module.exports = {
         auto: 'auto'
       },
       height: {
-        '12': '3rem',
+        '9': '2.25rem',
         '14': '3.5rem',
         '60': '15rem'
       },
@@ -78,6 +81,10 @@ module.exports = {
       },
       lineHeight: {
         'very-tight': '1.15'
+      },
+      flex: {
+        '2.4': '2.4 2.4 0%',
+        '2': '2 2 0%'
       }
     }
   },
