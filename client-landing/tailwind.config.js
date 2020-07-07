@@ -21,17 +21,7 @@ module.exports = {
         error: 'var(--error)'
       },
       fontFamily: {
-        avenir: [
-          'Avenir',
-          'system-ui',
-          '-apple-system',
-          'Segoe UI',
-          'Roboto',
-          'Ubuntu',
-          'Cantarell',
-          'Noto Sans',
-          'sans-serif'
-        ],
+        avenir: ['Avenir', 'sans-serif'],
         helvetica: [
           'Helvetica',
           'system-ui',
@@ -45,7 +35,7 @@ module.exports = {
         ]
       },
       fontSize: {
-        // ''
+        '6xl': '3.75rem',
         '7xl': '5rem'
       },
       borderWidth: {
@@ -70,6 +60,9 @@ module.exports = {
         '9': '2.25rem',
         '14': '3.5rem',
         '60': '15rem'
+      },
+      maxWidth: {
+        'screen-xxl': '1400px'
       },
       width: {
         '1px': '1px',

@@ -10,7 +10,7 @@ const Footer = () => {
   };
 
   return (
-    <footer className="max-w-screen-xl mx-auto main-padding text-primary-2-shade">
+    <footer className="max-w-screen-xxl mx-auto main-padding text-primary-2-shade">
       <div className="grid grid-cols-2 xl:grid-cols-6 lg:grid-cols-4 gap-8 mb-16">
         <ul>
           <li className="py-1" style={{ height: '25%' }}>
@@ -66,7 +66,7 @@ const Footer = () => {
               </Link>
             </li>
             <li className="py-2">
-              <Link href="#">
+              <Link href="/faq">
                 <a>FAQ</a>
               </Link>
             </li>

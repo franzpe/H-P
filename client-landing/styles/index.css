@@ -69,7 +69,7 @@ button:focus {
 
 @screen md {
   .main-padding {
-    @apply px-8 py-8;
+    @apply px-8 py-12;
   }
 }
 

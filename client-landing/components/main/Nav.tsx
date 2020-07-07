@@ -15,7 +15,7 @@ const Nav = () => {
   };
 
   return (
-    <nav className="h-full mx-auto max-w-screen-xl lg:px-8 flex flex-row items-center justify-between flex-wrap">
+    <nav className="h-full mx-auto max-w-screen-xxl lg:px-8 flex flex-row items-center justify-between flex-wrap">
       <div className="px-4 sm:px-8 lg:px-0 w-full h-full x lg:w-auto flex justify-between z-20 items-center bg-white">
         <Link href="/">
           <a>
@@ -46,7 +46,7 @@ const Nav = () => {
             </Link>
           </li>
           <li>
-            <Link href="#">
+            <Link href="/pricing">
               <a className="lg:p-4 py-3 px-0 block">Pricing</a>
             </Link>
           </li>

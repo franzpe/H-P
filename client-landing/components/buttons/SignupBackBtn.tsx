@@ -24,13 +24,16 @@ const SignupBackBtn = React.forwardRef<HTMLAnchorElement, HTMLProps<HTMLAnchorEl
         onClick={onClick}
       >
         <div
-          className={cx('w-10 h-10 p-2 flex items-center justify-center bg-primary-1-tint rounded-full', {
-            ['bg-primary-2-shade']: isHovering
-          })}
+          className={cx(
+            'w-8 h-8 md:w-10 md:h-10 p-2 flex items-center justify-center bg-primary-1-tint rounded-full',
+            {
+              ['bg-primary-2-shade']: isHovering
+            }
+          )}
         >
-          <MaterialIcon className="text-white text-3xl">arrow_back</MaterialIcon>
+          <MaterialIcon className="text-white text-2xl md:text-3xl">arrow_back</MaterialIcon>
         </div>
-        <span className="font-medium">Back</span>
+        <span className="font-medium hidden md:inline-block">Back</span>
       </a>
     );
   }

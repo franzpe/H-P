@@ -27,10 +27,10 @@ const Payment = () => {
 
   return (
     <div className={cx('max-w-4xl', styles.wrapper)}>
-      <span className="text-lg text-primary-3-shade uppercase font-medium">payment method</span>
+      <span className="inline-block text-lg text-primary-3-shade uppercase font-medium mb-4">payment method</span>
       <div className="flex flex-row flex-wrap md:flex-no-wrap">
         <div className="flex-2.4">
-          <div className="py-4 flex space-x-4 ">
+          <div className="pb-4 flex space-x-4 ">
             <button
               className={cx(
                 'rounded-lg shadow-card border-1.5 border-transparent p-4 flex flex-1 text-left hover:shadow-card-medium-hov',
@@ -113,7 +113,7 @@ const Payment = () => {
             </div>
           </div>
         </div>
-        <div className="bg-primary-1-tint mx-8  w-full md:w-1px" />
+        <div className="bg-primary-1-tint mx-8 md:mb-10 w-full md:w-1px" />
         <div className="flex-1 shadow-card p-6 self-start">
           <span className="text-lg text-primary-3-shade uppercase font-medium">order summary</span>
           <div className="rounded-lg bg-accent-orange-7 flex items-center space-x-4 p-4 my-4">

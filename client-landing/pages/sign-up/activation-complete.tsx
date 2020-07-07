@@ -16,10 +16,14 @@ enum Expertise {
 }
 
 const ActivationComplete = () => {
-  const [activeExpertise, setActiveExpertise] = useState<Expertise>(Expertise.Designer);
+  const [activeExpertise, setActiveExpertise] = useState({
+    [Expertise.Designer]: true,
+    [Expertise.Developer]: false,
+    [Expertise.DataScientist]: false
+  });
 
   const handleActiveClick = (expertise: Expertise) => e => {
-    setActiveExpertise(expertise);
+    setActiveExpertise({ ...activeExpertise, [expertise]: !activeExpertise[expertise] });
   };
 
   return (
@@ -33,7 +37,7 @@ const ActivationComplete = () => {
         <button
           className={cx(
             'w-2/5 h-2/5 sm:w-40 sm:h-40 md:w-48 md:h-48 lg:w-60 lg:h-60 shadow-card-medium flex flex-col justify-center items-center rounded-lg hover:shadow-card-medium-hov py-4 sm:py-6 md:py-8 border-1.5 border-transparent',
-            { [styles.active]: activeExpertise === Expertise.Designer }
+            { [styles.active]: activeExpertise[Expertise.Designer] }
           )}
           onClick={handleActiveClick(Expertise.Designer)}
         >
@@ -45,7 +49,7 @@ const ActivationComplete = () => {
         <button
           className={cx(
             'w-2/5 h-2/5 sm:w-40 sm:h-40 md:w-48 md:h-48 lg:w-60 lg:h-60 shadow-card-medium flex flex-col justify-center items-center rounded-lg hover:shadow-card-medium-hov py-4 sm:py-6 md:py-8 border-1.5 border-transparent',
-            { [styles.active]: activeExpertise === Expertise.Developer }
+            { [styles.active]: activeExpertise[Expertise.Developer] }
           )}
           onClick={handleActiveClick(Expertise.Developer)}
         >
@@ -57,7 +61,7 @@ const ActivationComplete = () => {
         <button
           className={cx(
             'w-2/5 h-2/5 sm:w-40 sm:h-40 md:w-48 md:h-48 lg:w-60 lg:h-60 shadow-card-medium flex flex-col justify-center items-center rounded-lg hover:shadow-card-medium-hov mt-6 sm:py-6 md:py-8 sm:mt-0 mx-0 py-4 border-1.5 border-transparent',
-            { [styles.active]: activeExpertise === Expertise.DataScientist }
+            { [styles.active]: activeExpertise[Expertise.DataScientist] }
           )}
           onClick={handleActiveClick(Expertise.DataScientist)}
         >
