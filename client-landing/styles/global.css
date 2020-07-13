@@ -1,0 +1,36 @@
+html,
+body,
+div#__next {
+  height: 100%;
+}
+
+button:focus {
+  @apply outline-none;
+}
+
+.main-padding-x {
+  @apply px-2;
+}
+
+.main-padding {
+  @apply px-2 py-6;
+}
+
+@screen md {
+  .main-padding {
+    @apply px-8 py-12;
+  }
+  .main-padding-x {
+    @apply px-8;
+  }
+}
+
+.collapsible {
+  overflow: hidden;
+  transition: height 0.3s ease-out;
+  height: auto;
+}
+
+.collapsible[data-collapsed='true'] {
+  height: 0;
+}

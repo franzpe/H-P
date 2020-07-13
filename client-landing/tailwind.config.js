@@ -7,6 +7,8 @@ module.exports = {
     extend: {
       colors: {
         'primary-1-tint': 'var(--primary-1-tint)',
+        'primary-1-tint-lt': 'var(--primary-1-tintlt)',
+        'primary-1-light': 'var(--primary-1-light)',
         'primary-1-shade': 'var(--primary-1-shade)',
         'primary-2-tint': 'var(--primary-2-tint)',
         'primary-2-navy': 'var(--primary-2-navy)',
@@ -18,6 +20,7 @@ module.exports = {
         'accent-orange': 'var(--accent-orange)',
         'accent-orange-7': 'rgba(255,136,44,0.07)',
         'accent-shade': 'var(--accent-shade)',
+        'accent-tint': 'var(--accent-tint)',
         error: 'var(--error)'
       },
       fontFamily: {

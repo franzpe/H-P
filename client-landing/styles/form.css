@@ -41,3 +41,44 @@
 .react-select-container .react-select__placeholder {
   @apply text-primary-1-tint;
 }
+
+/** Forms **/
+input:focus-within:not([type='radio']) ~ label,
+input:not(:placeholder-shown):not([type='radio']) ~ label {
+  @apply transform scale-75 -translate-y-6 duration-300;
+}
+
+input:focus-within:not([type='radio']) ~ label {
+  @apply text-accent-shade font-bold;
+}
+
+.outline input:focus-within ~ label,
+.outline input:not(:placeholder-shown) ~ label {
+  @apply transform scale-75 -translate-y-3 z-0 ml-3 px-1 py-0;
+}
+
+/** Radio btn **/
+input[type='radio'] + label span {
+  transition: background 0.2s, transform 0.2s;
+}
+
+input[type='radio'] + label span:hover,
+input[type='radio'] + label:hover span {
+  transform: scale(1.15);
+}
+
+input[type='radio']:checked + label span {
+  background-color: var(--accent-shade);
+  border-color: var(--accent-shade);
+  box-shadow: 0px 0px 0px 4px white inset;
+}
+
+input[type='radio']:checked + label {
+  color: var(--accent-shade);
+}
+
+input[type='radio'] {
+  border: 0px;
+  width: 100%;
+  height: 2em;
+}

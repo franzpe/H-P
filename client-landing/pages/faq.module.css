@@ -1,0 +1,15 @@
+.wrapper .active {
+  @apply border-accent-shade;
+}
+
+.active path {
+  @apply fill-current text-accent-orange;
+}
+
+.title {
+  @apply text-lg font-bold text-accent-orange;
+}
+
+.title path {
+  @apply fill-current;
+}
