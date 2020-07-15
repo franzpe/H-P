@@ -73,19 +73,37 @@ module.exports = {
         '72': '18rem',
         '84': '21rem',
         '96': '24rem',
-        '128': '32rem'
+        '128': '32rem',
+        '10%': '10%',
+        '20%': '20%',
+        '30%': '30%',
+        '35%': '35%',
+        '37%': '37%',
+        '40%': '40%',
+        '50%': '50%'
       },
       lineHeight: {
         'very-tight': '1.15'
       },
       flex: {
+        '1.4': '1.4 1.4 0%',
+        '1.5': '1.5 1.5 0%',
         '2.4': '2.4 2.4 0%',
         '2': '2 2 0%'
+      },
+      margin: {
+        '128': '32rem',
+        '10%': '10%',
+        '20%': '20%',
+        '30%': '30%',
+        '40%': '40%',
+        '50%': '50%'
       }
     }
   },
   variants: {
     boxShadow: ['hover'],
+    borderWidth: ['responsive', 'last', 'hover'],
     borderColor: ['responsive', 'hover', 'focus', 'focus-within']
   },
   plugins: []
