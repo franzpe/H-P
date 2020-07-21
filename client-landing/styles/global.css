@@ -16,13 +16,8 @@ button:focus {
   @apply px-2 py-6;
 }
 
-@screen md {
-  .main-padding {
-    @apply px-8 py-12;
-  }
-  .main-padding-x {
-    @apply px-8;
-  }
+.inner {
+  @apply max-w-screen-xxl px-2 py-6 mx-auto;
 }
 
 .collapsible {
@@ -33,4 +28,18 @@ button:focus {
 
 .collapsible[data-collapsed='true'] {
   height: 0;
+}
+
+@screen md {
+  .main-padding {
+    @apply px-8 py-12;
+  }
+
+  .main-padding-x {
+    @apply px-8;
+  }
+
+  .inner {
+    @apply px-8 py-12;
+  }
 }

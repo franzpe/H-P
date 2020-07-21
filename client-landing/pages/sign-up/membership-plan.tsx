@@ -6,7 +6,11 @@ import Plans from '../../components/Plans';
 type Props = SignupStepProps;
 
 const MembershipPlan: FC<Props> = ({ previousStep, nextStep }) => {
-  return <Plans href={nextStep} />;
+  return (
+    <div className="max-w-5xl mx-auto">
+      <Plans href={nextStep} />
+    </div>
+  );
 };
 
 (MembershipPlan as any).getLayout = getSignupStepperLayout;

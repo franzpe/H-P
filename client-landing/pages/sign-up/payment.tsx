@@ -26,7 +26,7 @@ const Payment = () => {
   };
 
   return (
-    <div className={cx('max-w-4xl', styles.wrapper)}>
+    <div className={cx('max-w-4xl mx-auto', styles.wrapper)}>
       <span className="inline-block text-lg text-primary-3-shade uppercase font-medium mb-4">payment method</span>
       <div className="flex flex-row flex-wrap md:flex-no-wrap">
         <div className="flex-2.4">

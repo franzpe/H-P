@@ -19,11 +19,11 @@ const Info: FC<Props> = ({ previousStep, nextStep }) => {
   const [option, setOption] = useState(null);
 
   return (
-    <div>
+    <div className="max-w-sm mx-auto">
       <form>
         <div className="flex md:space-x-2 flex-wrap">
-          <Input id="firstName" label="First Name" wrapperClassName="w-full md:w-auto" value="Frank" />
-          <Input id="lastName" label="Last Name" wrapperClassName="w-full md:w-auto" />
+          <Input id="firstName" label="First Name" wrapperClassName="w-full md:flex-1" value="Frank" />
+          <Input id="lastName" label="Last Name" wrapperClassName="w-full md:flex-1" />
         </div>
         <Select
           id="userType"

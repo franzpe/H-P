@@ -17,7 +17,7 @@ const Plans: FC<Props> = ({ href }) => {
 
   return (
     <div className="text-primary-3-shade flex">
-      <div className="inline-block py-4 pr-4text-left align-top max-w-xs">
+      <div className="inline-block py-4 pr-4text-left align-top max-w-xs my-3 flex-1 ">
         <ul className="text-primary-2-shade">
           <li className="h-56 leading-very-tight flex items-end justify-center">
             <div className="w-5/6">
@@ -32,7 +32,7 @@ const Plans: FC<Props> = ({ href }) => {
                 Save 15%
               </span>
               <div
-                className="rounded-full border border-primary-2-tint text-sm cursor-pointer flex justify-between px-4 py-2 relative text-primary-2-tint mb-4"
+                className="rounded-full border border-primary-2-tint text-sm cursor-pointer flex justify-between px-2 py-2 relative text-primary-2-tint mb-4"
                 onClick={e => setState(!state)}
               >
                 <span>Billed monthly</span>
@@ -79,210 +79,212 @@ const Plans: FC<Props> = ({ href }) => {
           <li className="h-14 leading-very-tight flex items-center justify-start">Trigger actions via Zapier</li>
         </ul>
       </div>
-      <div className="inline-block p-4 rounded-lg  shadow-card hover:shadow-card-medium-hov text-center mx-2 align-top w-40">
-        <ul>
-          <li className="h-56">
-            <h5 className="font-semibold mb-4">Starter</h5>
-            <div className="flex items-start justify-center h-24 mb-2">
-              <PuzzleStarter />
-            </div>
-            <div className="text-accent-orange font-semibold text-3xl">$208</div>
-            <div className="text-black">{state ? 'a year' : 'a month'}</div>
-          </li>
-          <li className="h-14 flex items-center justify-center">250</li>
-          <li className="h-14 flex items-center justify-center">
-            <MaterialIcon>done</MaterialIcon>
-          </li>
-          <li className="h-14 flex items-center justify-center">
-            <MaterialIcon>done</MaterialIcon>
-          </li>
-          <li className="h-14 flex items-center justify-center"></li>
-          <li className="h-14 flex items-center justify-center"></li>
-          <li className="h-14 flex items-center justify-center"></li>
-          <li className="h-14 flex items-center justify-center">
-            <MaterialIcon>done</MaterialIcon>
-          </li>
-          <li className="h-14 flex items-center justify-center">
-            <MaterialIcon>done</MaterialIcon>
-          </li>
-          <li className="h-14 flex items-center justify-center"></li>
-          <li className="h-14 flex items-center justify-center"></li>
-          <li className="h-14 flex items-center justify-center">
-            <MaterialIcon>done</MaterialIcon>
-          </li>
-          <li className="h-14 flex items-center justify-center"></li>
-          <li className="h-14 flex items-center justify-center"></li>
-          <li className="h-14 flex items-center justify-center"></li>
-          <li className="h-14 flex items-center justify-center"></li>
-          <li className="h-14 ">
-            <Link href={href}>
-              <button className="block w-full text-center py-2 font-medium text-white rounded-full bg-accent-orange  hover:bg-accent-shade">
-                Select
-              </button>
-            </Link>
-          </li>
-        </ul>
-      </div>
-      <div className="inline-block p-4 rounded-lg border-1.5 border-accent-shade align-top shadow-card hover:shadow-card-medium-hov text-center mx-2 w-40 ">
-        <ul>
-          <li className="h-56">
-            <h5 className="font-semibold mb-4">Pro</h5>
-            <div className="flex items-start justify-center h-24 mb-2">
-              <PuzzlePro width="83" />
-            </div>
-            <div className="text-accent-orange font-semibold text-3xl">$416</div>
-            <div className="text-black">{state ? 'a year' : 'a month'}</div>
-          </li>
-          <li className="h-14 flex items-center justify-center">500</li>
-          <li className="h-14 flex items-center justify-center">
-            <MaterialIcon>done</MaterialIcon>
-          </li>
-          <li className="h-14 flex items-center justify-center">
-            <MaterialIcon>done</MaterialIcon>
-          </li>
-          <li className="h-14 flex items-center justify-center">
-            <MaterialIcon>done</MaterialIcon>
-          </li>
-          <li className="h-14 flex items-center justify-center">
-            <MaterialIcon>done</MaterialIcon>
-          </li>
-          <li className="h-14 flex items-center justify-center"></li>
-          <li className="h-14 flex items-center justify-center">
-            <MaterialIcon>done</MaterialIcon>
-          </li>
-          <li className="h-14 flex items-center justify-center">
-            <MaterialIcon>done</MaterialIcon>
-          </li>
-          <li className="h-14 flex items-center justify-center"></li>
-          <li className="h-14 flex items-center justify-center"></li>
-          <li className="h-14 flex items-center justify-center">
-            <MaterialIcon>done</MaterialIcon>
-          </li>
-          <li className="h-14 flex items-center justify-center"></li>
-          <li className="h-14 flex items-center justify-center"></li>
-          <li className="h-14 flex items-center justify-center"></li>
-          <li className="h-14 flex items-center justify-center"></li>
-          <li className="h-14 ">
-            <Link href={href}>
-              <button className="block w-full text-center py-2 font-medium text-white rounded-full bg-accent-orange  hover:bg-accent-shade">
-                Select
-              </button>
-            </Link>
-          </li>
-        </ul>
-      </div>
-      <div className="inline-block p-4 rounded shadow-card hover:shadow-card-medium-hov text-center align-top mx-2 w-40">
-        <ul>
-          <li className="h-56">
-            <h5 className="font-semibold mb-4">Growth</h5>
-            <div className="flex items-start justify-center h-24 mb-2 ">
-              <PuzzleGrowth />
-            </div>
-            <div className="text-accent-orange font-semibold text-3xl">$833</div>
-            <div className="text-black">{state ? 'a year' : 'a month'}</div>
-          </li>
-          <li className="h-14 flex items-center justify-center">1000</li>
-          <li className="h-14 flex items-center justify-center">
-            <MaterialIcon>done</MaterialIcon>
-          </li>
-          <li className="h-14 flex items-center justify-center">
-            <MaterialIcon>done</MaterialIcon>
-          </li>
-          <li className="h-14 flex items-center justify-center">
-            <MaterialIcon>done</MaterialIcon>
-          </li>
-          <li className="h-14 flex items-center justify-center">
-            <MaterialIcon>done</MaterialIcon>
-          </li>
-          <li className="h-14 flex items-center justify-center"></li>
-          <li className="h-14 flex items-center justify-center">
-            <MaterialIcon>done</MaterialIcon>
-          </li>
-          <li className="h-14 flex items-center justify-center">
-            <MaterialIcon>done</MaterialIcon>
-          </li>
-          <li className="h-14 flex items-center justify-center"></li>
-          <li className="h-14 flex items-center justify-center">
-            <MaterialIcon>done</MaterialIcon>
-          </li>
-          <li className="h-14 flex items-center justify-center">
-            <MaterialIcon>done</MaterialIcon>
-          </li>
-          <li className="h-14 flex items-center justify-center">
-            <MaterialIcon>done</MaterialIcon>
-          </li>
-          <li className="h-14 flex items-center justify-center"></li>
-          <li className="h-14 flex items-center justify-center"></li>
-          <li className="h-14 flex items-center justify-center"></li>
-          <li className="h-14">
-            <Link href={href}>
-              <button className="block w-full text-center py-2 font-medium text-white rounded-full bg-accent-orange  hover:bg-accent-shade">
-                Select
-              </button>
-            </Link>
-          </li>
-        </ul>
-      </div>
-      <div className="inline-block p-4 rounded shadow-card hover:shadow-card-medium-hov text-center ml-2 align-top w-40">
-        <ul>
-          <li className="h-56 flex flex-col">
-            <h5 className="font-semibold mb-4">Enterprise</h5>
-            <div className="flex items-start justify-center h-24 mb-2">
-              <PuzzleEnterprise />
-            </div>
-            <div className="text-primary-2-navy font-bold text-2xl block my-auto">Custom</div>
-          </li>
-          <li className="h-14 flex items-center justify-center">Unlimited</li>
-          <li className="h-14 flex items-center justify-center">
-            <MaterialIcon>done</MaterialIcon>
-          </li>
-          <li className="h-14 flex items-center justify-center">
-            <MaterialIcon>done</MaterialIcon>
-          </li>
-          <li className="h-14 flex items-center justify-center">
-            <MaterialIcon>done</MaterialIcon>
-          </li>
-          <li className="h-14 flex items-center justify-center">
-            <MaterialIcon>done</MaterialIcon>
-          </li>
-          <li className="h-14 flex items-center justify-center">
-            <MaterialIcon>done</MaterialIcon>
-          </li>
-          <li className="h-14 flex items-center justify-center">
-            <MaterialIcon>done</MaterialIcon>
-          </li>
-          <li className="h-14 flex items-center justify-center">
-            <MaterialIcon>done</MaterialIcon>
-          </li>
-          <li className="h-14 flex items-center justify-center">
-            <MaterialIcon>done</MaterialIcon>
-          </li>
-          <li className="h-14 flex items-center justify-center">
-            <MaterialIcon>done</MaterialIcon>
-          </li>
-          <li className="h-14 flex items-center justify-center">
-            <MaterialIcon>done</MaterialIcon>
-          </li>
-          <li className="h-14 flex items-center justify-center">
-            <MaterialIcon>done</MaterialIcon>
-          </li>
-          <li className="h-14 flex items-center justify-center">
-            <MaterialIcon>done</MaterialIcon>
-          </li>
-          <li className="h-14 flex items-center justify-center">
-            <MaterialIcon>done</MaterialIcon>
-          </li>
-          <li className="h-14 flex items-center justify-center">
-            <MaterialIcon>done</MaterialIcon>
-          </li>
-          <li className="h-14">
-            <Link href={href}>
-              <button className="block w-full text-center py-2 font-medium text-white rounded-full bg-primary-2-navy hover:bg-accent-shade">
-                Contact Us
-              </button>
-            </Link>
-          </li>
-        </ul>
+      <div className="whitespace-no-wrap overflow-x-auto flex flex-1 ">
+        <div className="inline-block p-4 rounded-lg  shadow-card hover:shadow-card-medium-hov text-center mx-2 ml-3 align-top w-40 my-3">
+          <ul>
+            <li className="h-56">
+              <h5 className="font-semibold mb-4">Starter</h5>
+              <div className="flex items-start justify-center h-24 mb-2">
+                <PuzzleStarter />
+              </div>
+              <div className="text-accent-orange font-semibold text-3xl">$208</div>
+              <div className="text-black">{state ? 'a year' : 'a month'}</div>
+            </li>
+            <li className="h-14 flex items-center justify-center">250</li>
+            <li className="h-14 flex items-center justify-center">
+              <MaterialIcon>done</MaterialIcon>
+            </li>
+            <li className="h-14 flex items-center justify-center">
+              <MaterialIcon>done</MaterialIcon>
+            </li>
+            <li className="h-14 flex items-center justify-center"></li>
+            <li className="h-14 flex items-center justify-center"></li>
+            <li className="h-14 flex items-center justify-center"></li>
+            <li className="h-14 flex items-center justify-center">
+              <MaterialIcon>done</MaterialIcon>
+            </li>
+            <li className="h-14 flex items-center justify-center">
+              <MaterialIcon>done</MaterialIcon>
+            </li>
+            <li className="h-14 flex items-center justify-center"></li>
+            <li className="h-14 flex items-center justify-center"></li>
+            <li className="h-14 flex items-center justify-center">
+              <MaterialIcon>done</MaterialIcon>
+            </li>
+            <li className="h-14 flex items-center justify-center"></li>
+            <li className="h-14 flex items-center justify-center"></li>
+            <li className="h-14 flex items-center justify-center"></li>
+            <li className="h-14 flex items-center justify-center"></li>
+            <li className="h-14 ">
+              <Link href={href}>
+                <button className="block w-full text-center py-2 font-medium text-white rounded-full bg-accent-orange  hover:bg-accent-shade">
+                  Select
+                </button>
+              </Link>
+            </li>
+          </ul>
+        </div>
+        <div className="inline-block p-4 rounded-lg border-1.5 border-accent-shade align-top shadow-card hover:shadow-card-medium-hov text-center mx-2 w-40 my-3">
+          <ul>
+            <li className="h-56">
+              <h5 className="font-semibold mb-4">Pro</h5>
+              <div className="flex items-start justify-center h-24 mb-2">
+                <PuzzlePro width="83" />
+              </div>
+              <div className="text-accent-orange font-semibold text-3xl">$416</div>
+              <div className="text-black">{state ? 'a year' : 'a month'}</div>
+            </li>
+            <li className="h-14 flex items-center justify-center">500</li>
+            <li className="h-14 flex items-center justify-center">
+              <MaterialIcon>done</MaterialIcon>
+            </li>
+            <li className="h-14 flex items-center justify-center">
+              <MaterialIcon>done</MaterialIcon>
+            </li>
+            <li className="h-14 flex items-center justify-center">
+              <MaterialIcon>done</MaterialIcon>
+            </li>
+            <li className="h-14 flex items-center justify-center">
+              <MaterialIcon>done</MaterialIcon>
+            </li>
+            <li className="h-14 flex items-center justify-center"></li>
+            <li className="h-14 flex items-center justify-center">
+              <MaterialIcon>done</MaterialIcon>
+            </li>
+            <li className="h-14 flex items-center justify-center">
+              <MaterialIcon>done</MaterialIcon>
+            </li>
+            <li className="h-14 flex items-center justify-center"></li>
+            <li className="h-14 flex items-center justify-center"></li>
+            <li className="h-14 flex items-center justify-center">
+              <MaterialIcon>done</MaterialIcon>
+            </li>
+            <li className="h-14 flex items-center justify-center"></li>
+            <li className="h-14 flex items-center justify-center"></li>
+            <li className="h-14 flex items-center justify-center"></li>
+            <li className="h-14 flex items-center justify-center"></li>
+            <li className="h-14 ">
+              <Link href={href}>
+                <button className="block w-full text-center py-2 font-medium text-white rounded-full bg-accent-orange  hover:bg-accent-shade">
+                  Select
+                </button>
+              </Link>
+            </li>
+          </ul>
+        </div>
+        <div className="inline-block p-4 rounded shadow-card hover:shadow-card-medium-hov text-center align-top mx-2 w-40 my-3">
+          <ul>
+            <li className="h-56">
+              <h5 className="font-semibold mb-4">Growth</h5>
+              <div className="flex items-start justify-center h-24 mb-2 ">
+                <PuzzleGrowth />
+              </div>
+              <div className="text-accent-orange font-semibold text-3xl">$833</div>
+              <div className="text-black">{state ? 'a year' : 'a month'}</div>
+            </li>
+            <li className="h-14 flex items-center justify-center">1000</li>
+            <li className="h-14 flex items-center justify-center">
+              <MaterialIcon>done</MaterialIcon>
+            </li>
+            <li className="h-14 flex items-center justify-center">
+              <MaterialIcon>done</MaterialIcon>
+            </li>
+            <li className="h-14 flex items-center justify-center">
+              <MaterialIcon>done</MaterialIcon>
+            </li>
+            <li className="h-14 flex items-center justify-center">
+              <MaterialIcon>done</MaterialIcon>
+            </li>
+            <li className="h-14 flex items-center justify-center"></li>
+            <li className="h-14 flex items-center justify-center">
+              <MaterialIcon>done</MaterialIcon>
+            </li>
+            <li className="h-14 flex items-center justify-center">
+              <MaterialIcon>done</MaterialIcon>
+            </li>
+            <li className="h-14 flex items-center justify-center"></li>
+            <li className="h-14 flex items-center justify-center">
+              <MaterialIcon>done</MaterialIcon>
+            </li>
+            <li className="h-14 flex items-center justify-center">
+              <MaterialIcon>done</MaterialIcon>
+            </li>
+            <li className="h-14 flex items-center justify-center">
+              <MaterialIcon>done</MaterialIcon>
+            </li>
+            <li className="h-14 flex items-center justify-center"></li>
+            <li className="h-14 flex items-center justify-center"></li>
+            <li className="h-14 flex items-center justify-center"></li>
+            <li className="h-14">
+              <Link href={href}>
+                <button className="block w-full text-center py-2 font-medium text-white rounded-full bg-accent-orange  hover:bg-accent-shade">
+                  Select
+                </button>
+              </Link>
+            </li>
+          </ul>
+        </div>
+        <div className="inline-block p-4 rounded shadow-card hover:shadow-card-medium-hov text-center ml-2 align-top w-40 mr-2 my-3">
+          <ul>
+            <li className="h-56 flex flex-col">
+              <h5 className="font-semibold mb-4">Enterprise</h5>
+              <div className="flex items-start justify-center h-24 mb-2">
+                <PuzzleEnterprise />
+              </div>
+              <div className="text-primary-2-navy font-bold text-2xl block my-auto">Custom</div>
+            </li>
+            <li className="h-14 flex items-center justify-center">Unlimited</li>
+            <li className="h-14 flex items-center justify-center">
+              <MaterialIcon>done</MaterialIcon>
+            </li>
+            <li className="h-14 flex items-center justify-center">
+              <MaterialIcon>done</MaterialIcon>
+            </li>
+            <li className="h-14 flex items-center justify-center">
+              <MaterialIcon>done</MaterialIcon>
+            </li>
+            <li className="h-14 flex items-center justify-center">
+              <MaterialIcon>done</MaterialIcon>
+            </li>
+            <li className="h-14 flex items-center justify-center">
+              <MaterialIcon>done</MaterialIcon>
+            </li>
+            <li className="h-14 flex items-center justify-center">
+              <MaterialIcon>done</MaterialIcon>
+            </li>
+            <li className="h-14 flex items-center justify-center">
+              <MaterialIcon>done</MaterialIcon>
+            </li>
+            <li className="h-14 flex items-center justify-center">
+              <MaterialIcon>done</MaterialIcon>
+            </li>
+            <li className="h-14 flex items-center justify-center">
+              <MaterialIcon>done</MaterialIcon>
+            </li>
+            <li className="h-14 flex items-center justify-center">
+              <MaterialIcon>done</MaterialIcon>
+            </li>
+            <li className="h-14 flex items-center justify-center">
+              <MaterialIcon>done</MaterialIcon>
+            </li>
+            <li className="h-14 flex items-center justify-center">
+              <MaterialIcon>done</MaterialIcon>
+            </li>
+            <li className="h-14 flex items-center justify-center">
+              <MaterialIcon>done</MaterialIcon>
+            </li>
+            <li className="h-14 flex items-center justify-center">
+              <MaterialIcon>done</MaterialIcon>
+            </li>
+            <li className="h-14">
+              <Link href={href}>
+                <button className="block w-full text-center py-2 font-medium text-white rounded-full bg-primary-2-navy hover:bg-accent-shade">
+                  Contact Us
+                </button>
+              </Link>
+            </li>
+          </ul>
+        </div>
       </div>
     </div>
   );

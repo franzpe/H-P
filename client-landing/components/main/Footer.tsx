@@ -21,7 +21,7 @@ const Footer = () => {
           <ul>
             <li className="font-medium py-2">Company</li>
             <li className="py-2">
-              <Link href="#">
+              <Link href="/about">
                 <a>About</a>
               </Link>
             </li>

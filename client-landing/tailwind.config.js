@@ -62,7 +62,8 @@ module.exports = {
       height: {
         '9': '2.25rem',
         '14': '3.5rem',
-        '60': '15rem'
+        '60': '15rem',
+        '136': '34rem'
       },
       maxWidth: {
         'screen-xxl': '1400px'

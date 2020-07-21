@@ -41,14 +41,14 @@ const SignupStepperLayout = ({ children }) => {
   const { previousStep, nextStep } = getAdjacentSteps(currStepIndex);
 
   return (
-    <div className="relative">
+    <div className="relative ">
       {previousStep && (
         <Link href={previousStep} passHref={true}>
           <SignupBackBtn className="absolute" />
         </Link>
       )}
-      <div className="flex flex-col items-center justify-start w-full max-w-screen-xxl mx-auto">
-        <div className="max-w-xl w-full text-center mb-8">
+      <div className="w-full max-w-screen-xxl mx-auto">
+        <div className="mx-auto max-w-xl w-full text-center mb-8">
           <h3 className="font-semibold mb-4 text-2xl md:text-4xl">{currStep.heading}</h3>
           <ProgressBar value={currStepIndex / (steps.length - 1)} labels={steps.map(s => s.label)} />
         </div>
