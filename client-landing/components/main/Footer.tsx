@@ -100,15 +100,15 @@ const Footer = () => {
       </div>
       <div className="text-xs">
         © Hackers & Painters™, 2020. All rights reserved |{' '}
-        <Link href="#">
+        <Link href="/terms-of-service">
           <a className="border-b border-transparent hover:border-primary-2-shade">Terms</a>
         </Link>{' '}
         |{' '}
-        <Link href="#">
+        <Link href="/privacy-policy">
           <a className="border-b border-transparent hover:border-primary-2-shade">Privacy Policy</a>
         </Link>{' '}
         |{' '}
-        <Link href="#">
+        <Link href="/cookies-policy">
           <a className="border-b border-transparent hover:border-primary-2-shade">Cookies Policy</a>
         </Link>{' '}
         <br />

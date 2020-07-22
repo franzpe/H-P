@@ -79,16 +79,6 @@ const About = () => {
       </section>
       <section className="inner">
         <h2 className="font-bold text-center">What we've been up to</h2>
-        <div>
-          <div className="inline-block relative">
-            <div className="rounded-full border border-accent-orange w-24 h-24 inline-block"></div>
-            <div
-              style={{ width: '50%', height: '100%' }}
-              className="z-10 background-white border border-white absolute"
-            ></div>
-          </div>
-          <div className="rounded-full border-b border-accent-orange w-32 inline-block"></div>
-        </div>
       </section>
       <section className="inner text-center mb-12">
         <h5 className="font-bold mb-12">Trusted by companies all over</h5>
