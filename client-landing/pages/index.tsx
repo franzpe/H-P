@@ -134,7 +134,7 @@ const Home = () => {
         </ul>
       </section>
       <section className="pb-10 mt-12 md:mt-32 space-x-0 md:space-x-8 lg:space-x-10 xl:space-x-16 md:flex text-center md:text-left max-w-screen-xxl mx-auto">
-        <DiscoveryIcon className="inline-block w-2/5" />
+        <DiscoveryIcon className="inline-block w-2/5 h-full" />
         <div className="inline-block">
           <h2 className="font-bold mb-6 sm:mb-6">Start discovering hidden talent</h2>
           <div className="space-x-4 md:space-x-8 flex md:block justify-center ">
