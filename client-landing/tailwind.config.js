@@ -5,7 +5,11 @@ module.exports = {
   },
   theme: {
     extend: {
+      screens: {
+        lg: { min: '1025px' }
+      },
       colors: {
+        black: '#000',
         'primary-1-tint': 'var(--primary-1-tint)',
         'primary-1-tint-lt': 'var(--primary-1-tintlt)',
         'primary-1-light': 'var(--primary-1-light)',
@@ -25,6 +29,11 @@ module.exports = {
       },
       fontFamily: {
         avenir: ['Avenir', 'sans-serif'],
+        'avenir-book': ['Avenir-Book', 'sans-serif'],
+        'avenir-light': ['Avenir-Light', 'sans-serif'],
+        'avenir-roman': ['Avenir-Roman', 'sans-serif'],
+        'avenir-heavy': ['Avenir-heavy', 'sans-serif'],
+        'avenir-black': ['Avenir-Black', 'sans-serif'],
         helvetica: [
           'Helvetica',
           'system-ui',
@@ -38,6 +47,7 @@ module.exports = {
         ]
       },
       fontSize: {
+        '3.5xl': '2.125rem',
         '6xl': '3.75rem',
         '7xl': '5rem'
       },
@@ -63,7 +73,20 @@ module.exports = {
         '9': '2.25rem',
         '14': '3.5rem',
         '60': '15rem',
-        '136': '34rem'
+        '120': '30rem',
+        '124': '31rem',
+        '136': '34rem',
+        '10%': '10%',
+        '20%': '20%',
+        '30%': '30%',
+        '35%': '35%',
+        '37%': '37%',
+        '40%': '40%',
+        '50%': '50%',
+        '60%': '60%',
+        '70%': '70%',
+        '80%': '80%',
+        '90%': '90%'
       },
       maxWidth: {
         'screen-xxl': '1400px'
@@ -82,16 +105,30 @@ module.exports = {
         '35%': '35%',
         '37%': '37%',
         '40%': '40%',
-        '50%': '50%'
+        '50%': '50%',
+        '60%': '60%',
+        '70%': '70%',
+        '80%': '80%',
+        '90%': '90%',
+        '95%': '95%'
       },
       lineHeight: {
         'very-tight': '1.15'
       },
       flex: {
+        '0.8': '0.8 0.8 0%',
+        '1.1': '1.1 1.1 0%',
+        '1.2': '1.2 1.2 0%',
+        '1.3': '1.3 1.3 0%',
         '1.4': '1.4 1.4 0%',
         '1.5': '1.5 1.5 0%',
         '2.4': '2.4 2.4 0%',
         '2': '2 2 0%'
+      },
+      flexShrink: {
+        '0.25': 0.25,
+        '0.5': 0.5,
+        '0.75': 0.75
       },
       padding: {
         '11': '2.75rem'
@@ -99,8 +136,10 @@ module.exports = {
       margin: {
         '128': '32rem',
         '10%': '10%',
+        '15%': '15%',
         '20%': '20%',
         '30%': '30%',
+        '35%': '35%',
         '40%': '40%',
         '50%': '50%'
       },

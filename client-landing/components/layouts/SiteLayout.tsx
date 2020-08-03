@@ -15,13 +15,13 @@ const SiteLayout = ({ children }) => {
     <div className="flex flex-col h-full">
       <SiteHead />
       <Header />
-      <div
+      <main
         className={cx('flex-1  w-full', {
           ['main-padding max-w-screen-xxl mx-auto']: !isPageFullySized
         })}
       >
         {children}
-      </div>
+      </main>
       <Footer />
     </div>
   );

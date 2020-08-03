@@ -4,6 +4,11 @@ div#__next {
   height: 100%;
 }
 
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
 button:focus {
   @apply outline-none;
 }

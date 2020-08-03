@@ -26,7 +26,7 @@ const Footer = () => {
               </Link>
             </li>
             <li className="py-2">
-              <Link href="#">
+              <Link href="/featuers">
                 <a>Features</a>
               </Link>
             </li>

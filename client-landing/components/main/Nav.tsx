@@ -22,7 +22,6 @@ const Nav = () => {
             <Logo />
           </a>
         </Link>
-
         <div className="block lg:hidden">
           <button className="flex items-center px-3 py-2 focus:outline-none" onClick={handleToggleMenuClick}>
             <MaterialIcon>menu</MaterialIcon>
@@ -41,7 +40,7 @@ const Nav = () => {
             </Link>
           </li>
           <li>
-            <Link href="#">
+            <Link href="/features">
               <a className="lg:p-4 py-3 px-0 block">Features</a>
             </Link>
           </li>

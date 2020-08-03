@@ -1,0 +1,42 @@
+.nav .navItem {
+  @apply flex items-center font-avenir-black text-primary-2-navy uppercase tracking-widest cursor-pointer outline-none pr-1;
+  display: flex !important;
+}
+.nav .navItem:hover {
+  @apply text-accent-orange;
+}
+.nav .navItem:hover svg path {
+  fill: var(--accent-orange);
+}
+
+.slider {
+  @apply overflow-x-hidden;
+}
+
+.articleSliderItem {
+  @apply flex flex-col rounded-lg text-left;
+  padding: 0.75rem;
+}
+
+.articleSliderItem.active {
+  background: rgba(162, 199, 204, 0.3);
+}
+
+.articleSliderItem:not(.active):hover {
+  background: rgba(162, 199, 204, 0.1);
+}
+
+@screen md {
+  .nav .navItem {
+    @apply pr-2;
+  }
+}
+
+@screen lg {
+  .slider {
+    @apply flex justify-between pr-0;
+  }
+  .articleSliderItem:first-child {
+    margin-left: -0.75rem;
+  }
+}

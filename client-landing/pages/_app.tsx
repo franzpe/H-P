@@ -5,6 +5,8 @@ import { CustomNextComponentType } from '../types/common';
 import SiteLayout from '../components/layouts/SiteLayout';
 
 import '../styles/index.css';
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
 import { initializePolyfills } from '../libs/pollyfills';
 
 const App: FC<AppProps> = ({ Component, pageProps }) => {

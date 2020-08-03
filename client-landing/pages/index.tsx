@@ -1,19 +1,29 @@
 import { Fragment } from 'react';
+import cx from 'classnames';
 import Link from 'next/link';
 
 import MaterialIcon from '../components/MaterialIcon';
 import DiscoveryIcon from '../assets/images/svgs/component-6.svg';
-import RecruitersSvg from '../assets/images/svgs/recruiters.svg';
+import WaveDesktop from '../assets/images/svgs/homepage-wave.svg';
+import Recruitersppl from '../assets/images/svgs/homepage-recruiters.svg';
 import WaveSvg from '../assets/images/svgs/wave.svg';
 import BrowserWindow from '../assets/images/browser-window@3x.png';
 import RecruiterDuoSvg from '../assets/images/svgs/recruiter-duo.svg';
 import SpotlightSvg from '../assets/images/svgs/spotlight.svg';
 
+import Wave1Tablet from '../assets/images/svgs/wave-1-tablet.svg';
+import Wave2Tablet from '../assets/images/svgs/wave-2-tablet.svg';
+import RecruitersTablet from '../assets/images/svgs/recruiters-tablet.svg';
+
+import WaveMobile from '../assets/images/svgs/subtract.svg';
+import RecruitersMobile from '../assets/images/svgs/recruiters-mobile.svg';
+import styles from './index.module.css';
+
 const Home = () => {
   return (
     <Fragment>
-      <section className="relative pt-6 md:pt-12" style={{ minHeight: 'calc(100vh - 80px)' }}>
-        <div className="max-w-screen-xxl mx-auto main-padding-x pt-4">
+      <section className="relative pt-4 md:pt-12 overflow-hidden" style={{ minHeight: 'calc(100vh - 80px)' }}>
+        <div className="max-w-screen-xxl mx-auto main-padding-x pt-4 relative z-10">
           <h1 className="text-4xl sm:text-5xl lg:text-6xl max-w-xl leading-snug font-bold">
             Discover <span className="text-primary-3-shade">designers</span>,{' '}
             <span className="text-primary-3-shade">developers</span>, &{' '}
@@ -28,21 +38,57 @@ const Home = () => {
             </button>
           </Link>
         </div>
-        <RecruitersSvg
-          style={{ position: 'absolute', bottom: '0', left: '0', top: '-80px', height: 'calc(100% + 80px)' }}
+        <WaveDesktop
+          className="hidden lg:block"
+          style={{ position: 'absolute', bottom: '0', left: '0', top: '0', height: '100%' }}
           preserveAspectRatio="none"
           width="100%"
         />
+        <Recruitersppl
+          className="hidden lg:block w-auto"
+          style={{ position: 'absolute', bottom: '0', top: '0', right: '8%', height: '100%' }}
+          preserveAspectRatio="xMaxYMin meet"
+        />
+        <Wave1Tablet
+          className="hidden md:block lg:hidden absolute bottom-0 left-0 right-0 top-0 w-full h-full -z-1"
+          preserveAspectRatio="none"
+        />
+        <RecruitersTablet
+          className="hidden md:block lg:hidden absolute bottom-0 left-0 right-0 w-95% h-full mx-auto"
+          preserveAspectRatio="xMidYMax meet"
+        />
+        <WaveMobile
+          className="md:hidden"
+          style={{ position: 'absolute', bottom: '0', left: '0', right: '0', top: '0' }}
+          width="100%"
+          height="100%"
+          preserveAspectRatio="none"
+        />
+        <RecruitersMobile
+          className="md:hidden absolute bottom-0 left-0 right-0 w-60% h-full mx-auto"
+          preserveAspectRatio="xMidYMax meet"
+        />
       </section>
-      <section className="relative mb-12 lg:mb-40">
-        <WaveSvg className="z-10 relative" />
+      <section className="relative mb-12 lg:mb-10%">
+        <WaveSvg className="z-10 relative hidden lg:block" />
+        <Wave2Tablet
+          className={cx('z-10 relative w-full block lg:hidden', styles.wave2)}
+          preserveAspectRatio="none"
+        />
         <SpotlightSvg
-          // width="37%"
           className="max-w-4xl absolute top-0 hidden lg:block w-37%"
           style={{ marginTop: '8%', marginLeft: '10%' }}
         />
+        <div className={styles.spotlightWrapper}>
+          <SpotlightSvg
+            className={cx(
+              'max-w-4xl absolute top-0 left-0 right-0 mx-auto lg:hidden w-60% md:w-50%',
+              styles.spotlight
+            )}
+          />
+        </div>
         <div className="max-w-screen-xxl main-padding mx-auto text-center md:text-left">
-          <div className="md:ml-auto md:max-w-xl">
+          <div className="lg:ml-auto lg:max-w-xl">
             <h2 className="font-bold mb-6 sm:mb-6">Find hidden talent</h2>
             <p className="text-primary-2-tint text-lg sm:text-2xl font-thin">
               Search the Hackers & Painters database of designers, developers, and data scientists. Take a closer
@@ -51,8 +97,8 @@ const Home = () => {
           </div>
         </div>
       </section>
-      <section className="max-w-screen-xxl mx-auto main-padding space-x-0 md:space-x-8 lg:space-x-10 xl:space-x-16 flex flex-col md:flex-row text-center md:text-left">
-        <div className="md:flex-1.4">
+      <section className="max-w-screen-xxl mx-auto main-padding md:space-x-8 lg:space-x-10 xl:space-x-16 flex flex-col md:flex-row text-center md:text-left">
+        <div className="md:flex-1.4 mb-8 md:mb-0">
           <h2 className="font-bold mb-6 sm:mb-6">Our features</h2>
           <p className="text-primary-2-tint text-lg sm:text-2xl font-thin mb-12">
             Frustrated with sourcing through traditional networks? Take a look at what we do differently. We’re a
@@ -84,7 +130,7 @@ const Home = () => {
             </button>
           </Link>
         </div>
-        <div className="md:flex-1">
+        <div className="md:flex-1 w-80% md:w-full ml-auto mr-auto">
           <div className="relative mb-30%">
             <img src={BrowserWindow} />
             <RecruiterDuoSvg

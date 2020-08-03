@@ -1,0 +1,33 @@
+.wave2 {
+  height: 200px;
+}
+
+.spotlightWrapper {
+  margin-bottom: 45%;
+}
+
+.spotlight {
+  margin-top: 95px;
+  margin-left: 12%;
+}
+
+@screen md {
+  .wave2 {
+    height: 300px;
+  }
+
+  .spotlightWrapper {
+    margin-bottom: 32%;
+  }
+
+  .spotlight {
+    margin-top: 120px;
+    margin-left: 20%;
+  }
+}
+
+@screen lg {
+  .spotlightWrapper {
+    display: none;
+  }
+}

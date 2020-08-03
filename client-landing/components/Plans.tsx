@@ -35,8 +35,8 @@ const Plans: FC<Props> = ({ href }) => {
                 className="rounded-full border border-primary-2-tint text-sm cursor-pointer flex justify-between px-2 py-2 relative text-primary-2-tint mb-4"
                 onClick={e => setState(!state)}
               >
-                <span>Billed monthly</span>
-                <span>Billed annually</span>
+                <span className="w-50% text-center">Billed monthly</span>
+                <span className="w-50% text-center">Billed annually</span>
                 <div
                   className={cx(
                     'right-0 top-0 absolute w-1/2 rounded-full bg-primary-3-shade py-2 px-2 text-center text-white font-medium transform translate-x-0 duration-300 transition-transform ease',
@@ -87,7 +87,7 @@ const Plans: FC<Props> = ({ href }) => {
               <div className="flex items-start justify-center h-24 mb-2">
                 <PuzzleStarter />
               </div>
-              <div className="text-accent-orange font-semibold text-3xl">$208</div>
+              <div className="font-avenir-heavy text-accent-orange font-semibold text-3xl">$208</div>
               <div className="text-black">{state ? 'a year' : 'a month'}</div>
             </li>
             <li className="h-14 flex items-center justify-center">250</li>
@@ -131,7 +131,7 @@ const Plans: FC<Props> = ({ href }) => {
               <div className="flex items-start justify-center h-24 mb-2">
                 <PuzzlePro width="83" />
               </div>
-              <div className="text-accent-orange font-semibold text-3xl">$416</div>
+              <div className="font-avenir-heavy text-accent-orange font-semibold text-3xl">$416</div>
               <div className="text-black">{state ? 'a year' : 'a month'}</div>
             </li>
             <li className="h-14 flex items-center justify-center">500</li>
@@ -179,7 +179,7 @@ const Plans: FC<Props> = ({ href }) => {
               <div className="flex items-start justify-center h-24 mb-2 ">
                 <PuzzleGrowth />
               </div>
-              <div className="text-accent-orange font-semibold text-3xl">$833</div>
+              <div className="font-avenir-heavy text-accent-orange font-semibold text-3xl">$833</div>
               <div className="text-black">{state ? 'a year' : 'a month'}</div>
             </li>
             <li className="h-14 flex items-center justify-center">1000</li>
@@ -231,7 +231,7 @@ const Plans: FC<Props> = ({ href }) => {
               <div className="flex items-start justify-center h-24 mb-2">
                 <PuzzleEnterprise />
               </div>
-              <div className="text-primary-2-navy font-bold text-2xl block my-auto">Custom</div>
+              <div className="font-avenir-heavy text-primary-2-navy font-bold text-2xl block my-auto">Custom</div>
             </li>
             <li className="h-14 flex items-center justify-center">Unlimited</li>
             <li className="h-14 flex items-center justify-center">
