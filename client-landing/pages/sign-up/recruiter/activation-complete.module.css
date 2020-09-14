@@ -1,0 +1,7 @@
+.wrapper .active {
+  @apply border-accent-shade;
+}
+
+.active path {
+  @apply fill-current text-accent-orange;
+}

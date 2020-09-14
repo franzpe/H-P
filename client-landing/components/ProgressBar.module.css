@@ -1,0 +1,16 @@
+.label {
+  text-align: center;
+}
+
+.label:first-child {
+  text-align: left;
+}
+
+.label:last-child {
+  text-align: right;
+}
+
+.label:first-child:nth-last-child(3),
+.label:first-child:nth-last-child(3) ~ .label {
+  width: 33.3333%;
+}

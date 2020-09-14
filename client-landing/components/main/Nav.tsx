@@ -55,7 +55,7 @@ const Nav = () => {
             </Link>
           </li>
           <li className="inline-block">
-            <Link href="/sign-up/info">
+            <Link href="/sign-up/user-type">
               <button className="ml-4 lg:ml-0 py-1 px-4 text-white rounded-full bg-primary-3-turq focus:outline-none focus:shadow-outline hover:bg-primary-3-shade">
                 Sign up
               </button>

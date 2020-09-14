@@ -1,16 +1,16 @@
 import React, { useState } from 'react';
 import cx from 'classnames';
 
-import { getSignupStepperLayout } from '../../components/layouts/SignupStepperLayout';
+import { getSignupStepperLayout } from '../../../components/layouts/SignupStepperLayout';
 import Link from 'next/link';
-import Input from '../../components/forms/Input';
-import RadioButton from '../../components/forms/RadioButton';
-import MaterialIcon from '../../components/MaterialIcon';
+import Input from '../../../components/forms/Input';
+import RadioButton from '../../../components/forms/RadioButton';
+import MaterialIcon from '../../../components/MaterialIcon';
 
-import PuzzlePro from '../../assets/images/svgs/puzzle-pro.svg';
-import PuzzleGrowth from '../../assets/images/svgs/puzzle-growth.svg';
-import PuzzleEnterprise from '../../assets/images/svgs/puzzle-enterprise.svg';
-import PaypalIcon from '../../assets/images/svgs/payment-method-paypal.svg';
+import PuzzlePro from '../../../assets/images/svgs/puzzle-pro.svg';
+import PuzzleGrowth from '../../../assets/images/svgs/puzzle-growth.svg';
+import PuzzleEnterprise from '../../../assets/images/svgs/puzzle-enterprise.svg';
+import PaypalIcon from '../../../assets/images/svgs/payment-method-paypal.svg';
 import styles from './payment.module.css';
 
 const Payment = () => {

@@ -1,10 +1,9 @@
 import React, { FC, useState } from 'react';
-import cx from 'classnames';
 
-import { getSignupStepperLayout, SignupStepProps } from '../../components/layouts/SignupStepperLayout';
+import { getSignupStepperLayout, SignupStepProps } from '../../../components/layouts/SignupStepperLayout';
 import Link from 'next/link';
-import Input from '../../components/forms/Input';
-import Select from '../../components/forms/Select';
+import Input from '../../../components/forms/Input';
+import Select from '../../../components/forms/Select';
 
 type Props = SignupStepProps;
 
@@ -15,7 +14,7 @@ const userTypesOptions = [
   { value: 'other', label: 'Other' }
 ];
 
-const Info: FC<Props> = ({ previousStep, nextStep }) => {
+const CandidateBasicInfo: FC<Props> = ({ previousStep, nextStep }) => {
   const [option, setOption] = useState(null);
 
   return (
@@ -26,16 +25,16 @@ const Info: FC<Props> = ({ previousStep, nextStep }) => {
           <Input id="lastName" label="Last Name" wrapperClassName="w-full md:flex-1" />
         </div>
         <Select
-          id="userType"
+          id="candidateType"
           value={option}
           onChange={selectedOption => setOption(selectedOption)}
           options={userTypesOptions}
           classNamePrefix="react-select"
           isSearchable={false}
-          placeholder="Select User Type"
+          placeholder="Select Candidate Type"
         />
-        <Input id="companyName" label="Company" wrapperClassName="w-full" />
-        <Input id="email" label="Company Email" value="" wrapperClassName="w-full" />
+        <Input id="email" label="Email" value="" wrapperClassName="w-full" />
+        <Input id="phone" label="Phone Number" type="tel" value="" wrapperClassName="w-full" />
         <Input id="password" label="Password" value="" wrapperClassName="w-full" icon="visibility" />
         <Input
           id="passwordConfirm"
@@ -59,6 +58,6 @@ const Info: FC<Props> = ({ previousStep, nextStep }) => {
   );
 };
 
-(Info as any).getLayout = getSignupStepperLayout;
+(CandidateBasicInfo as any).getLayout = getSignupStepperLayout;
 
-export default Info;
+export default CandidateBasicInfo;

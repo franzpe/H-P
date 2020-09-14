@@ -1,7 +1,7 @@
-import React, { useState, FC } from 'react';
+import React, { FC } from 'react';
 
-import { getSignupStepperLayout, SignupStepProps } from '../../components/layouts/SignupStepperLayout';
-import Plans from '../../components/Plans';
+import { getSignupStepperLayout, SignupStepProps } from '../../../components/layouts/SignupStepperLayout';
+import Plans from '../../../components/Plans';
 
 type Props = SignupStepProps;
 

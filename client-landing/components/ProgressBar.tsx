@@ -1,6 +1,8 @@
 import React, { FC } from 'react';
 import cx from 'classnames';
 
+import styles from './ProgressBar.module.css';
+
 type Props = {
   value: number;
   labels: string[];
@@ -19,7 +21,9 @@ const ProgressBar: FC<Props> = ({ value, labels }) => {
       </div>
       <ul className="flex justify-between text-primary-3">
         {labels.map(l => (
-          <li key={l}>{l}</li>
+          <li key={l} className={styles.label}>
+            {l}
+          </li>
         ))}
       </ul>
     </div>

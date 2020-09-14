@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import Link from 'next/link';
 import cx from 'classnames';
 
-import { getLayout } from '../../components/layouts/SiteLayout';
+import { getLayout } from '../../../components/layouts/SiteLayout';
 
 import DesignerImage from '../../assets/images/svgs/designer.svg';
 import DeveloperImage from '../../assets/images/svgs/developer.svg';
