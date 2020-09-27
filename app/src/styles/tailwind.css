@@ -1,0 +1,10 @@
+@import 'tailwindcss/base';
+
+@import './colors.css';
+@import './typography.css';
+@import 'global.css';
+@import './form.css';
+@import './utility.css';
+
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';

@@ -1,0 +1,17 @@
+overwrite: true
+schema: "http://localhost:3001/graphql"
+documents:
+  - "src/graphql/**/*.graphql":
+      loader: "./scripts/graphql-gen.js"
+generates:
+  src/_generated/graphql.output.tsx:
+    config:
+      withComponent: true
+      withHooks: true
+      withHOC: false
+      preResolveTypes: true
+      noNamespaces: true
+    plugins:
+      - "typescript"
+      - "typescript-operations"
+      - "typescript-react-apollo"

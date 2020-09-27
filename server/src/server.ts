@@ -34,7 +34,10 @@ export default class Server {
       context: ({ req, res }) => ({ req, res })
     });
 
-    apolloServer.applyMiddleware({ app: this._app, cors: { credentials: true, origin: 'localhost:3000' } });
+    apolloServer.applyMiddleware({
+      app: this._app as any,
+      cors: false
+    });
   };
 
   start = (port: string) => {

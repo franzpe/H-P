@@ -5,7 +5,7 @@ import compression from 'compression';
 import cookieParser from 'cookie-parser';
 
 export const handleCors = (router: Router) => {
-  router.use(cors({ credentials: true, origin: 'localhost:3000' }));
+  router.use(cors({ credentials: true, origin: 'http://localhost:3000' }));
 };
 
 export const handleBodyRequestParsing = (router: Router) => {

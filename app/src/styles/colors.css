@@ -1,0 +1,23 @@
+:root {
+  --primary-1-white: #ffffff;
+  --primary-1-light: #efefef;
+  --primary-1-tintlt: #dbdbdb;
+  --primary-1-tint: #cbcbcb;
+  --primary-1-shade: #292929;
+  --primary-2-navy: #212353;
+  --primary-2-tint: #797a92;
+  --primary-2-shade: #00034f;
+  --accent-orange: #ff882c;
+  --accent-tint: #ffb881;
+  --primary-3: #10828c;
+  --primary-3-shade: #199fb2;
+  --primary-3-turq: #39bacd;
+  --primary-3-tint: #a2c7cc;
+  --error: #eb5757;
+  --accent-shade: #ff6f00;
+}
+
+/** Cols & Gradients **/
+.bg-gradient-to-primary-3-shade {
+  background-image: linear-gradient(to right, #58cadb, var(--primary-3-shade));
+}
