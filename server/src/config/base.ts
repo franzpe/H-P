@@ -3,6 +3,7 @@ export type Config = {
   dev: string;
   prod: string;
   port: string;
+  version: number;
   auth: {
     accessTokenSecret: string;
     accessTokenExpiration: string;
@@ -16,6 +17,7 @@ const config: Config = {
   prod: 'production',
   env: '',
   port: process.env.PORT || '3000',
+  version: 1,
   auth: {
     accessTokenSecret: process.env.ACCESS_TOKEN_SECRET || 'accessTokenSecret',
     accessTokenExpiration: process.env.ACCESS_TOKEN_EXPIRATION || '15m',
