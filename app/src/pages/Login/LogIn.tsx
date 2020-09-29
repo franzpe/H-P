@@ -6,7 +6,7 @@ import Input from '../../components/forms/Input';
 import yup from '../../libs/yupMethods';
 import { useHistory } from 'react-router';
 import { routes } from '../../constants/routes';
-import { useLogin } from '../../libs/auth/hooks';
+import { useLogin } from '../../libs/auth/useLogin';
 
 interface IFormInputs {
   email: string;

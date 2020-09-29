@@ -1,0 +1,3 @@
+- Client side authentication e.g. login / logout, security (token removal, Error handling)
+- 404 page
+- Network error

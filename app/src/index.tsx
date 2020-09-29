@@ -3,17 +3,10 @@ import ReactDOM from 'react-dom';
 import './styles/tailwind.output.css';
 import App from './core/App';
 import * as serviceWorker from './serviceWorker';
-import { BrowserRouter as Router } from 'react-router-dom';
-import { ApolloProvider } from '@apollo/client';
-import client from './libs/apolloClient';
 
 ReactDOM.render(
   <React.StrictMode>
-    <ApolloProvider client={client}>
-      <Router>
-        <App />
-      </Router>
-    </ApolloProvider>
+    <App />
   </React.StrictMode>,
   document.getElementById('root')
 );

@@ -1,4 +1,5 @@
 export enum routes {
   DASHBOARD = '/',
-  LOGIN = '/login'
+  LOGIN = '/login',
+  NETWORK_ERROR = '/network-error'
 }

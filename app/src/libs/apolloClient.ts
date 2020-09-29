@@ -1,46 +1,77 @@
-import { ApolloClient, ApolloLink, createHttpLink, InMemoryCache } from '@apollo/client';
+import { ApolloClient, ApolloLink, createHttpLink, fromPromise, InMemoryCache } from '@apollo/client';
 import { onError } from '@apollo/client/link/error';
 import { setContext } from '@apollo/client/link/context';
-import { ACCESS_TOKEN_NAME } from './auth/hooks';
+import { getAccessToken, setAccessToken } from './accessToken';
+import { useHistory } from 'react-router';
+import { History } from 'history';
+import { routes } from '../constants/routes';
+
+const ORIGIN = 'http://localhost:3001';
 
 const httpLink = createHttpLink({
-  uri: 'http://localhost:3001/graphql',
+  uri: ORIGIN + '/graphql',
   credentials: 'include'
 });
 
-const getNewToken = () => {
-  // TODO GET NEW TOKEN
+let isRefreshing = false;
+let pendingRequests: any[] = [];
 
-  return '';
+const resolvePendingRequests = () => {
+  pendingRequests.map(callback => callback());
+  pendingRequests = [];
 };
 
-const errorLink = onError(({ graphQLErrors, networkError, operation, forward }) => {
-  if (graphQLErrors) {
-    graphQLErrors.map(({ message, extensions }) => {
-      console.log(`[GraphQL error]: Message: ${message}, Location: ${extensions?.code}`);
-      switch (extensions?.code) {
-        case 'UNAUTHENTICATED':
-          const headers = operation.getContext().headers;
-          operation.setContext({
-            headers: {
-              ...headers,
-              authorization: getNewToken()
-            }
-          });
+const errorLink = (history: History<unknown>) =>
+  onError(({ graphQLErrors, networkError, operation, forward }) => {
+    if (graphQLErrors) {
+      for (let { extensions } of graphQLErrors) {
+        switch (extensions?.code) {
+          case 'UNAUTHENTICATED':
+            let forward$;
 
-          return forward(operation);
+            if (!isRefreshing) {
+              isRefreshing = true;
+
+              forward$ = fromPromise(
+                fetch(ORIGIN + '/api/v1/refresh_token', { method: 'GET', credentials: 'include' })
+                  .then(res => res.json())
+                  .then(({ accessToken }) => {
+                    setAccessToken(accessToken);
+                    resolvePendingRequests();
+                    return accessToken;
+                  })
+                  .catch(() => {
+                    // invalid or missing refresh token
+                    pendingRequests = [];
+                    console.log('Refresh token invalid');
+                    history.push(routes.DASHBOARD);
+                    return null;
+                  })
+                  .finally(() => {
+                    isRefreshing = false;
+                  })
+              ).filter(value => Boolean(value));
+            } else {
+              forward$ = fromPromise(
+                new Promise(resolve => {
+                  pendingRequests.push(() => resolve());
+                })
+              );
+            }
+
+            return forward$.flatMap(() => forward(operation));
+        }
       }
-    });
-  }
-  if (networkError) {
-    console.log(`[Network error]: ${networkError}`);
-    // TODO REDIRECT TO NETWORK PAGE
-  }
-});
+    }
+    if (networkError) {
+      console.log(`[Network error]: ${networkError}`);
+      history.push(routes.NETWORK_ERROR);
+    }
+  });
 
 const authLink = setContext((_, { headers }) => {
-  // get the authentication token from local storage if it exists
-  const token = localStorage.getItem(ACCESS_TOKEN_NAME);
+  // get the authentication token from memory if it exists
+  const token = getAccessToken();
   // return the headers to the context so httpLink can read them
   return {
     headers: {
@@ -50,9 +81,15 @@ const authLink = setContext((_, { headers }) => {
   };
 });
 
-const client = new ApolloClient({
-  link: ApolloLink.from([errorLink, authLink, httpLink]),
-  cache: new InMemoryCache()
-});
+const useApolloClient = () => {
+  const history = useHistory();
 
-export default client;
+  const client = new ApolloClient({
+    link: ApolloLink.from([errorLink(history), authLink, httpLink]),
+    cache: new InMemoryCache()
+  });
+
+  return client;
+};
+
+export default useApolloClient;
