@@ -1,4 +1,3 @@
-import { load } from 'dotenv/types';
 import React, { FC } from 'react';
 import { Route, Redirect } from 'react-router-dom';
 import { routes } from '../constants/routes';

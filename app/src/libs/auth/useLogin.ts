@@ -2,7 +2,7 @@ import { useLoginMutation } from '../../_generated/graphql.output';
 import { setAccessToken } from '../accessToken';
 
 export const useLogin = () => {
-  const [loginMutation, result] = useLoginMutation({ errorPolicy: 'ignore' });
+  const [loginMutation, result] = useLoginMutation();
 
   const login = async (email: string, password: string) => {
     return loginMutation({ variables: { email, password } }).then(({ data }) => {

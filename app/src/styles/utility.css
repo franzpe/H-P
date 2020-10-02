@@ -9,3 +9,20 @@
 .border-space-0-12 {
   border-spacing: 0 3rem;
 }
+
+@layer utilities {
+  @variants hover, focus {
+    .filter-darken-20 {
+      filter: brightness(20%);
+    }
+    .filter-darken-40 {
+      filter: brightness(40%);
+    }
+    .filter-darken-60 {
+      filter: brightness(60%);
+    }
+    .filter-darken-80 {
+      filter: brightness(80%);
+    }
+  }
+}

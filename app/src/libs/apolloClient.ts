@@ -1,3 +1,4 @@
+/*eslint no-loop-func: 0*/
 import { ApolloClient, ApolloLink, createHttpLink, fromPromise, InMemoryCache } from '@apollo/client';
 import { onError } from '@apollo/client/link/error';
 import { setContext } from '@apollo/client/link/context';
@@ -42,7 +43,7 @@ const errorLink = (history: History<unknown>) =>
                   })
                   .catch(() => {
                     // invalid or missing refresh token
-                    pendingRequests = [];
+                    pendingRequests = []; // eslint-disable-next-line no-loop-func
                     console.log('Refresh token invalid');
                     history.push(routes.DASHBOARD);
                     return null;

@@ -1,0 +1,15 @@
+html,
+body,
+#root,
+.app {
+  height: 100%;
+}
+
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+button:focus {
+  @apply outline-none;
+}

@@ -1,0 +1,66 @@
+.container {
+  @apply flex h-full;
+}
+
+.leftContainer {
+  @apply w-2/5 flex items-center justify-center;
+
+  @screen xl {
+    @apply w-1/2 p-4;
+  }
+
+  @screen md {
+    @apply w-full;
+  }
+
+  .signin {
+    @apply w-7/12 mb-20;
+
+    @screen xl {
+      @apply w-4/5;
+    }
+
+    @screen md {
+      @apply w-full text-center;
+    }
+  }
+}
+
+.rightContainer {
+  @apply w-3/5 flex justify-center items-center flex-col;
+  background: url('../../assets/images/login-bg.png') center no-repeat;
+  background-size: cover;
+
+  @screen xl {
+    @apply w-1/2;
+  }
+
+  @screen md {
+    @apply hidden;
+  }
+}
+
+.logo {
+  margin-left: -8px;
+
+  @screen md {
+    @apply mx-auto;
+  }
+}
+
+.error {
+  @apply text-error font-bold text-center mb-4;
+}
+
+.errorAnimation {
+  animation: appear 400ms ease-out;
+}
+
+@keyframes appear {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

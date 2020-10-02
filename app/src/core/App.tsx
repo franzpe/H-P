@@ -10,8 +10,7 @@ function App() {
   return (
     <ApolloProvider client={client}>
       <Router>
-        <div className="App">
-          Hackers & Painters
+        <div className="app">
           <Routes />
         </div>
       </Router>
