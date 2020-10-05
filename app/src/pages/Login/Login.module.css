@@ -27,7 +27,7 @@
 }
 
 .rightContainer {
-  @apply w-3/5 flex justify-center items-center flex-col;
+  @apply w-3/5 flex justify-center items-center flex-col text-center;
   background: url('../../assets/images/login-bg.png') center no-repeat;
   background-size: cover;
 

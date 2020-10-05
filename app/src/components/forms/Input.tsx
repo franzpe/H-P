@@ -18,7 +18,7 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
     return (
       <div
         className={cx(
-          'outline relative border border-primary-1-tint focus-within:border-accent-shade rounded-lg mb-6',
+          'outline relative border border-primary-1-tint focus-within:border-accent-shade rounded-lg mb-6 text-left',
           wrapperClassName,
           {
             'border-primary-2-shade': value,

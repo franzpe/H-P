@@ -13,3 +13,7 @@ body,
 button:focus {
   @apply outline-none;
 }
+
+.app {
+  @apply flex;
+}

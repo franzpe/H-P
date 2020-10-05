@@ -110,7 +110,10 @@
     "stylelint-config-standard": "^20.0.0"
   },
   "eslintConfig": {
-    "extends": "react-app"
+    "extends": "react-app",
+    "plugins": [
+      "react-hooks"
+    ]
   },
   "browserslist": {
     "production": [

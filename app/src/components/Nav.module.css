@@ -1,0 +1,44 @@
+.navbar {
+  @apply flex flex-col justify-between flex-1 flex-no-wrap;
+
+  a {
+    @apply px-10 py-3 flex items-center text-primary-2-tint;
+
+    &:hover {
+      background: rgba(203, 203, 203, 0.15);
+    }
+
+    &.logout {
+      @apply text-lg;
+    }
+  }
+}
+
+.navbar:not(.opened) {
+  @screen lg {
+    a {
+      @apply px-0 justify-center;
+    }
+
+    .icon {
+      @apply mr-0 text-2.5xl;
+    }
+
+    .text {
+      @apply hidden;
+    }
+  }
+}
+
+.icon {
+  @apply mr-3;
+}
+
+.active {
+  @apply text-primary-2-navy font-bold;
+  background: rgba(203, 203, 203, 0.38);
+}
+
+.text {
+  @apply whitespace-no-wrap;
+}

@@ -165,6 +165,7 @@ module.exports = {
       8: '2rem',
       10: '2.5rem',
       12: '3rem',
+      14: '3.5rem',
       16: '4rem',
       20: '5rem',
       24: '6rem',
@@ -172,7 +173,9 @@ module.exports = {
       40: '10rem',
       48: '12rem',
       56: '14rem',
-      64: '16rem'
+      64: '16rem',
+      72: '18rem',
+      76: '19rem'
     },
     backgroundColor: theme => theme('colors'),
     backgroundImage: {
@@ -309,6 +312,7 @@ module.exports = {
       lg: '1.125rem',
       xl: '1.25rem',
       '2xl': '1.5rem',
+      '2.5xl': '1.6875rem',
       '3xl': '1.875rem',
       '3.5xl': '2.125rem',
       '4xl': '2.25rem',

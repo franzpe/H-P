@@ -1,12 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './styles/tailwind.output.css';
-import App from './core/App';
+import AppEntry from './core/AppEntry';
 import * as serviceWorker from './serviceWorker';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <AppEntry />
   </React.StrictMode>,
   document.getElementById('root')
 );

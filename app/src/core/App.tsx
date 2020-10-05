@@ -1,21 +1,14 @@
 import React from 'react';
+import Sidebar from '../components/Sidebar';
 import Routes from './routes';
-import { ApolloProvider } from '@apollo/client';
-import useApolloClient from '../libs/apolloClient';
-import { BrowserRouter as Router } from 'react-router-dom';
 
-function App() {
-  const client = useApolloClient();
-
+const App = () => {
   return (
-    <ApolloProvider client={client}>
-      <Router>
-        <div className="app">
-          <Routes />
-        </div>
-      </Router>
-    </ApolloProvider>
+    <div className="app">
+      <Sidebar />
+      <Routes />
+    </div>
   );
-}
+};
 
 export default App;
