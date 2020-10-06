@@ -16,4 +16,8 @@ button:focus {
 
 .app {
   @apply flex;
+
+  @screen sm {
+    @apply pt-16;
+  }
 }

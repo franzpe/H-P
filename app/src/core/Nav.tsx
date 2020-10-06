@@ -5,8 +5,8 @@ import { NavLink } from 'react-router-dom';
 import { routes } from '../constants/routes';
 import { useLogout } from '../libs/auth/useLogout';
 import { MaterialIconType } from '../types/common';
-import MaterialIcon from './MaterialIcon';
 import styles from './Nav.module.css';
+import MaterialIcon from 'components/MaterialIcon';
 
 type Props = {
   isOpen: boolean;

@@ -9,8 +9,7 @@
 }
 
 .container {
-  @apply w-72 bg-white h-full py-8 flex flex-col z-50 overflow-hidden;
-  box-shadow: 3px 0 10px 0 rgba(203, 203, 203, 0.33);
+  @apply w-72 bg-white h-full py-8 flex flex-col z-50 overflow-hidden shadow-sidebar;
 
   @screen xl {
     @apply w-64;
@@ -22,7 +21,7 @@
   }
 
   @screen md {
-    @apply fixed w-72;
+    @apply fixed w-72 top-0;
     transform: translate(-102%);
     will-change: transform;
     transition: transform cubic-bezier(0.24, 0.88, 0.47, 1) 0.35s;

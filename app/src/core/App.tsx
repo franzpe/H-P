@@ -1,11 +1,17 @@
+import SidebarProvider from 'libs/ui/sidebarContext';
 import React from 'react';
-import Sidebar from '../components/Sidebar';
+
+import MobileHeader from './MobileHeader';
 import Routes from './routes';
+import Sidebar from './Sidebar';
 
 const App = () => {
   return (
     <div className="app">
-      <Sidebar />
+      <SidebarProvider>
+        <MobileHeader />
+        <Sidebar />
+      </SidebarProvider>
       <Routes />
     </div>
   );

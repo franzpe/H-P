@@ -6,12 +6,13 @@ import Nav from './Nav';
 import styles from './Sidebar.module.css';
 import { ReactComponent as Logo } from '../assets/images/logo-small.svg';
 import avatar from 'assets/images/JohnDoe.jpg';
-import MaterialIcon from './MaterialIcon';
 import { MaterialIconType } from 'types/common';
+import MaterialIcon from 'components/MaterialIcon';
+import { useSidebar } from 'libs/ui/sidebarContext';
 
 const Sidebar = () => {
   const overlay = useRef<HTMLDivElement | null>(null);
-  const [isOpen, setIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = useSidebar();
 
   /**
    * Overlay Hook for the animation exit
@@ -79,7 +80,6 @@ const Sidebar = () => {
         <Nav isOpen={isOpen} onItemClick={handleClose} />
       </aside>
       <div ref={overlay} className={styles.overlay} onClick={handleClose} />
-      {/* <div ref={overlay} className={cx(styles.overlay, { [styles.open]: isOpen })} onClick={handleClose} /> */}
     </div>
   );
 };
