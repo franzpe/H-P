@@ -5,7 +5,7 @@ import { setContext } from '@apollo/client/link/context';
 import { getAccessToken, setAccessToken } from './accessToken';
 import { useHistory } from 'react-router';
 import { History } from 'history';
-import { routes } from '../constants/routes';
+import { Routes } from '../constants/routes';
 
 const ORIGIN = 'http://localhost:3001';
 
@@ -45,7 +45,7 @@ const errorLink = (history: History<unknown>) =>
                     // invalid or missing refresh token
                     pendingRequests = []; // eslint-disable-next-line no-loop-func
                     console.log('Refresh token invalid');
-                    history.push(routes.DASHBOARD);
+                    history.push(Routes.DASHBOARD);
                     return null;
                   })
                   .finally(() => {
@@ -66,7 +66,7 @@ const errorLink = (history: History<unknown>) =>
     }
     if (networkError) {
       console.log(`[Network error]: ${networkError}`);
-      history.push(routes.NETWORK_ERROR);
+      history.push(Routes.NETWORK_ERROR);
     }
   });
 

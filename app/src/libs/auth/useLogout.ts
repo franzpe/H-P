@@ -1,5 +1,5 @@
 import { useHistory } from 'react-router';
-import { routes } from '../../constants/routes';
+import { Routes } from '../../constants/routes';
 import { useLogoutMutation } from '../../_generated/graphql.output';
 import { setAccessToken } from '../accessToken';
 
@@ -11,7 +11,7 @@ export const useLogout = () => {
     await logoutMutation();
     client.clearStore();
     setAccessToken('');
-    history.push(routes.LOGIN);
+    history.push(Routes.LOGIN);
   };
 
   return logout;

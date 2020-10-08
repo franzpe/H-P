@@ -6,7 +6,7 @@ documents:
 generates:
   src/_generated/graphql.output.tsx:
     config:
-      withComponent: true
+      withComponent: false
       withHooks: true
       withHOC: false
       preResolveTypes: true

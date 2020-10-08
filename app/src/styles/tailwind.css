@@ -2,6 +2,7 @@
 
 @import './colors.css';
 @import './typography.css';
+@import './animations.css';
 @import 'global.css';
 @import './form.css';
 @import './utility.css';

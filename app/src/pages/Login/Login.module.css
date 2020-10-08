@@ -51,16 +51,3 @@
 .error {
   @apply text-error font-bold text-center mb-4;
 }
-
-.errorAnimation {
-  animation: appear 400ms ease-out;
-}
-
-@keyframes appear {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}

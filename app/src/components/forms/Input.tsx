@@ -8,17 +8,30 @@ export type InputProps = {
   error?: string;
   icon?: string;
   onIconClick?: (e: React.MouseEvent<HTMLButtonElement>) => void;
+  marginBottom?: number;
 } & React.HTMLProps<HTMLInputElement>;
 
 const Input = React.forwardRef<HTMLInputElement, InputProps>(
   (
-    { wrapperClassName, id, className, error, value, label, icon, onIconClick, placeholder = ' ', ...restProps },
+    {
+      wrapperClassName,
+      id,
+      className,
+      error,
+      value,
+      label,
+      icon,
+      onIconClick,
+      placeholder = ' ',
+      marginBottom = 6,
+      ...restProps
+    },
     ref
   ) => {
     return (
       <div
         className={cx(
-          'outline relative border border-primary-1-tint focus-within:border-accent-shade rounded-lg mb-6 text-left',
+          `outline relative border border-primary-1-tint focus-within:border-accent-shade rounded-lg mb-${marginBottom} text-left`,
           wrapperClassName,
           {
             'border-primary-2-shade': value,

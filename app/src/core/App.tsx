@@ -12,7 +12,9 @@ const App = () => {
         <MobileHeader />
         <Sidebar />
       </SidebarProvider>
-      <Routes />
+      <main className="main-content">
+        <Routes />
+      </main>
     </div>
   );
 };

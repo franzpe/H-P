@@ -1,0 +1,25 @@
+@import '../../styles/utility.css';
+
+.heading {
+  @apply font-avenir-heavy inline-block;
+}
+
+.headingLink {
+  @apply underline text-primary-3-shade text-sm ml-4;
+}
+
+.headingLink:hover {
+  @apply filter-darken-80;
+}
+
+.textStrong {
+  @apply text-lg text-primary-2-navy;
+}
+
+.textInfoLabel {
+  @apply w-48 inline-block font-avenir-medium;
+}
+
+.textWeak {
+  @apply text-lg font-avenir-book text-primary-2-tint;
+}

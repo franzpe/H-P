@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
 import { Route, Redirect } from 'react-router-dom';
-import { routes } from '../constants/routes';
+import { Routes } from '../constants/routes';
 import { useUserQuery } from '../_generated/graphql.output';
 
 type Props = {
@@ -19,7 +19,7 @@ const PrivateRoute: FC<Props> = props => {
   if (data) {
     return <Route {...props} />;
   } else {
-    return <Redirect to={routes.LOGIN} />;
+    return <Redirect to={Routes.LOGIN} />;
   }
 };
 

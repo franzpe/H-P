@@ -1,23 +1,30 @@
-import React from 'react';
+import React, { lazy, Suspense } from 'react';
 import { ApolloProvider } from '@apollo/client';
 import useApolloClient from '../libs/apolloClient';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import { routes } from '../constants/routes';
-import Login from '../pages/Login/Login';
+import { Routes } from '../constants/routes';
+import LoginPage from '../pages/Login/LoginPage';
 import PrivateRoute from '../components/PrivateRoute';
 import App from './App';
+
+const ForgotPassword = lazy(() => import(/* webpackChunkName: "AccountPage" */ 'pages/ForgotPassword'));
+const ResetPassword = lazy(() => import(/* webpackChunkName: "AccountPage" */ 'pages/ResetPassword'));
 
 function AppEntry() {
   const client = useApolloClient();
 
   return (
     <ApolloProvider client={client}>
-      <Router>
-        <Switch>
-          <Route exact={true} path={routes.LOGIN} component={Login} />
-          <PrivateRoute path="/" component={App} />
-        </Switch>
-      </Router>
+      <Suspense fallback={<div />}>
+        <Router>
+          <Switch>
+            <Route exact={true} path={Routes.LOGIN} component={LoginPage} />
+            <Route exact={true} path={Routes.FORGOT_PASSWORD} component={ForgotPassword} />
+            <Route path={Routes.RESET_PASSWORD} component={ResetPassword} />
+            <PrivateRoute path="/" component={App} />
+          </Switch>
+        </Router>
+      </Suspense>
     </ApolloProvider>
   );
 }

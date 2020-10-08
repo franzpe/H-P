@@ -275,6 +275,7 @@ module.exports = {
       'avenir-book': ['Avenir-Book', 'sans-serif'],
       'avenir-light': ['Avenir-Light', 'sans-serif'],
       'avenir-roman': ['Avenir-Roman', 'sans-serif'],
+      'avenir-medium': ['Avenir-Medium', 'sans-serif'],
       'avenir-heavy': ['Avenir-heavy', 'sans-serif'],
       'avenir-black': ['Avenir-Black', 'sans-serif'],
       helvetica: [
@@ -725,7 +726,7 @@ module.exports = {
     appearance: ['responsive'],
     backgroundAttachment: ['responsive'],
     backgroundClip: ['responsive'],
-    backgroundColor: ['responsive', 'hover', 'focus'],
+    backgroundColor: ['responsive', 'hover', 'focus', 'disabled'],
     backgroundImage: ['responsive'],
     gradientColorStops: ['responsive', 'hover', 'focus'],
     backgroundOpacity: ['responsive', 'hover', 'focus'],

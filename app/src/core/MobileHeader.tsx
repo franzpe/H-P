@@ -5,10 +5,10 @@ import { MaterialIconType } from 'types/common';
 import { ReactComponent as Logo } from '../assets/images/logo.svg';
 
 const MobileHeader = () => {
-  const [_, openSidebar] = useSidebar();
+  const [, openSidebar] = useSidebar();
 
   return (
-    <div className="hidden sm:flex items-center justify-between h-16 fixed top-0 z-10 w-full shadow-sidebar px-2">
+    <div className="hidden md:flex items-center justify-between h-16 fixed top-0 z-10 w-full shadow-sidebar px-2">
       <MaterialIcon
         type={MaterialIconType.Round}
         className="text-center text-3xl text-primary-1-shade cursor-pointer"

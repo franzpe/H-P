@@ -2,7 +2,7 @@ import React, { FC } from 'react';
 import cx from 'classnames';
 import { NavLink } from 'react-router-dom';
 
-import { routes } from '../constants/routes';
+import { AccountRoutes, Routes } from '../constants/routes';
 import { useLogout } from '../libs/auth/useLogout';
 import { MaterialIconType } from '../types/common';
 import styles from './Nav.module.css';
@@ -34,7 +34,7 @@ const Nav: FC<Props> = ({ isOpen, onItemClick }) => {
           </NavLink>
         </li>
         <li>
-          <NavLink activeClassName={styles.active} to={routes.ACCOUNT} onClick={onItemClick}>
+          <NavLink activeClassName={styles.active} to={AccountRoutes.GENERAL} onClick={onItemClick}>
             <MaterialIcon className={styles.icon} type={MaterialIconType.Outlined}>
               settings
             </MaterialIcon>
@@ -51,7 +51,7 @@ const Nav: FC<Props> = ({ isOpen, onItemClick }) => {
       <ul>
         <li>
           <NavLink
-            to={routes.LOGIN}
+            to={Routes.LOGIN}
             onClick={e => {
               e.preventDefault();
               onItemClick();

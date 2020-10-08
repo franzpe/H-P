@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useRef } from 'react';
 import cx from 'classnames';
 import { Link } from 'react-router-dom';
 import Nav from './Nav';

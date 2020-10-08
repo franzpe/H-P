@@ -17,7 +17,23 @@ button:focus {
 .app {
   @apply flex;
 
-  @screen sm {
+  @screen md {
     @apply pt-16;
   }
+}
+
+.main-content {
+  @apply flex-1 m-8;
+
+  @screen md {
+    @apply m-4;
+  }
+}
+
+.underlined-link {
+  @apply underline text-primary-3-shade text-sm;
+}
+
+.underlined-link:hover {
+  @apply filter-darken-80;
 }
