@@ -9,6 +9,14 @@ export type Config = {
     accessTokenExpiration: string;
     refreshTokenSecret: string;
     refreshTokenExpiration: string;
+    salt: string | number;
+  };
+  email: {
+    host: string;
+    port: number;
+    secure: boolean;
+    user: string;
+    password: string;
   };
 };
 
@@ -22,7 +30,15 @@ const config: Config = {
     accessTokenSecret: process.env.ACCESS_TOKEN_SECRET || 'accessTokenSecret',
     accessTokenExpiration: process.env.ACCESS_TOKEN_EXPIRATION || '15m',
     refreshTokenSecret: process.env.REFRESH_TOKEN_SECRET || 'refreshTokenSecret',
-    refreshTokenExpiration: process.env.REFRESH_TOKEN_EXPIRATION || '7d'
+    refreshTokenExpiration: process.env.REFRESH_TOKEN_EXPIRATION || '7d',
+    salt: Number(process.env.SALT) || 12
+  },
+  email: {
+    host: process.env.EMAIL_HOST || '',
+    port: Number(process.env.EMAIL_PORT) || 587,
+    secure: process.env.EMAIL_SECURE === 'true',
+    user: process.env.EMAIL_USER || '',
+    password: process.env.EMAIL_PASSWORD || ''
   }
 };
 

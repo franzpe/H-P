@@ -5,6 +5,10 @@ import { createRefreshToken, createAccessToken, setRefreshToken } from './auth';
 import { User } from '../user/UserEntity';
 import { Context } from '../../utils/Context';
 import { getConnection } from 'typeorm';
+import { generatePassword } from '../../utils';
+import config from '../../config';
+import { sendMail } from '../email';
+import logger from '../../utils/Logger';
 
 const refreshToken = async (req: Request, res: Response) => {
   setRefreshToken(res, createRefreshToken(req.locals.user));
@@ -43,7 +47,7 @@ const logout = (res: Response) => {
 };
 
 const register = async (email: string, password: string) => {
-  const hashedPassword = await hash(password, 12);
+  const hashedPassword = await hash(password, config.auth.salt);
 
   try {
     await User.insert({ email, password: hashedPassword });
@@ -55,10 +59,34 @@ const register = async (email: string, password: string) => {
   return true;
 };
 
+const forgotPassword = async (email: string) => {
+  const user = await User.findOne({ where: { email } });
+
+  if (!user) {
+    throw new Error('Could not find user');
+  }
+
+  const generatedPassword = generatePassword(14, 'a');
+  const hashedPassword = await hash(generatedPassword, config.auth.salt);
+
+  await getConnection()
+    .getRepository(User)
+    .update({ id: user.id }, { password: hashedPassword, tokenVersion: user.tokenVersion + 1 });
+
+  try {
+    await sendMail({ to: email, subject: 'New Password', text: 'Please use new password: ' + generatedPassword });
+  } catch (err) {
+    logger.error(err);
+  }
+
+  return true;
+};
+
 export default {
   refreshToken,
   revokeRefreshTokens,
   register,
   login,
-  logout
+  logout,
+  forgotPassword
 };

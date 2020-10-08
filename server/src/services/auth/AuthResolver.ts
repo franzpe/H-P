@@ -48,4 +48,9 @@ export class AuthResolver {
   async register(@Arg('data') { email, password }: RegisterInput) {
     return authController.register(email, password);
   }
+
+  @Mutation(() => String)
+  async forgotPassword(@Arg('email') email: string) {
+    return authController.forgotPassword(email);
+  }
 }
