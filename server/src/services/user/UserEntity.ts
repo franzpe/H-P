@@ -15,6 +15,12 @@ export class User extends BaseEntity {
   @Column('text')
   password: string;
 
+  @Column({ type: 'text', nullable: true })
+  resetPasswordToken: string;
+
+  @Column({ nullable: true })
+  resetPasswordExpires: Date;
+
   @Column('int', { default: 0 })
   tokenVersion: number;
 }
