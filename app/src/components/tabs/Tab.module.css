@@ -1,0 +1,7 @@
+.tab {
+  @apply border-b-2 border-primary-1-tint font-avenir-medium text-primary-2-tint px-6;
+}
+
+.active {
+  @apply border-accent-shade text-accent-shade font-avenir-heavy;
+}
