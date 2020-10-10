@@ -8,7 +8,10 @@
     "dev": " tsc-watch --onSuccess \"node -r dotenv/config ./dist/index.js\" ",
     "build": "tsc -p .",
     "start": "NODE_ENV=production npx pm2 start pm2.yaml",
-    "test": "jest --coverage --silent --passWithNoTests"
+    "test": "jest --coverage --silent --passWithNoTests",
+    "migrate:create": "ts-node ./node_modules/typeorm/cli.js --config src/config/orm.ts migration:create -n",
+    "migrate:up": "ts-node ./node_modules/typeorm/cli.js --config src/config/orm.ts migration:run",
+    "migrate:down": "ts-node ./node_modules/typeorm/cli.js --config src/config/orm.ts migration:revert"
   },
   "keywords": [],
   "author": "",

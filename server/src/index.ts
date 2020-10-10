@@ -3,7 +3,7 @@ import express from 'express';
 
 import config from './config';
 import { createConnection } from 'typeorm';
-import { ormOptions } from './config/orm';
+import ormOptions from './config/orm';
 
 process.on('uncaughtException', e => {
   console.log(e);
@@ -17,7 +17,7 @@ process.on('unhandledRejection', e => {
 
 (async () => {
   const server = new Server(express());
-  await createConnection(ormOptions);
+  await createConnection(ormOptions as any);
   await server.setup();
   server.start(config.port);
 })();

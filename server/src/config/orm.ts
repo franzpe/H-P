@@ -1,7 +1,7 @@
 import { ConnectionOptions } from 'typeorm';
 import config from '.';
 
-export const ormOptions: ConnectionOptions = {
+const ormOptions: ConnectionOptions = {
   type: 'mysql',
   host: 'localhost',
   port: 3306,
@@ -11,11 +11,15 @@ export const ormOptions: ConnectionOptions = {
   synchronize: config.env === config.dev,
   logging: false,
   entities: ['dist/**/*Entity.js'],
-  migrations: ['dist/migration/**/*.js'],
+  migrations: ['dist/migrations/**/*.js'],
   subscribers: ['dist/subscriber/**/*.js'],
   cli: {
     entitiesDir: 'dist/**/*Entity.js',
-    migrationsDir: 'src/migration',
+    migrationsDir: 'src/migrations',
     subscribersDir: 'src/subscriber'
   }
+} 
+
+export = {
+  ...ormOptions
 };

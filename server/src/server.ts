@@ -5,7 +5,7 @@ import { buildSchema } from 'type-graphql';
 
 import { applyMiddleware, applyRoutes } from './utils';
 import middleware from './middleware';
-import { routes, resolvers } from './services';
+import { routes, resolvers } from './modules';
 import errorHandlers from './middleware/errorHandlers';
 
 export default class Server {
