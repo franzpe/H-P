@@ -5,7 +5,7 @@ import { verify } from 'jsonwebtoken';
 import config from '../../config';
 import { User } from '../user/UserEntity';
 import { HTTP400Error } from '../../utils/httpErrors';
-import { MiddlewareFn, UnauthorizedError } from 'type-graphql';
+import { MiddlewareFn  } from 'type-graphql';
 import { AuthenticationError } from 'apollo-server-express';
 import { Context } from '../../utils/Context';
 

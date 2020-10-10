@@ -126,6 +126,31 @@ const resetPassword = async (token: string, password: string) => {
   return true;
 };
 
+const changePassword = async (currentPassword: string, newPassword: string, userId: number) => {
+  const user = await User.findOne({ where: { id: userId } });
+
+  if (!user) {
+    throw new Error('Could not find user');
+  }
+
+  const valid = await compare(currentPassword, user.password);  
+
+  if(!valid){
+    throw new Error('Incorrect password');
+  }
+  
+  const hashedNewPassword = await hash(newPassword, config.auth.salt);
+
+  await getConnection()
+  .getRepository(User)
+  .update(
+    { id: user.id },
+    { password: hashedNewPassword }
+  );
+
+  return true ;
+}
+
 export default {
   refreshToken,
   revokeRefreshTokens,
@@ -133,5 +158,6 @@ export default {
   login,
   logout,
   forgotPassword,
-  resetPassword
+  resetPassword, 
+  changePassword  
 };

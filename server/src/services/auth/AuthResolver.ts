@@ -2,7 +2,7 @@ import { Query, Resolver, ObjectType, Field, Mutation, Arg, Ctx, Int, UseMiddlew
 import { User } from '../user/UserEntity';
 import authController from './authController';
 import { Context } from '../../utils/Context';
-import { LoginInput, RegisterInput, ResetPasswordInput } from './authTypes';
+import { ChangePasswordInput, LoginInput, RegisterInput, ResetPasswordInput } from './authTypes';
 import { isAuth } from './auth';
 
 @ObjectType()
@@ -57,5 +57,11 @@ export class AuthResolver {
   @Mutation(() => Boolean)
   async resetPassword(@Arg('data') { token, password }: ResetPasswordInput) {
     return authController.resetPassword(token, password);
+  }
+
+  @Mutation(() => Boolean)
+  @UseMiddleware(isAuth)
+  async changePassword(@Arg('data') { currentPassword, newPassword }: ChangePasswordInput, @Ctx() { payload } : Context) {
+    return authController.changePassword(currentPassword, newPassword, payload!.userId);
   }
 }

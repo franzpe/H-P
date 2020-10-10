@@ -31,3 +31,12 @@ export class ResetPasswordInput {
   @Field()
   password: string;
 }
+
+@InputType()
+export class ChangePasswordInput {
+  @Field()
+  currentPassword: string;
+
+  @Field()
+  newPassword: string
+}
