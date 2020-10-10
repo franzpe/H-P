@@ -1,5 +1,6 @@
-import { BaseEntity, Entity, PrimaryGeneratedColumn, Column } from 'typeorm';
+import { BaseEntity, Entity, PrimaryGeneratedColumn, Column, OneToOne, JoinColumn } from 'typeorm';
 import { ObjectType, Field, Int } from 'type-graphql';
+import { Profile } from '../profile/ProfileEntity';
 
 @ObjectType()
 @Entity('users')
@@ -8,8 +9,8 @@ export class User extends BaseEntity {
   @PrimaryGeneratedColumn()
   id: number;
 
-  @Field()
   @Column('text')
+  @Field()
   email: string;
 
   @Column('text')
@@ -23,4 +24,9 @@ export class User extends BaseEntity {
 
   @Column('int', { default: 0 })
   tokenVersion: number;
+
+  @OneToOne(type => Profile) 
+  @JoinColumn()
+  @Field()
+	profile: Profile
 }
