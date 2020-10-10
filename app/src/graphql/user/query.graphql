@@ -4,3 +4,17 @@ query User {
     email
   }
 }
+
+query ProfileGeneralInfo {
+  me {
+    email
+    profile {
+      basicSection {
+        name
+        company
+        location
+        phoneNumber
+      }
+    }
+  }
+}

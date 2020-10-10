@@ -10,17 +10,17 @@ export class BasicSection extends BaseEntity {
 
   @Column('text')
   @Field()
-  Name: string;
+  name: string;
 
   @Column('text')
   @Field()
-	Company: string;
+  company: string;
 
   @Column('text')
   @Field()
-	Location: string;
-	
+  location: string;
+
   @Column('text')
   @Field()
-	PhoneNumber: string;
+  phoneNumber: string;
 }

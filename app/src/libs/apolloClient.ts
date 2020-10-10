@@ -73,6 +73,7 @@ const errorLink = (history: History<unknown>) =>
 const authLink = setContext((_, { headers }) => {
   // get the authentication token from memory if it exists
   const token = getAccessToken();
+  console.log(token);
   // return the headers to the context so httpLink can read them
   return {
     headers: {

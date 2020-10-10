@@ -9,7 +9,7 @@ import { Routes } from 'constants/routes';
 import OrangeButton from 'components/buttons/OrangeButton';
 import yup from 'libs/yupMethods';
 import { yupResolver } from '@hookform/resolvers';
-import { useChangePasswordMutation } from '_generated/graphql.output';
+import { useChangePasswordMutation, useProfileGeneralInfoQuery } from '_generated/graphql.output';
 import { showErrorSnackbar, showSnackbar } from 'libs/snackbar';
 
 const schema = yup.object().shape({
@@ -31,6 +31,7 @@ const defaultValues = {
 };
 
 const GeneralInformation = () => {
+  const { data, loading: isProfileLoading } = useProfileGeneralInfoQuery();
   const { control, errors, handleSubmit, reset } = useForm<IFormInputs>({
     defaultValues,
     resolver: yupResolver(schema)
@@ -46,6 +47,8 @@ const GeneralInformation = () => {
       .finally(() => reset());
   };
 
+  if (isProfileLoading) return null;
+
   return (
     <Fragment>
       <section className="pb-2">
@@ -55,23 +58,23 @@ const GeneralInformation = () => {
         </div>
         <div className="leading-loose">
           <span className={cx(accountStyles.textStrong, accountStyles.textInfoLabel)}>Name</span>
-          <span className={accountStyles.textWeak}>Jane Doe</span>
+          <span className={accountStyles.textWeak}>{data?.me.profile.basicSection.name}</span>
         </div>
         <div className="leading-loose">
           <span className={cx(accountStyles.textStrong, accountStyles.textInfoLabel)}>Company</span>
-          <span className={accountStyles.textWeak}>Amazon</span>
+          <span className={accountStyles.textWeak}>{data?.me.profile.basicSection.company}</span>
         </div>
         <div className="leading-loose">
           <span className={cx(accountStyles.textStrong, accountStyles.textInfoLabel)}>Location</span>
-          <span className={accountStyles.textWeak}>Palo Alto</span>
+          <span className={accountStyles.textWeak}>{data?.me.profile.basicSection.location}</span>
         </div>
         <div className="leading-loose">
           <span className={cx(accountStyles.textStrong, accountStyles.textInfoLabel)}>Email</span>
-          <span className={accountStyles.textWeak}>pobocekfrantisek@gmail.com</span>
+          <span className={accountStyles.textWeak}>{data?.me.email}</span>
         </div>
         <div className="leading-loose">
           <span className={cx(accountStyles.textStrong, accountStyles.textInfoLabel)}>Phone Number</span>
-          <span className={accountStyles.textWeak}>(650) 867 2345</span>
+          <span className={accountStyles.textWeak}>{data?.me.profile.basicSection.phoneNumber}</span>
         </div>
       </section>
       <section className="py-4 max-w-sm">

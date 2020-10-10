@@ -22,6 +22,22 @@ export type User = {
   __typename?: 'User';
   id: Scalars['Int'];
   email: Scalars['String'];
+  profile: Profile;
+};
+
+export type Profile = {
+  __typename?: 'Profile';
+  id: Scalars['Int'];
+  basicSection: BasicSection;
+};
+
+export type BasicSection = {
+  __typename?: 'BasicSection';
+  id: Scalars['Int'];
+  name: Scalars['String'];
+  company: Scalars['String'];
+  location: Scalars['String'];
+  phoneNumber: Scalars['String'];
 };
 
 export type Mutation = {
@@ -126,6 +142,11 @@ export type ChangePasswordMutationVariables = Exact<{
 
 
 export type ChangePasswordMutation = { __typename?: 'Mutation', changePassword: boolean };
+
+export type ProfileGeneralInfoQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+export type ProfileGeneralInfoQuery = { __typename?: 'Query', me: { __typename?: 'User', email: string, profile: { __typename?: 'Profile', basicSection: { __typename?: 'BasicSection', name: string, company: string, location: string, phoneNumber: string } } } };
 
 export type UserQueryVariables = Exact<{ [key: string]: never; }>;
 
@@ -287,6 +308,46 @@ export function useChangePasswordMutation(baseOptions?: ApolloReactHooks.Mutatio
 export type ChangePasswordMutationHookResult = ReturnType<typeof useChangePasswordMutation>;
 export type ChangePasswordMutationResult = ApolloReactCommon.MutationResult<ChangePasswordMutation>;
 export type ChangePasswordMutationOptions = ApolloReactCommon.BaseMutationOptions<ChangePasswordMutation, ChangePasswordMutationVariables>;
+export const ProfileGeneralInfoDocument = gql`
+    query ProfileGeneralInfo {
+  me {
+    email
+    profile {
+      basicSection {
+        name
+        company
+        location
+        phoneNumber
+      }
+    }
+  }
+}
+    `;
+
+/**
+ * __useProfileGeneralInfoQuery__
+ *
+ * To run a query within a React component, call `useProfileGeneralInfoQuery` and pass it any options that fit your needs.
+ * When your component renders, `useProfileGeneralInfoQuery` returns an object from Apollo Client that contains loading, error, and data properties
+ * you can use to render your UI.
+ *
+ * @param baseOptions options that will be passed into the query, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options;
+ *
+ * @example
+ * const { data, loading, error } = useProfileGeneralInfoQuery({
+ *   variables: {
+ *   },
+ * });
+ */
+export function useProfileGeneralInfoQuery(baseOptions?: ApolloReactHooks.QueryHookOptions<ProfileGeneralInfoQuery, ProfileGeneralInfoQueryVariables>) {
+        return ApolloReactHooks.useQuery<ProfileGeneralInfoQuery, ProfileGeneralInfoQueryVariables>(ProfileGeneralInfoDocument, baseOptions);
+      }
+export function useProfileGeneralInfoLazyQuery(baseOptions?: ApolloReactHooks.LazyQueryHookOptions<ProfileGeneralInfoQuery, ProfileGeneralInfoQueryVariables>) {
+          return ApolloReactHooks.useLazyQuery<ProfileGeneralInfoQuery, ProfileGeneralInfoQueryVariables>(ProfileGeneralInfoDocument, baseOptions);
+        }
+export type ProfileGeneralInfoQueryHookResult = ReturnType<typeof useProfileGeneralInfoQuery>;
+export type ProfileGeneralInfoLazyQueryHookResult = ReturnType<typeof useProfileGeneralInfoLazyQuery>;
+export type ProfileGeneralInfoQueryResult = ApolloReactCommon.QueryResult<ProfileGeneralInfoQuery, ProfileGeneralInfoQueryVariables>;
 export const UserDocument = gql`
     query User {
   me {
