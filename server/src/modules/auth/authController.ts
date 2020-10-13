@@ -133,23 +133,81 @@ const changePassword = async (currentPassword: string, newPassword: string, user
     throw new Error('Could not find user');
   }
 
-  const valid = await compare(currentPassword, user.password);  
+  const valid = await compare(currentPassword, user.password);
 
-  if(!valid){
+  if (!valid) {
     throw new Error('Incorrect password');
   }
-  
+
   const hashedNewPassword = await hash(newPassword, config.auth.salt);
 
+  await getConnection().getRepository(User).update({ id: user.id }, { password: hashedNewPassword });
+
+  return true;
+};
+
+/**
+ * Email change request sends verification email to an old one, with 1 hour validity
+ *
+ * @param email - new email
+ * @param userId - userid
+ */
+const changeEmailRequest = async (email: string, userId: number) => {
+  const user = await User.findOne({ where: { id: userId } });
+
+  if (!user) {
+    throw new Error('Could not find user');
+  }
+
+  const changeEmailToken = crypto.randomBytes(20).toString('hex');
+
+  // Expires in an hour
+  const changeEmailExpires = new Date();
+  changeEmailExpires.setHours(changeEmailExpires.getHours() + 1);
+
   await getConnection()
-  .getRepository(User)
-  .update(
+    .getRepository(User)
+    .update({ id: userId }, { changeEmail: email, changeEmailToken, changeEmailExpires });
+
+  const link = `http://localhost:3000/change-email/${changeEmailToken}`;
+
+  sendMail({
+    to: user.email,
+    subject: 'Email change request',
+    text: `Hi,\nPlease click on the following link ${link} to change your email. \n\n 
+      If you did not request this, please ignore this email and your email will remain unchanged.\n`
+  });
+
+  return true;
+};
+
+const changeEmail = async (token: string) => {
+  const user = await User.findOne({
+    where: { changeEmailToken: token, changeEmailExpires: MoreThan(new Date()) }
+  });
+
+  if (!user) {
+    throw new Error('Email change token is invalid or has expired.');
+  }
+
+  await getConnection().getRepository(User).update(
     { id: user.id },
-    { password: hashedNewPassword }
+    {
+      email: user.changeEmail,
+      changeEmail: undefined,
+      changeEmailToken: undefined,
+      changeEmailExpires: undefined
+    }
   );
 
-  return true ;
-}
+  await sendMail({
+    to: user.changeEmail,
+    subject: 'Your email has been changed',
+    text: `Hi,\nThis is a confirmation that the email for your account has just been changed.`
+  });
+
+  return true;
+};
 
 export default {
   refreshToken,
@@ -158,6 +216,8 @@ export default {
   login,
   logout,
   forgotPassword,
-  resetPassword, 
-  changePassword  
+  resetPassword,
+  changePassword,
+  changeEmailRequest,
+  changeEmail
 };

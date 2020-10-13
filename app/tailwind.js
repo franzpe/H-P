@@ -320,7 +320,8 @@ module.exports = {
       '4xl': '2.25rem',
       '5xl': '3rem',
       '6xl': '3.75rem',
-      '7xl': '5rem'
+      '7xl': '5rem',
+      '8xl': '6rem'
     },
     fontWeight: {
       hairline: '100',
@@ -341,7 +342,8 @@ module.exports = {
     }),
     inset: {
       0: '0',
-      auto: 'auto'
+      auto: 'auto',
+      '1/2': '50%',
     },
     letterSpacing: {
       tighter: '-0.05em',

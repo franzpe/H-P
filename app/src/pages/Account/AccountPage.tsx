@@ -4,8 +4,8 @@ import { Route, Switch } from 'react-router';
 import Tab from 'components/tabs/Tab';
 import Tabs from 'components/tabs/Tabs';
 import { AccountRoutes } from 'constants/routes';
-import GeneralInformation from './GeneralInformation';
-import MembershipSettings from './MembershipSettings';
+import GeneralInformation from './general/GeneralInformation';
+import MembershipSettings from './membership/MembershipSettings';
 
 /**
  * Delete Account - Put somewhere below

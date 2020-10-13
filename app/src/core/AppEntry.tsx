@@ -9,6 +9,7 @@ import App from './App';
 
 const ForgotPassword = lazy(() => import(/* webpackChunkName: "AccountPage" */ 'pages/ForgotPassword'));
 const ResetPassword = lazy(() => import(/* webpackChunkName: "AccountPage" */ 'pages/ResetPassword'));
+const ChangeEmail = lazy(() => import(/* webpackChunkName: "AccountPage" */ 'pages/ChangeEmailVerification'));
 
 function AppEntry() {
   const client = useApolloClient();
@@ -20,6 +21,7 @@ function AppEntry() {
           <Switch>
             <Route exact={true} path={Routes.LOGIN} component={LoginPage} />
             <Route exact={true} path={Routes.FORGOT_PASSWORD} component={ForgotPassword} />
+            <Route path={Routes.CHANGE_EMAIL_VERIFICATION} component={ChangeEmail} />
             <Route path={Routes.RESET_PASSWORD} component={ResetPassword} />
             <PrivateRoute path="/" component={App} />
           </Switch>

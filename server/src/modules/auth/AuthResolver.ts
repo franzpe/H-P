@@ -61,7 +61,22 @@ export class AuthResolver {
 
   @Mutation(() => Boolean)
   @UseMiddleware(isAuth)
-  async changePassword(@Arg('data') { currentPassword, newPassword }: ChangePasswordInput, @Ctx() { payload } : Context) {
+  async changeEmailRequest(@Arg('email') email: string, @Ctx() { payload }: Context) {
+    console.log(payload);
+    return authController.changeEmailRequest(email, payload!.userId);
+  }
+
+  @Mutation(() => Boolean)
+  async changeEmail(@Arg('token') token: string) {
+    return authController.changeEmail(token);
+  }
+
+  @Mutation(() => Boolean)
+  @UseMiddleware(isAuth)
+  async changePassword(
+    @Arg('data') { currentPassword, newPassword }: ChangePasswordInput,
+    @Ctx() { payload }: Context
+  ) {
     return authController.changePassword(currentPassword, newPassword, payload!.userId);
   }
 }

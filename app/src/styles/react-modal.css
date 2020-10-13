@@ -1,0 +1,50 @@
+.ReactModal__Body--open {
+  overflow: hidden;
+}
+
+.ReactModal__Overlay {
+  @apply fixed bg-gray-500 bg-opacity-75 top-0 left-0 bottom-0 right-0 !important;
+  opacity: 0;
+  transition: opacity 250ms ease-in-out;
+}
+
+.ReactModal__Overlay--after-open {
+  opacity: 1;
+}
+
+.ReactModal__Overlay--before-close {
+  opacity: 0;
+}
+
+.ReactModal__Content {
+  @apply relative outline-none mx-auto shadow-xl align-bottom w-2/5 bg-white rounded-lg top-1/2 text-left overflow-hidden;
+  background: white;
+  will-change: transform;
+  transform: translate3d(0, -70%, 0);
+  transition: transform 250ms ease 0ms;
+}
+
+.ReactModal__Content--after-open {
+  transform: translate3d(0, -50%, 0);
+}
+
+.ReactModal__Content--before-close {
+  transform: translate3d(0, -70%, 0);
+}
+
+@screen xl {
+  .ReactModal__Content {
+    @apply w-2/4 !important;
+  }
+}
+@screen lg {
+  .ReactModal__Content {
+    @apply w-4/6 !important;
+  }
+}
+
+@screen sm {
+  .ReactModal__Content {
+    @apply w-4/5 !important;
+  }
+}

@@ -22,7 +22,7 @@ export const showSnackbar = (text: string, options?: SnackbarOptions) =>
 export const showErrorSnackbar = (text: string, options?: SnackbarOptions) => {
   Snackbar.show({
     text,
-    duration: 999000,
+    duration: 4000,
     actionText: 'dismiss',
     pos: 'bottom-left',
     customClass: cx(styles.container, styles.error),

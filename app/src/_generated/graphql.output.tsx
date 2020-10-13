@@ -48,6 +48,8 @@ export type Mutation = {
   register: Scalars['Boolean'];
   forgotPassword: Scalars['Boolean'];
   resetPassword: Scalars['Boolean'];
+  changeEmailRequest: Scalars['Boolean'];
+  changeEmail: Scalars['Boolean'];
   changePassword: Scalars['Boolean'];
 };
 
@@ -74,6 +76,16 @@ export type MutationForgotPasswordArgs = {
 
 export type MutationResetPasswordArgs = {
   data: ResetPasswordInput;
+};
+
+
+export type MutationChangeEmailRequestArgs = {
+  email: Scalars['String'];
+};
+
+
+export type MutationChangeEmailArgs = {
+  token: Scalars['String'];
 };
 
 
@@ -143,15 +155,29 @@ export type ChangePasswordMutationVariables = Exact<{
 
 export type ChangePasswordMutation = { __typename?: 'Mutation', changePassword: boolean };
 
-export type ProfileGeneralInfoQueryVariables = Exact<{ [key: string]: never; }>;
+export type ChangeEmailRequestMutationVariables = Exact<{
+  email: Scalars['String'];
+}>;
 
 
-export type ProfileGeneralInfoQuery = { __typename?: 'Query', me: { __typename?: 'User', email: string, profile: { __typename?: 'Profile', basicSection: { __typename?: 'BasicSection', name: string, company: string, location: string, phoneNumber: string } } } };
+export type ChangeEmailRequestMutation = { __typename?: 'Mutation', changeEmailRequest: boolean };
+
+export type ChangeEmailMutationVariables = Exact<{
+  token: Scalars['String'];
+}>;
+
+
+export type ChangeEmailMutation = { __typename?: 'Mutation', changeEmail: boolean };
 
 export type UserQueryVariables = Exact<{ [key: string]: never; }>;
 
 
 export type UserQuery = { __typename?: 'Query', me: { __typename?: 'User', id: number, email: string } };
+
+export type ProfileGeneralInfoQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+export type ProfileGeneralInfoQuery = { __typename?: 'Query', me: { __typename?: 'User', email: string, profile: { __typename?: 'Profile', basicSection: { __typename?: 'BasicSection', name: string, company: string, location: string, phoneNumber: string } } } };
 
 
 export const LoginDocument = gql`
@@ -308,6 +334,99 @@ export function useChangePasswordMutation(baseOptions?: ApolloReactHooks.Mutatio
 export type ChangePasswordMutationHookResult = ReturnType<typeof useChangePasswordMutation>;
 export type ChangePasswordMutationResult = ApolloReactCommon.MutationResult<ChangePasswordMutation>;
 export type ChangePasswordMutationOptions = ApolloReactCommon.BaseMutationOptions<ChangePasswordMutation, ChangePasswordMutationVariables>;
+export const ChangeEmailRequestDocument = gql`
+    mutation ChangeEmailRequest($email: String!) {
+  changeEmailRequest(email: $email)
+}
+    `;
+export type ChangeEmailRequestMutationFn = ApolloReactCommon.MutationFunction<ChangeEmailRequestMutation, ChangeEmailRequestMutationVariables>;
+
+/**
+ * __useChangeEmailRequestMutation__
+ *
+ * To run a mutation, you first call `useChangeEmailRequestMutation` within a React component and pass it any options that fit your needs.
+ * When your component renders, `useChangeEmailRequestMutation` returns a tuple that includes:
+ * - A mutate function that you can call at any time to execute the mutation
+ * - An object with fields that represent the current status of the mutation's execution
+ *
+ * @param baseOptions options that will be passed into the mutation, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options-2;
+ *
+ * @example
+ * const [changeEmailRequestMutation, { data, loading, error }] = useChangeEmailRequestMutation({
+ *   variables: {
+ *      email: // value for 'email'
+ *   },
+ * });
+ */
+export function useChangeEmailRequestMutation(baseOptions?: ApolloReactHooks.MutationHookOptions<ChangeEmailRequestMutation, ChangeEmailRequestMutationVariables>) {
+        return ApolloReactHooks.useMutation<ChangeEmailRequestMutation, ChangeEmailRequestMutationVariables>(ChangeEmailRequestDocument, baseOptions);
+      }
+export type ChangeEmailRequestMutationHookResult = ReturnType<typeof useChangeEmailRequestMutation>;
+export type ChangeEmailRequestMutationResult = ApolloReactCommon.MutationResult<ChangeEmailRequestMutation>;
+export type ChangeEmailRequestMutationOptions = ApolloReactCommon.BaseMutationOptions<ChangeEmailRequestMutation, ChangeEmailRequestMutationVariables>;
+export const ChangeEmailDocument = gql`
+    mutation ChangeEmail($token: String!) {
+  changeEmail(token: $token)
+}
+    `;
+export type ChangeEmailMutationFn = ApolloReactCommon.MutationFunction<ChangeEmailMutation, ChangeEmailMutationVariables>;
+
+/**
+ * __useChangeEmailMutation__
+ *
+ * To run a mutation, you first call `useChangeEmailMutation` within a React component and pass it any options that fit your needs.
+ * When your component renders, `useChangeEmailMutation` returns a tuple that includes:
+ * - A mutate function that you can call at any time to execute the mutation
+ * - An object with fields that represent the current status of the mutation's execution
+ *
+ * @param baseOptions options that will be passed into the mutation, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options-2;
+ *
+ * @example
+ * const [changeEmailMutation, { data, loading, error }] = useChangeEmailMutation({
+ *   variables: {
+ *      token: // value for 'token'
+ *   },
+ * });
+ */
+export function useChangeEmailMutation(baseOptions?: ApolloReactHooks.MutationHookOptions<ChangeEmailMutation, ChangeEmailMutationVariables>) {
+        return ApolloReactHooks.useMutation<ChangeEmailMutation, ChangeEmailMutationVariables>(ChangeEmailDocument, baseOptions);
+      }
+export type ChangeEmailMutationHookResult = ReturnType<typeof useChangeEmailMutation>;
+export type ChangeEmailMutationResult = ApolloReactCommon.MutationResult<ChangeEmailMutation>;
+export type ChangeEmailMutationOptions = ApolloReactCommon.BaseMutationOptions<ChangeEmailMutation, ChangeEmailMutationVariables>;
+export const UserDocument = gql`
+    query User {
+  me {
+    id
+    email
+  }
+}
+    `;
+
+/**
+ * __useUserQuery__
+ *
+ * To run a query within a React component, call `useUserQuery` and pass it any options that fit your needs.
+ * When your component renders, `useUserQuery` returns an object from Apollo Client that contains loading, error, and data properties
+ * you can use to render your UI.
+ *
+ * @param baseOptions options that will be passed into the query, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options;
+ *
+ * @example
+ * const { data, loading, error } = useUserQuery({
+ *   variables: {
+ *   },
+ * });
+ */
+export function useUserQuery(baseOptions?: ApolloReactHooks.QueryHookOptions<UserQuery, UserQueryVariables>) {
+        return ApolloReactHooks.useQuery<UserQuery, UserQueryVariables>(UserDocument, baseOptions);
+      }
+export function useUserLazyQuery(baseOptions?: ApolloReactHooks.LazyQueryHookOptions<UserQuery, UserQueryVariables>) {
+          return ApolloReactHooks.useLazyQuery<UserQuery, UserQueryVariables>(UserDocument, baseOptions);
+        }
+export type UserQueryHookResult = ReturnType<typeof useUserQuery>;
+export type UserLazyQueryHookResult = ReturnType<typeof useUserLazyQuery>;
+export type UserQueryResult = ApolloReactCommon.QueryResult<UserQuery, UserQueryVariables>;
 export const ProfileGeneralInfoDocument = gql`
     query ProfileGeneralInfo {
   me {
@@ -348,36 +467,3 @@ export function useProfileGeneralInfoLazyQuery(baseOptions?: ApolloReactHooks.La
 export type ProfileGeneralInfoQueryHookResult = ReturnType<typeof useProfileGeneralInfoQuery>;
 export type ProfileGeneralInfoLazyQueryHookResult = ReturnType<typeof useProfileGeneralInfoLazyQuery>;
 export type ProfileGeneralInfoQueryResult = ApolloReactCommon.QueryResult<ProfileGeneralInfoQuery, ProfileGeneralInfoQueryVariables>;
-export const UserDocument = gql`
-    query User {
-  me {
-    id
-    email
-  }
-}
-    `;
-
-/**
- * __useUserQuery__
- *
- * To run a query within a React component, call `useUserQuery` and pass it any options that fit your needs.
- * When your component renders, `useUserQuery` returns an object from Apollo Client that contains loading, error, and data properties
- * you can use to render your UI.
- *
- * @param baseOptions options that will be passed into the query, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options;
- *
- * @example
- * const { data, loading, error } = useUserQuery({
- *   variables: {
- *   },
- * });
- */
-export function useUserQuery(baseOptions?: ApolloReactHooks.QueryHookOptions<UserQuery, UserQueryVariables>) {
-        return ApolloReactHooks.useQuery<UserQuery, UserQueryVariables>(UserDocument, baseOptions);
-      }
-export function useUserLazyQuery(baseOptions?: ApolloReactHooks.LazyQueryHookOptions<UserQuery, UserQueryVariables>) {
-          return ApolloReactHooks.useLazyQuery<UserQuery, UserQueryVariables>(UserDocument, baseOptions);
-        }
-export type UserQueryHookResult = ReturnType<typeof useUserQuery>;
-export type UserLazyQueryHookResult = ReturnType<typeof useUserLazyQuery>;
-export type UserQueryResult = ApolloReactCommon.QueryResult<UserQuery, UserQueryVariables>;

@@ -13,6 +13,15 @@ export class User extends BaseEntity {
   @Field()
   email: string;
 
+  @Column({ type: 'text', nullable: true })
+  changeEmail: string;
+
+  @Column({ type: 'text', nullable: true })
+  changeEmailToken: string;
+
+  @Column({ nullable: true })
+  changeEmailExpires: Date;
+
   @Column('text')
   password: string;
 
@@ -25,8 +34,8 @@ export class User extends BaseEntity {
   @Column('int', { default: 0 })
   tokenVersion: number;
 
-  @OneToOne(type => Profile) 
+  @OneToOne(type => Profile)
   @JoinColumn()
   @Field()
-	profile: Profile
+  profile: Profile;
 }
