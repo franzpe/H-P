@@ -26,12 +26,12 @@ const Footer = () => {
               </Link>
             </li>
             <li className="py-2">
-              <Link href="/featuers">
+              <Link href="/features">
                 <a>Features</a>
               </Link>
             </li>
             <li className="py-2">
-              <Link href="#">
+              <Link href="/careers">
                 <a>Careers</a>
               </Link>
             </li>
@@ -61,7 +61,7 @@ const Footer = () => {
           <ul>
             <li className="font-medium py-2">Help & Support</li>
             <li className="py-2">
-              <Link href="#">
+              <Link href="/contact">
                 <a>Contact Us</a>
               </Link>
             </li>
@@ -81,7 +81,7 @@ const Footer = () => {
               </Link>
             </li>
             <li className="py-2">
-              <Link href="/sign-up/user-type">
+              <Link href="/sign-up/waiting-list">
                 <a>Sign Up</a>
               </Link>
             </li>
