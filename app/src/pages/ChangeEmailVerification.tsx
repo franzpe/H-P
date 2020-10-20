@@ -13,8 +13,6 @@ const ChangeEmailVerification = () => {
   const [countdown, setCountdown] = useState(3);
   const history = useHistory();
 
-  console.log('here');
-
   useEffect(() => {
     let intervalId: NodeJS.Timeout;
     console.log(token);

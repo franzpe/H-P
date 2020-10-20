@@ -12,7 +12,7 @@ const Pricing = () => {
           Needs change as your company grows. We’ll help you create the most talented & effective teams from the
           very start.
         </p>
-        <Plans href="/sign-up/info" />
+        <Plans href="/sign-up/waiting-list" />
       </div>
       <div className="max-w-5xl flex flex-col md:flex-row">
         <div className="flex-1 text-center md:text-left mb-8 md:mb-0">

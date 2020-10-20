@@ -1,7 +1,7 @@
 import React from 'react';
 import { getLayout } from '../../../components/layouts/SiteLayout';
 
-import Image from '../../assets/images/svgs/flying-recruiters-1.svg';
+import Image from '../../../assets/images/svgs/flying-recruiters-1.svg';
 
 const PaymentComplete = () => {
   return (

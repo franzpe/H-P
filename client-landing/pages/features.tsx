@@ -41,7 +41,7 @@ const Featuers = () => {
           </div>
           <div className="flex space-x-4 md:space-x-6">
             <Link href="#">
-              <button className="text-center py-2 w-48 font-medium text-white text-sm md:text-base rounded-full bg-accent-orange font-bold hover:bg-accent-shade border border-accent-orange">
+              <button className="text-center py-2 w-48 font-medium text-white text-sm md:text-base rounded-full bg-accent-orange hover:bg-accent-shade border border-accent-orange">
                 Get started
               </button>
             </Link>

@@ -1,4 +1,5 @@
 import React from 'react';
+
 import LikeIcon from '../assets/images/svgs/twitter-like.svg';
 import PuzzlePieceIcon from '../assets/images/svgs/puzzle-piece-2.svg';
 import Link from 'next/link';

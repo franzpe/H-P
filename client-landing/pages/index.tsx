@@ -124,9 +124,9 @@ const Home = () => {
               </p>
             </li>
           </ul>
-          <Link href="/sign-up/payment-complete">
-            <button className="text-center py-3 px-8 font-medium text-white rounded-full bg-accent-orange mb-4 font-bold hover:bg-accent-shade">
-              Complete Purchase
+          <Link href="/features">
+            <button className="text-center py-3 px-8 font-medium text-white rounded-full bg-accent-orange mb-4  hover:bg-accent-shade">
+              View all features
             </button>
           </Link>
         </div>
@@ -184,12 +184,12 @@ const Home = () => {
         <div className="inline-block">
           <h2 className="font-bold mb-6 sm:mb-6">Start discovering hidden talent</h2>
           <div className="space-x-4 md:space-x-8 flex md:block justify-center ">
-            <Link href="/sign-up/user-type">
-              <button className="text-center py-2 w-40 font-medium text-white text-sm md:text-base rounded-full bg-accent-orange font-bold hover:bg-accent-shade border border-accent-orange">
+            <Link href="/sign-up/waiting-list">
+              <button className="text-center py-2 w-40 font-medium text-white text-sm md:text-base rounded-full bg-accent-orange hover:bg-accent-shade border border-accent-orange">
                 Sign up
               </button>
             </Link>
-            <button className="text-center py-2 w-40 font-medium text-accent-orange text-sm md:text-base rounded-full border border-accent-orange font-bold hover:bg-primary-1-light">
+            <button className="text-center py-2 w-40 font-medium text-accent-orange text-sm md:text-base rounded-full border border-accent-orange hover:bg-primary-1-light">
               View demo
             </button>
           </div>
