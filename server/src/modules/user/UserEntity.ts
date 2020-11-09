@@ -34,6 +34,22 @@ export class User extends BaseEntity {
   @Column('int', { default: 0 })
   tokenVersion: number;
 
+  @Column('text')
+  @Field({ nullable: true })
+  name: string;
+
+  @Column('text')
+  @Field({ nullable: true })
+  company: string;
+
+  @Column('text')
+  @Field({ nullable: true })
+  location: string;
+
+  @Column('text')
+  @Field({ nullable: true })
+  phoneNumber?: string;
+
   @OneToOne(type => Profile)
   @JoinColumn()
   @Field()

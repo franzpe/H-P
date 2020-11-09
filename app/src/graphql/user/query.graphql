@@ -5,16 +5,12 @@ query User {
   }
 }
 
-query ProfileGeneralInfo {
+query UserGeneralInfo {
   me {
     email
-    profile {
-      basicSection {
-        name
-        company
-        location
-        phoneNumber
-      }
-    }
+    name
+    company
+    location
+    phoneNumber
   }
 }

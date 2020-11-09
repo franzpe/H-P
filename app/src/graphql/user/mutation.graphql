@@ -27,3 +27,7 @@ mutation ChangeEmailRequest($email: String!) {
 mutation ChangeEmail($token: String!) {
   changeEmail(token: $token)
 }
+
+mutation UpdateUserBasicInfo($info: UserBasicInfoUpdateInput!) {
+  updateUserBasicInfo(data: $info)
+}

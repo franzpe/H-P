@@ -1,7 +1,8 @@
 import { BaseEntity, Entity, PrimaryGeneratedColumn, Column } from 'typeorm';
-import { ObjectType, Field, Int } from 'type-graphql';
+import { ObjectType, Field, Int, InputType } from 'type-graphql';
 
 @ObjectType()
+@InputType()
 @Entity('basic_section')
 export class BasicSection extends BaseEntity {
   @Field(() => Int)
@@ -9,18 +10,18 @@ export class BasicSection extends BaseEntity {
   id: number;
 
   @Column('text')
-  @Field()
+  @Field({ nullable: true })
   name: string;
 
   @Column('text')
-  @Field()
+  @Field({ nullable: true })
   company: string;
 
   @Column('text')
-  @Field()
+  @Field({ nullable: true })
   location: string;
 
   @Column('text')
-  @Field()
-  phoneNumber: string;
+  @Field({ nullable: true })
+  phoneNumber?: string;
 }

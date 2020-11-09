@@ -22,6 +22,10 @@ export type User = {
   __typename?: 'User';
   id: Scalars['Int'];
   email: Scalars['String'];
+  name?: Maybe<Scalars['String']>;
+  company?: Maybe<Scalars['String']>;
+  location?: Maybe<Scalars['String']>;
+  phoneNumber?: Maybe<Scalars['String']>;
   profile: Profile;
 };
 
@@ -34,10 +38,10 @@ export type Profile = {
 export type BasicSection = {
   __typename?: 'BasicSection';
   id: Scalars['Int'];
-  name: Scalars['String'];
-  company: Scalars['String'];
-  location: Scalars['String'];
-  phoneNumber: Scalars['String'];
+  name?: Maybe<Scalars['String']>;
+  company?: Maybe<Scalars['String']>;
+  location?: Maybe<Scalars['String']>;
+  phoneNumber?: Maybe<Scalars['String']>;
 };
 
 export type Mutation = {
@@ -51,6 +55,8 @@ export type Mutation = {
   changeEmailRequest: Scalars['Boolean'];
   changeEmail: Scalars['Boolean'];
   changePassword: Scalars['Boolean'];
+  updateUserBasicInfo: Scalars['Boolean'];
+  updateBasicSection: Scalars['Boolean'];
 };
 
 
@@ -93,6 +99,16 @@ export type MutationChangePasswordArgs = {
   data: ChangePasswordInput;
 };
 
+
+export type MutationUpdateUserBasicInfoArgs = {
+  data: UserBasicInfoUpdateInput;
+};
+
+
+export type MutationUpdateBasicSectionArgs = {
+  data: BasicSectionInput;
+};
+
 export type LoginResponse = {
   __typename?: 'LoginResponse';
   accessToken: Scalars['String'];
@@ -118,6 +134,28 @@ export type ChangePasswordInput = {
   currentPassword: Scalars['String'];
   newPassword: Scalars['String'];
 };
+
+export type UserBasicInfoUpdateInput = {
+  name?: Maybe<Scalars['String']>;
+  company?: Maybe<Scalars['String']>;
+  location?: Maybe<Scalars['String']>;
+  phoneNumber?: Maybe<Scalars['String']>;
+};
+
+export type BasicSectionInput = {
+  id: Scalars['Int'];
+  name?: Maybe<Scalars['String']>;
+  company?: Maybe<Scalars['String']>;
+  location?: Maybe<Scalars['String']>;
+  phoneNumber?: Maybe<Scalars['String']>;
+};
+
+export type UpdateBasicSectionMutationVariables = Exact<{
+  section: BasicSectionInput;
+}>;
+
+
+export type UpdateBasicSectionMutation = { __typename?: 'Mutation', updateBasicSection: boolean };
 
 export type LoginMutationVariables = Exact<{
   email: Scalars['String'];
@@ -169,17 +207,54 @@ export type ChangeEmailMutationVariables = Exact<{
 
 export type ChangeEmailMutation = { __typename?: 'Mutation', changeEmail: boolean };
 
+export type UpdateUserBasicInfoMutationVariables = Exact<{
+  info: UserBasicInfoUpdateInput;
+}>;
+
+
+export type UpdateUserBasicInfoMutation = { __typename?: 'Mutation', updateUserBasicInfo: boolean };
+
 export type UserQueryVariables = Exact<{ [key: string]: never; }>;
 
 
 export type UserQuery = { __typename?: 'Query', me: { __typename?: 'User', id: number, email: string } };
 
-export type ProfileGeneralInfoQueryVariables = Exact<{ [key: string]: never; }>;
+export type UserGeneralInfoQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-export type ProfileGeneralInfoQuery = { __typename?: 'Query', me: { __typename?: 'User', email: string, profile: { __typename?: 'Profile', basicSection: { __typename?: 'BasicSection', name: string, company: string, location: string, phoneNumber: string } } } };
+export type UserGeneralInfoQuery = { __typename?: 'Query', me: { __typename?: 'User', email: string, name?: Maybe<string>, company?: Maybe<string>, location?: Maybe<string>, phoneNumber?: Maybe<string> } };
 
 
+export const UpdateBasicSectionDocument = gql`
+    mutation UpdateBasicSection($section: BasicSectionInput!) {
+  updateBasicSection(data: $section)
+}
+    `;
+export type UpdateBasicSectionMutationFn = ApolloReactCommon.MutationFunction<UpdateBasicSectionMutation, UpdateBasicSectionMutationVariables>;
+
+/**
+ * __useUpdateBasicSectionMutation__
+ *
+ * To run a mutation, you first call `useUpdateBasicSectionMutation` within a React component and pass it any options that fit your needs.
+ * When your component renders, `useUpdateBasicSectionMutation` returns a tuple that includes:
+ * - A mutate function that you can call at any time to execute the mutation
+ * - An object with fields that represent the current status of the mutation's execution
+ *
+ * @param baseOptions options that will be passed into the mutation, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options-2;
+ *
+ * @example
+ * const [updateBasicSectionMutation, { data, loading, error }] = useUpdateBasicSectionMutation({
+ *   variables: {
+ *      section: // value for 'section'
+ *   },
+ * });
+ */
+export function useUpdateBasicSectionMutation(baseOptions?: ApolloReactHooks.MutationHookOptions<UpdateBasicSectionMutation, UpdateBasicSectionMutationVariables>) {
+        return ApolloReactHooks.useMutation<UpdateBasicSectionMutation, UpdateBasicSectionMutationVariables>(UpdateBasicSectionDocument, baseOptions);
+      }
+export type UpdateBasicSectionMutationHookResult = ReturnType<typeof useUpdateBasicSectionMutation>;
+export type UpdateBasicSectionMutationResult = ApolloReactCommon.MutationResult<UpdateBasicSectionMutation>;
+export type UpdateBasicSectionMutationOptions = ApolloReactCommon.BaseMutationOptions<UpdateBasicSectionMutation, UpdateBasicSectionMutationVariables>;
 export const LoginDocument = gql`
     mutation Login($email: String!, $password: String!) {
   login(data: {email: $email, password: $password}) {
@@ -394,6 +469,36 @@ export function useChangeEmailMutation(baseOptions?: ApolloReactHooks.MutationHo
 export type ChangeEmailMutationHookResult = ReturnType<typeof useChangeEmailMutation>;
 export type ChangeEmailMutationResult = ApolloReactCommon.MutationResult<ChangeEmailMutation>;
 export type ChangeEmailMutationOptions = ApolloReactCommon.BaseMutationOptions<ChangeEmailMutation, ChangeEmailMutationVariables>;
+export const UpdateUserBasicInfoDocument = gql`
+    mutation UpdateUserBasicInfo($info: UserBasicInfoUpdateInput!) {
+  updateUserBasicInfo(data: $info)
+}
+    `;
+export type UpdateUserBasicInfoMutationFn = ApolloReactCommon.MutationFunction<UpdateUserBasicInfoMutation, UpdateUserBasicInfoMutationVariables>;
+
+/**
+ * __useUpdateUserBasicInfoMutation__
+ *
+ * To run a mutation, you first call `useUpdateUserBasicInfoMutation` within a React component and pass it any options that fit your needs.
+ * When your component renders, `useUpdateUserBasicInfoMutation` returns a tuple that includes:
+ * - A mutate function that you can call at any time to execute the mutation
+ * - An object with fields that represent the current status of the mutation's execution
+ *
+ * @param baseOptions options that will be passed into the mutation, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options-2;
+ *
+ * @example
+ * const [updateUserBasicInfoMutation, { data, loading, error }] = useUpdateUserBasicInfoMutation({
+ *   variables: {
+ *      info: // value for 'info'
+ *   },
+ * });
+ */
+export function useUpdateUserBasicInfoMutation(baseOptions?: ApolloReactHooks.MutationHookOptions<UpdateUserBasicInfoMutation, UpdateUserBasicInfoMutationVariables>) {
+        return ApolloReactHooks.useMutation<UpdateUserBasicInfoMutation, UpdateUserBasicInfoMutationVariables>(UpdateUserBasicInfoDocument, baseOptions);
+      }
+export type UpdateUserBasicInfoMutationHookResult = ReturnType<typeof useUpdateUserBasicInfoMutation>;
+export type UpdateUserBasicInfoMutationResult = ApolloReactCommon.MutationResult<UpdateUserBasicInfoMutation>;
+export type UpdateUserBasicInfoMutationOptions = ApolloReactCommon.BaseMutationOptions<UpdateUserBasicInfoMutation, UpdateUserBasicInfoMutationVariables>;
 export const UserDocument = gql`
     query User {
   me {
@@ -427,43 +532,39 @@ export function useUserLazyQuery(baseOptions?: ApolloReactHooks.LazyQueryHookOpt
 export type UserQueryHookResult = ReturnType<typeof useUserQuery>;
 export type UserLazyQueryHookResult = ReturnType<typeof useUserLazyQuery>;
 export type UserQueryResult = ApolloReactCommon.QueryResult<UserQuery, UserQueryVariables>;
-export const ProfileGeneralInfoDocument = gql`
-    query ProfileGeneralInfo {
+export const UserGeneralInfoDocument = gql`
+    query UserGeneralInfo {
   me {
     email
-    profile {
-      basicSection {
-        name
-        company
-        location
-        phoneNumber
-      }
-    }
+    name
+    company
+    location
+    phoneNumber
   }
 }
     `;
 
 /**
- * __useProfileGeneralInfoQuery__
+ * __useUserGeneralInfoQuery__
  *
- * To run a query within a React component, call `useProfileGeneralInfoQuery` and pass it any options that fit your needs.
- * When your component renders, `useProfileGeneralInfoQuery` returns an object from Apollo Client that contains loading, error, and data properties
+ * To run a query within a React component, call `useUserGeneralInfoQuery` and pass it any options that fit your needs.
+ * When your component renders, `useUserGeneralInfoQuery` returns an object from Apollo Client that contains loading, error, and data properties
  * you can use to render your UI.
  *
  * @param baseOptions options that will be passed into the query, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options;
  *
  * @example
- * const { data, loading, error } = useProfileGeneralInfoQuery({
+ * const { data, loading, error } = useUserGeneralInfoQuery({
  *   variables: {
  *   },
  * });
  */
-export function useProfileGeneralInfoQuery(baseOptions?: ApolloReactHooks.QueryHookOptions<ProfileGeneralInfoQuery, ProfileGeneralInfoQueryVariables>) {
-        return ApolloReactHooks.useQuery<ProfileGeneralInfoQuery, ProfileGeneralInfoQueryVariables>(ProfileGeneralInfoDocument, baseOptions);
+export function useUserGeneralInfoQuery(baseOptions?: ApolloReactHooks.QueryHookOptions<UserGeneralInfoQuery, UserGeneralInfoQueryVariables>) {
+        return ApolloReactHooks.useQuery<UserGeneralInfoQuery, UserGeneralInfoQueryVariables>(UserGeneralInfoDocument, baseOptions);
       }
-export function useProfileGeneralInfoLazyQuery(baseOptions?: ApolloReactHooks.LazyQueryHookOptions<ProfileGeneralInfoQuery, ProfileGeneralInfoQueryVariables>) {
-          return ApolloReactHooks.useLazyQuery<ProfileGeneralInfoQuery, ProfileGeneralInfoQueryVariables>(ProfileGeneralInfoDocument, baseOptions);
+export function useUserGeneralInfoLazyQuery(baseOptions?: ApolloReactHooks.LazyQueryHookOptions<UserGeneralInfoQuery, UserGeneralInfoQueryVariables>) {
+          return ApolloReactHooks.useLazyQuery<UserGeneralInfoQuery, UserGeneralInfoQueryVariables>(UserGeneralInfoDocument, baseOptions);
         }
-export type ProfileGeneralInfoQueryHookResult = ReturnType<typeof useProfileGeneralInfoQuery>;
-export type ProfileGeneralInfoLazyQueryHookResult = ReturnType<typeof useProfileGeneralInfoLazyQuery>;
-export type ProfileGeneralInfoQueryResult = ApolloReactCommon.QueryResult<ProfileGeneralInfoQuery, ProfileGeneralInfoQueryVariables>;
+export type UserGeneralInfoQueryHookResult = ReturnType<typeof useUserGeneralInfoQuery>;
+export type UserGeneralInfoLazyQueryHookResult = ReturnType<typeof useUserGeneralInfoLazyQuery>;
+export type UserGeneralInfoQueryResult = ApolloReactCommon.QueryResult<UserGeneralInfoQuery, UserGeneralInfoQueryVariables>;

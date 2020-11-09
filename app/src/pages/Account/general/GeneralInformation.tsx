@@ -1,19 +1,20 @@
-import Input from 'components/forms/Input';
 import cx from 'classnames';
 import React, { Fragment, useEffect, useState } from 'react';
-import { Controller, useForm } from 'react-hook-form';
+import { useForm } from 'react-hook-form';
 
 import accountStyles from '../AccountPage.module.css';
-import { useProfileGeneralInfoQuery } from '_generated/graphql.output';
+import { useUserGeneralInfoQuery, useUpdateUserBasicInfoMutation } from '_generated/graphql.output';
 import styles from './GeneralInformation.module.css';
 import PasswordSettingsForm from './PasswordSettingsForm';
 import ChangeEmailModal from './ChangeEmailModal';
+import { showErrorSnackbar, showSnackbar } from 'libs/snackbar';
+import ControllerInput from 'components/forms/ControllerInput';
 
 interface IFormInputs {
-  name: string;
-  company: string;
-  location: string;
-  phoneNumber: string;
+  name: string | null;
+  company: string | null;
+  location: string | null;
+  phoneNumber: string | null;
 }
 
 const defaultValues = {
@@ -24,20 +25,43 @@ const defaultValues = {
 };
 
 const GeneralInformation = () => {
-  const { data, loading: isProfileLoading } = useProfileGeneralInfoQuery();
+  const { data, loading: isProfileLoading } = useUserGeneralInfoQuery();
   const [isEditEmailModalOpen, setIsEditEmailModalOpen] = useState(false);
 
-  const { control: controlBasic, setValue } = useForm<IFormInputs>({ defaultValues: defaultValues });
+  const {
+    control: controlBasic,
+    setValue,
+    reset,
+    watch,
+    formState: { isDirty }
+  } = useForm<IFormInputs>({
+    defaultValues: defaultValues,
+    mode: 'onBlur'
+  });
   const [isEditing, setIsEditing] = useState(false);
+
+  const [updateBasicInfo] = useUpdateUserBasicInfoMutation();
+  const values = watch();
 
   useEffect(() => {
     if (isEditing) {
-      Object.keys(defaultValues).forEach(key => setValue(key, (data?.me.profile.basicSection as any)[key]));
+      Object.keys(defaultValues).forEach(key => setValue(key, (data?.me as any)[key]));
     }
   }, [isEditing]);
 
-  const handleBlur = () => (e: any) => {
-    // TODO Save
+  const handleBlur = (label: string) => (event: React.FocusEvent<HTMLInputElement>) => {
+    const { name, value } = event.currentTarget;
+
+    if (!isDirty) return;
+
+    updateBasicInfo({
+      variables: {
+        info: { [name]: value }
+      }
+    })
+      .then(() => showSnackbar(`${label} has been updated`))
+      .catch(() => showErrorSnackbar('Error occured while updating'))
+      .finally(() => reset(values));
   };
 
   if (isProfileLoading) return null;
@@ -64,64 +88,60 @@ const GeneralInformation = () => {
         <div className="leading-loose ">
           <span className={cx(accountStyles.textStrong, accountStyles.textInfoLabel)}>Name</span>
           {!isEditing ? (
-            <span className={accountStyles.textWeak}>{data?.me.profile.basicSection.name}</span>
+            <span className={accountStyles.textWeak}>{data?.me.name}</span>
           ) : (
-            <Controller
-              as={Input}
+            <ControllerInput
               name="name"
+              control={controlBasic}
               type="text"
               wrapperClassName={styles.inputWrapper}
               marginBottom={3}
-              control={controlBasic}
-              onBlur={handleBlur}
+              onBlur={handleBlur('Name')}
             />
           )}
         </div>
         <div className="leading-loose ">
           <span className={cx(accountStyles.textStrong, accountStyles.textInfoLabel)}>Company</span>
           {!isEditing ? (
-            <span className={accountStyles.textWeak}>{data?.me.profile.basicSection.company}</span>
+            <span className={accountStyles.textWeak}>{data?.me.company}</span>
           ) : (
-            <Controller
-              as={Input}
+            <ControllerInput
               name="company"
+              control={controlBasic}
               type="text"
               wrapperClassName={styles.inputWrapper}
               marginBottom={3}
-              control={controlBasic}
-              onBlur={handleBlur}
+              onBlur={handleBlur('Company')}
             />
           )}
         </div>
         <div className="leading-loose ">
           <span className={cx(accountStyles.textStrong, accountStyles.textInfoLabel)}>Location</span>
           {!isEditing ? (
-            <span className={accountStyles.textWeak}>{data?.me.profile.basicSection.location}</span>
+            <span className={accountStyles.textWeak}>{data?.me.location}</span>
           ) : (
-            <Controller
-              as={Input}
+            <ControllerInput
               name="location"
+              control={controlBasic}
               type="text"
               wrapperClassName={styles.inputWrapper}
               marginBottom={3}
-              control={controlBasic}
-              onBlur={handleBlur}
+              onBlur={handleBlur('Location')}
             />
           )}
         </div>
         <div className="leading-loose ">
           <span className={cx(accountStyles.textStrong, accountStyles.textInfoLabel)}>Phone Number</span>
           {!isEditing ? (
-            <span className={accountStyles.textWeak}>{data?.me.profile.basicSection.phoneNumber}</span>
+            <span className={accountStyles.textWeak}>{data?.me.phoneNumber}</span>
           ) : (
-            <Controller
-              as={Input}
+            <ControllerInput
               name="phoneNumber"
+              control={controlBasic}
               type="text"
               wrapperClassName={styles.inputWrapper}
               marginBottom={3}
-              control={controlBasic}
-              onBlur={handleBlur}
+              onBlur={handleBlur('Phone number')}
             />
           )}
         </div>

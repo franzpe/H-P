@@ -38,5 +38,5 @@ export class ChangePasswordInput {
   currentPassword: string;
 
   @Field()
-  newPassword: string
+  newPassword: string;
 }

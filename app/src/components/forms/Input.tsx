@@ -22,6 +22,7 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
       label,
       icon,
       onIconClick,
+      onBlur,
       placeholder = ' ',
       marginBottom = 6,
       ...restProps
@@ -46,6 +47,7 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
           id={id}
           placeholder={placeholder}
           className="block px-4 py-2 w-full text appearance-none focus:outline-none bg-transparent rounded-lg text-primary-2-shade placeholder-primary-1-tint"
+          onBlur={onBlur}
           {...restProps}
         />
         {label && (
@@ -66,7 +68,7 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
           </span>
         )}
         {icon && (
-          <span className="z-10 h-full leading-snug font-normal absolute text-center text-gray-400 absolute bg-transparent rounded text-base items-center justify-center w-8 right-0 pr-2 py-2 top-0">
+          <span className="z-10 h-full leading-snug font-normal text-center text-gray-400 absolute bg-transparent rounded text-base items-center justify-center w-8 right-0 pr-2 py-2 top-0">
             {onIconClick ? (
               <button onClick={onIconClick}>
                 <MaterialIcon>{icon}</MaterialIcon>
