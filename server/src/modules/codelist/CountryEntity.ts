@@ -9,9 +9,11 @@ export class Country extends BaseEntity {
   id: number;
 
   @Column('text')
+  @Field()
   code: string;
 
   @Column('text')
+  @Field()
   name: string;
 
   @Column('text')
