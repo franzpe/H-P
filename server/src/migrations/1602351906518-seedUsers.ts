@@ -1,14 +1,12 @@
-import {getRepository, MigrationInterface, QueryRunner} from "typeorm";
-import { createUserSeed } from "../modules/user/user.seed";
+import { MigrationInterface, QueryRunner } from 'typeorm';
+import { createUserSeed } from '../modules/user/user.seed';
+import { User } from '../modules/user/UserEntity';
 
 export class seedUsers1602351906518 implements MigrationInterface {
+  public async up(queryRunner: QueryRunner): Promise<void> {
+    const usersSeed = await createUserSeed();
+    await User.save(usersSeed);
+  }
 
-    public async up(queryRunner: QueryRunner): Promise<void> {
-        const usersSeed = await createUserSeed();
-        await getRepository('users').save(usersSeed)
-    }
-
-    public async down(queryRunner: QueryRunner): Promise<void> {
-    }
-
+  public async down(queryRunner: QueryRunner): Promise<void> {}
 }
