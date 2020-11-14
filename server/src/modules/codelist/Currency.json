@@ -1,0 +1,167 @@
+[
+  {
+    "id": "AUD",
+    "name": "AUD - Australian dollar",
+    "symbol": "AUD"
+  },
+  {
+    "id": "BGN",
+    "name": "BGN - Bulgarian Lev",
+    "symbol": "BGN"
+  },
+  {
+    "id": "BRL",
+    "name": "BRL - Brazilian Real",
+    "symbol": "BRL"
+  },
+  {
+    "id": "CAD",
+    "name": "CAD - Canadian Dollar",
+    "symbol": "CAD"
+  },
+  {
+    "id": "CNY",
+    "name": "CNY - Chinese Yuan Renminbi",
+    "symbol": "CNY"
+  },
+  {
+    "id": "CZK",
+    "name": "CZK - Czech Krone",
+    "symbol": "Kc"
+  },
+  {
+    "id": "DKK",
+    "name": "DKK - Danish Krone",
+    "symbol": "DKK"
+  },
+  {
+    "id": "EUR",
+    "name": "EUR - Euro",
+    "symbol": "€"
+  },
+  {
+    "id": "GBP",
+    "name": "GBP - Pound Sterling",
+    "symbol": "GBP"
+  },
+  {
+    "id": "HKD",
+    "name": "HKD - Hong Kong Dollar",
+    "symbol": "HKD"
+  },
+  {
+    "id": "HRK",
+    "name": "HRK - Croatian Kuna",
+    "symbol": "HRK"
+  },
+  {
+    "id": "HUF",
+    "name": "HUF - Forint",
+    "symbol": "HUF"
+  },
+  {
+    "id": "CHF",
+    "name": "CHF - Swiss Franc",
+    "symbol": "CHF"
+  },
+  {
+    "id": "IDR",
+    "name": "IDR - Indonesian Rupiah",
+    "symbol": "IDR"
+  },
+  {
+    "id": "ILS",
+    "name": "ILS - Israeli Shekel",
+    "symbol": "ILS"
+  },
+  {
+    "id": "INR",
+    "name": "INR - Indian Rupee",
+    "symbol": "INR"
+  },
+  {
+    "id": "ISK",
+    "name": "ISK - Islandic Krona",
+    "symbol": "ISK"
+  },
+  {
+    "id": "JPY",
+    "name": "JPY - Yen",
+    "symbol": "JPY"
+  },
+  {
+    "id": "KRW",
+    "name": "KRW - South Korean Won",
+    "symbol": "KRW"
+  },
+  {
+    "id": "MXN",
+    "name": "MXN - Mexican Peso",
+    "symbol": "MXN"
+  },
+  {
+    "id": "MYR",
+    "name": "MYR - Malaysian Ringgit",
+    "symbol": "MYR"
+  },
+  {
+    "id": "NOK",
+    "name": "NOK - Norwegian Krone",
+    "symbol": "NOK"
+  },
+  {
+    "id": "NZD",
+    "name": "NZD - New Zealand Dollar",
+    "symbol": "NZD"
+  },
+  {
+    "id": "PHP",
+    "name": "PHP - Philippine Peso",
+    "symbol": "PHP"
+  },
+  {
+    "id": "PLN",
+    "name": "PLN - Zloty",
+    "symbol": "PLN"
+  },
+  {
+    "id": "RON",
+    "name": "RON - Romanian Leu",
+    "symbol": "RON"
+  },
+  {
+    "id": "RUB",
+    "name": "RUB - Russian Ruble",
+    "symbol": "RUB"
+  },
+  {
+    "id": "SEK",
+    "name": "SEK - Swedish Krona",
+    "symbol": "SEK"
+  },
+  {
+    "id": "SGD",
+    "name": "SGD - Singapore Dollar",
+    "symbol": "SGD"
+  },
+  {
+    "id": "THB",
+    "name": "THB - Thai Baht",
+    "symbol": "THB"
+  },
+  {
+    "id": "TRY",
+    "name": "TRY - Turkish Lira",
+    "symbol": "TRY"
+  },
+  {
+    "id": "USD",
+    "name": "USD - US Dollar",
+    "symbol": "$"
+  },
+  {
+    "id": "ZAR",
+    "name": "ZAR - South African Rand",
+    "symbol": "ZAR"
+  }
+]

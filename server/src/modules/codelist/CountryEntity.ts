@@ -1,6 +1,5 @@
 import { BaseEntity, Entity, PrimaryGeneratedColumn, Column, JoinColumn, OneToOne, ManyToOne } from 'typeorm';
 import { ObjectType, Field, Int } from 'type-graphql';
-import { Currency } from './CurrencyEntity';
 
 @ObjectType()
 @Entity('country')
