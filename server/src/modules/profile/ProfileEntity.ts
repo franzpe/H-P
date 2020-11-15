@@ -1,6 +1,7 @@
 import { BaseEntity, Column, Entity, JoinColumn, OneToOne, PrimaryGeneratedColumn } from 'typeorm';
-import { ObjectType, Field, Int } from 'type-graphql';
+import { ObjectType, Field, Int, Root } from 'type-graphql';
 import { Address } from '../common/address/AddressEntity';
+import { Lazy } from '../../utils';
 
 @ObjectType()
 @Entity('profile')
@@ -11,18 +12,30 @@ export class Profile extends BaseEntity {
 
   @Column('varchar')
   @Field({ nullable: true })
-  name: string;
+  firstName: string;
+
+  @Column('varchar')
+  @Field({ nullable: true })
+  lastName: string;
 
   @Column('varchar')
   @Field({ nullable: true })
   company: string;
 
-  @OneToOne(() => Address)
+  @OneToOne(type => Address, address => address.id, { lazy: true })
+  @Field(type => Address)
   @JoinColumn()
-  @Field({ nullable: true })
-  address: Address;
+  address: Lazy<Address>;
 
   @Column('varchar')
   @Field({ nullable: true })
   phoneNumber?: string;
+
+  /**
+   * Computed fields
+   */
+  @Field(() => String)
+  fullName(@Root() profile: Profile) {
+    return profile.firstName + ' ' + profile.lastName;
+  }
 }

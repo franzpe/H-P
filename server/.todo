@@ -9,10 +9,9 @@ LOGGING:
 		☐ great error tracking system, very good for production
 		☐ capture errors from frondend or backend
 
-AUTHENTICATION:
-	✔ revoke refresh token @done(20-05-26 19:16)
-	✔ logout @done(20-05-26 19:16)
-
 CHECK:
-	☐ TypeORM with TypeGraphQL https://typegraphql.com/
 	☐ Sentry error tracking sentry.io
+	☐ Dependency injection for TypeORM https://www.youtube.com/watch?v=5YYsfkl2UCM&list=PLN3n1USn4xlma1bBu3Tloe4NyYn9Ko8Gs&index=14&ab_channel=BenAwad
+	
+BEFORE PRODUCTION:
+	☐ Implement graphql-query-complexity https://www.youtube.com/watch?v=mgxNeYjHbsI&list=PLN3n1USn4xlma1bBu3Tloe4NyYn9Ko8Gs&index=13&ab_channel=BenAwad

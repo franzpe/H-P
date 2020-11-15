@@ -3,9 +3,9 @@ import { UserBasicInfoUpdateInput } from './userTypes';
 
 const me = async (userId: number) => {
   const user = await User.findOne({
-    where: { id: userId },
-    relations: ['profile', 'profile.address', 'profile.address.country']
+    where: { id: userId }
   });
+
   return user;
 };
 

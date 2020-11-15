@@ -1,6 +1,7 @@
 import { BaseEntity, Entity, PrimaryGeneratedColumn, Column, PrimaryColumn, ManyToOne, JoinColumn } from 'typeorm';
 import { Field, ObjectType } from 'type-graphql';
 import { Country } from '../../codelist/CountryEntity';
+import { Lazy } from '../../../utils';
 
 @ObjectType()
 @Entity('address')
@@ -25,8 +26,7 @@ export class Address extends BaseEntity {
   @Column('varchar', { nullable: true })
   postalCode: string;
 
-  @ManyToOne(() => Country, type => type.id)
-  @JoinColumn()
-  @Field()
-  country: Country;
+  @ManyToOne(() => Country, type => type.id, { lazy: true })
+  @Field(type => Country)
+  country: Lazy<Country>;
 }

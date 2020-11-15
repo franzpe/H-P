@@ -1,6 +1,7 @@
 import { BaseEntity, Entity, PrimaryGeneratedColumn, Column, OneToOne, JoinColumn } from 'typeorm';
 import { ObjectType, Field, Int } from 'type-graphql';
 import { Profile } from '../profile/ProfileEntity';
+import { Lazy } from '../../utils';
 
 @ObjectType()
 @Entity('users')
@@ -50,8 +51,8 @@ export class User extends BaseEntity {
   @Field({ nullable: true })
   phoneNumber?: string;
 
-  @OneToOne(() => Profile)
+  @OneToOne(() => Profile, { lazy: true })
   @JoinColumn()
-  @Field()
-  profile: Profile;
+  @Field(() => Profile)
+  profile: Lazy<Profile>;
 }

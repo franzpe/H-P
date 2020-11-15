@@ -46,3 +46,5 @@ export const generatePassword = (length: number, an?: 'a' | 'n') => {
 
   return str;
 };
+
+export type Lazy<T extends object> = Promise<T> | T;
