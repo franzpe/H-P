@@ -1,6 +1,6 @@
-import { BaseEntity, Entity, PrimaryGeneratedColumn, Column, OneToOne, JoinColumn } from 'typeorm';
+import { BaseEntity, Column, Entity, JoinColumn, OneToOne, PrimaryGeneratedColumn } from 'typeorm';
 import { ObjectType, Field, Int } from 'type-graphql';
-import { BasicSection } from './sections/BasicSectionEntity';
+import { Address } from '../common/address/AddressEntity';
 
 @ObjectType()
 @Entity('profile')
@@ -9,9 +9,20 @@ export class Profile extends BaseEntity {
   @PrimaryGeneratedColumn()
   id: number;
 
-	@OneToOne(type => BasicSection) 
-	@JoinColumn()
-	@Field()
-	basicSection: BasicSection
-}
+  @Column('varchar')
+  @Field({ nullable: true })
+  name: string;
 
+  @Column('varchar')
+  @Field({ nullable: true })
+  company: string;
+
+  @OneToOne(() => Address)
+  @JoinColumn()
+  @Field({ nullable: true })
+  address: Address;
+
+  @Column('varchar')
+  @Field({ nullable: true })
+  phoneNumber?: string;
+}

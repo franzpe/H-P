@@ -50,7 +50,7 @@ export class User extends BaseEntity {
   @Field({ nullable: true })
   phoneNumber?: string;
 
-  @OneToOne(type => Profile)
+  @OneToOne(() => Profile)
   @JoinColumn()
   @Field()
   profile: Profile;

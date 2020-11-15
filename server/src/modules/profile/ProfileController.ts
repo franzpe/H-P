@@ -1,20 +1,22 @@
-import { BasicSectionInput } from './profileTypes';
-import { BasicSection } from './sections/BasicSectionEntity';
+import { Profile } from './ProfileEntity';
 
-const updateBasicSection = async (data: BasicSectionInput) => {
-  const basicSection = await BasicSection.findOne({
+const updateProfile = async (data: any) => {
+  /**
+   * TODO
+   **/
+  const profile = await Profile.findOne({
     where: { id: data.id }
   });
 
-  if (!basicSection) {
+  if (!profile) {
     throw new Error('Could not find section');
   }
 
-  await BasicSection.save({ ...basicSection, ...data } as BasicSection);
+  await Profile.save({ ...profile, ...data } as Profile);
 
   return true;
 };
 
 export default {
-  updateBasicSection
+  updateProfile
 };
