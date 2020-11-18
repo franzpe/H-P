@@ -7,6 +7,7 @@ import { applyMiddleware, applyRoutes } from './utils';
 import middleware from './middleware';
 import { routes, resolvers } from './modules';
 import errorHandlers from './middleware/errorHandlers';
+import { container } from 'tsyringe';
 
 export default class Server {
   private _app: Express;
@@ -23,13 +24,14 @@ export default class Server {
 
   private setupRest = () => {
     applyMiddleware(middleware, this._app);
-    applyRoutes(routes, this._app, '/api/v1');
+    applyRoutes(routes(), this._app, '/api/v1');
   };
 
   private setupGraphql = async () => {
     const apolloServer = new ApolloServer({
       schema: await buildSchema({
-        resolvers: resolvers
+        resolvers: resolvers,
+        container: { get: c => container.resolve(c as any) }
       }),
       context: ({ req, res }) => ({ req, res })
     });

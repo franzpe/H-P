@@ -1,4 +1,4 @@
-import languages from './Language.json';
+import languages from './language.json';
 
 export const createLanguageSeed = () => {
   return languages;

@@ -1,6 +1,6 @@
 import { BaseEntity, Entity, PrimaryGeneratedColumn, Column, OneToOne, JoinColumn } from 'typeorm';
 import { ObjectType, Field, Int } from 'type-graphql';
-import { Profile } from '../profile/ProfileEntity';
+import { Profile } from '../profile/profile.model';
 import { Lazy } from '../../utils';
 
 @ObjectType()
@@ -35,19 +35,19 @@ export class User extends BaseEntity {
   @Column('int', { default: 0 })
   tokenVersion: number;
 
-  @Column('text')
+  @Column({ nullable: true })
   @Field({ nullable: true })
-  name: string;
+  name?: string;
 
-  @Column('text')
+  @Column({ nullable: true })
   @Field({ nullable: true })
-  company: string;
+  company?: string;
 
-  @Column('text')
+  @Column({ nullable: true })
   @Field({ nullable: true })
-  location: string;
+  location?: string;
 
-  @Column('text')
+  @Column({ nullable: true })
   @Field({ nullable: true })
   phoneNumber?: string;
 

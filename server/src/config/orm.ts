@@ -10,15 +10,15 @@ const ormOptions: ConnectionOptions = {
   database: 'hackers_and_painters',
   synchronize: config.env === config.dev,
   logging: false,
-  entities: ['dist/**/*Entity.js'],
-  migrations: ['dist/migrations/**/*.js'],
-  subscribers: ['dist/subscriber/**/*.js'],
+  entities: ['dist/**/*.model.{js,ts}', 'dist/**/*.repository.{js,ts}'],
+  migrations: ['dist/migrations/**/*.{js,ts}'],
+  subscribers: ['dist/subscriber/**/*.{js,ts}'],
   cli: {
-    entitiesDir: 'dist/**/*Entity.js',
+    entitiesDir: 'dist/**/*.model.js',
     migrationsDir: 'src/migrations',
     subscribersDir: 'src/subscriber'
   }
-} 
+};
 
 export = {
   ...ormOptions

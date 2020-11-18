@@ -4,14 +4,22 @@ import {
   ValidatorConstraint,
   ValidatorConstraintInterface
 } from 'class-validator';
-import { User } from '../../modules/user/UserEntity';
+import { inject, injectable } from 'tsyringe';
+import { Connection, Repository } from 'typeorm';
+import { User } from '../../modules/user/user.model';
 
+@injectable()
 @ValidatorConstraint({ async: true })
 export class IsEmailAlreadyExistsConstraint implements ValidatorConstraintInterface {
-  validate(email: string) {
-    return User.findOne({ where: { email } }).then(user => {
-      return user ? false : true;
-    });
+  private userRepository: Repository<User>;
+
+  constructor(@inject(Connection) connection: Connection) {
+    this.userRepository = connection.getRepository(User);
+  }
+
+  async validate(email: string) {
+    const user = await this.userRepository.findOne({ where: { email } });
+    return !!!user;
   }
 }
 

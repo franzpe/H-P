@@ -1,6 +1,6 @@
 import { MigrationInterface, QueryRunner } from 'typeorm';
-import { createCurrencySeed } from '../modules/codelist/currency.seed';
-import { Currency } from '../modules/codelist/CurrencyEntity';
+import { createCurrencySeed } from '../modules/codelist/currency/currency.seed';
+import { Currency } from '../modules/codelist/currency/currency.model';
 
 export class seedCurrency1605358863447 implements MigrationInterface {
   public async up(queryRunner: QueryRunner): Promise<void> {

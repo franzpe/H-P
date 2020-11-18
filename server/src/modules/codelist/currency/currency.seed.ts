@@ -1,4 +1,4 @@
-import currencies from './Currency.json';
+import currencies from './currency.json';
 
 export const createCurrencySeed = () => {
   return currencies;

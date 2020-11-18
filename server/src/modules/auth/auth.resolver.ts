@@ -1,9 +1,10 @@
 import { Query, Resolver, ObjectType, Field, Mutation, Arg, Ctx, Int, UseMiddleware } from 'type-graphql';
-import { User } from '../user/UserEntity';
-import authController from './authController';
+import { User } from '../user/user.model';
 import { Context } from '../../utils/Context';
-import { ChangePasswordInput, LoginInput, RegisterInput, ResetPasswordInput } from './authTypes';
+import { ChangePasswordInput, LoginInput, RegisterInput, ResetPasswordInput } from './auth.types';
 import { isAuth } from './auth';
+import { inject, injectable } from 'tsyringe';
+import AuthService from './auth.service';
 
 @ObjectType()
 class LoginResponse {
@@ -15,7 +16,9 @@ class LoginResponse {
 }
 
 @Resolver()
+@injectable()
 export class AuthResolver {
+  constructor(@inject(AuthService) private authService: AuthService) {}
   /**
    * QUERIES
    */
@@ -30,45 +33,44 @@ export class AuthResolver {
   @Mutation(() => Boolean)
   @UseMiddleware(isAuth)
   async revokeRefreshTokensForUser(@Arg('userId', () => Int) userId: number) {
-    return authController.revokeRefreshTokens(userId);
+    return this.authService.revokeRefreshTokens(userId);
   }
 
   @Mutation(() => LoginResponse)
   async login(@Arg('data') { email, password }: LoginInput, @Ctx() ctx: Context): Promise<LoginResponse> {
-    return authController.login(email, password, ctx);
+    return this.authService.login(email, password, ctx);
   }
 
   @Mutation(() => Boolean)
   @UseMiddleware(isAuth)
   async logout(@Ctx() { res }: Context) {
-    return authController.logout(res);
+    return this.authService.logout(res);
   }
 
   @Mutation(() => Boolean)
   async register(@Arg('data') { email, password }: RegisterInput) {
-    return authController.register(email, password);
+    return this.authService.register(email, password);
   }
 
   @Mutation(() => Boolean)
   async forgotPassword(@Arg('email') email: string) {
-    return authController.forgotPassword(email);
+    return this.authService.forgotPassword(email);
   }
 
   @Mutation(() => Boolean)
   async resetPassword(@Arg('data') { token, password }: ResetPasswordInput) {
-    return authController.resetPassword(token, password);
+    return this.authService.resetPassword(token, password);
   }
 
   @Mutation(() => Boolean)
   @UseMiddleware(isAuth)
   async changeEmailRequest(@Arg('email') email: string, @Ctx() { payload }: Context) {
-    console.log(payload);
-    return authController.changeEmailRequest(email, payload!.userId);
+    return this.authService.changeEmailRequest(email, payload!.userId);
   }
 
   @Mutation(() => Boolean)
   async changeEmail(@Arg('token') token: string) {
-    return authController.changeEmail(token);
+    return this.authService.changeEmail(token);
   }
 
   @Mutation(() => Boolean)
@@ -77,6 +79,6 @@ export class AuthResolver {
     @Arg('data') { currentPassword, newPassword }: ChangePasswordInput,
     @Ctx() { payload }: Context
   ) {
-    return authController.changePassword(currentPassword, newPassword, payload!.userId);
+    return this.authService.changePassword(currentPassword, newPassword, payload!.userId);
   }
 }

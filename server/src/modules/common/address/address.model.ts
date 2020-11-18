@@ -1,6 +1,6 @@
 import { BaseEntity, Entity, PrimaryGeneratedColumn, Column, PrimaryColumn, ManyToOne, JoinColumn } from 'typeorm';
 import { Field, ObjectType } from 'type-graphql';
-import { Country } from '../../codelist/CountryEntity';
+import { Country } from '../../codelist/country/country.model';
 import { Lazy } from '../../../utils';
 
 @ObjectType()

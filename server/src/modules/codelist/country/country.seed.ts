@@ -1,4 +1,4 @@
-import countries from './Country.json';
+import countries from './country.json';
 
 export const createCountrySeed = () => {
   return countries;

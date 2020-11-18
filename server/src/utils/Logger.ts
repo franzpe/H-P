@@ -1,8 +1,10 @@
+import { singleton } from 'tsyringe';
 import winston from 'winston';
 import 'winston-daily-rotate-file';
 import winstonOptions from '../config/winston';
 
-class Logger {
+@singleton()
+export class Logger {
   private _instance: winston.Logger;
 
   constructor() {

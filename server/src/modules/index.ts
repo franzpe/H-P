@@ -1,12 +1,18 @@
+import { container } from 'tsyringe';
 import searchRoutes from './search/routes';
-import authRoutes from './auth/routes';
-import { AuthResolver } from './auth/AuthResolver';
-import { UserResolver } from './user/UserResolver';
+import { AuthResolver } from './auth/auth.resolver';
+import { UserResolver } from './user/user.resolver';
 import { NonEmptyArray } from 'type-graphql';
-import { ProfileResolver } from './profile/ProfileResolver';
-import { CodelistResolver } from './codelist/CodelistResolver';
+import { ProfileResolver } from './profile/profile.resolver';
+import { CodelistResolver } from './codelist/codelist.resolver';
+import AuthRouter from './auth/auth.router';
 
-export const routes = [...authRoutes, ...searchRoutes];
+export const routes = () => {
+  const authRouter = container.resolve(AuthRouter);
+
+  return [...authRouter.getRoutes(), ...searchRoutes];
+};
+
 export const resolvers: NonEmptyArray<Function> | NonEmptyArray<string> = [
   AuthResolver,
   UserResolver,

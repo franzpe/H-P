@@ -1,6 +1,6 @@
 import { BaseEntity, Column, Entity, JoinColumn, OneToOne, PrimaryGeneratedColumn } from 'typeorm';
 import { ObjectType, Field, Int, Root } from 'type-graphql';
-import { Address } from '../common/address/AddressEntity';
+import { Address } from '../common/address/address.model';
 import { Lazy } from '../../utils';
 
 @ObjectType()

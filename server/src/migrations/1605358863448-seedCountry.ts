@@ -1,6 +1,6 @@
 import { MigrationInterface, QueryRunner } from 'typeorm';
-import { createCountrySeed } from '../modules/codelist/country.seed';
-import { Country } from '../modules/codelist/CountryEntity';
+import { createCountrySeed } from '../modules/codelist/country/country.seed';
+import { Country } from '../modules/codelist/country/country.model';
 
 export class seedCountry1605358863448 implements MigrationInterface {
   public async up(queryRunner: QueryRunner): Promise<void> {
