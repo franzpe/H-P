@@ -39,16 +39,4 @@ export const collapseSection = (element, mark?: boolean) => {
   }
 };
 
-// document.querySelector('#toggle-button').addEventListener('click', function (e) {
-//   var section = document.querySelector('.collapsible');
-//   var isCollapsed = section.getAttribute('data-collapsed') === 'true';
-
-//   if (isCollapsed) {
-//     expandSection(section);
-//     section.setAttribute('data-collapsed', 'false');
-//   } else {
-//     collapseSection(section);
-//   }
-// });
-
 export default { collapseSection, expandSection };

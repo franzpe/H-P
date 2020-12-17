@@ -1,72 +1,150 @@
-import { Fragment } from 'react';
+import { Fragment, useState } from 'react';
 import cx from 'classnames';
+import { Carousel } from 'react-responsive-carousel';
 import Link from 'next/link';
 
 import MaterialIcon from '../components/MaterialIcon';
 import DiscoveryIcon from '../assets/images/svgs/component-6.svg';
 import WaveDesktop from '../assets/images/svgs/homepage-wave.svg';
-import Recruitersppl from '../assets/images/svgs/homepage-recruiters.svg';
 import WaveSvg from '../assets/images/svgs/wave.svg';
 import BrowserWindow from '../assets/images/browser-window@3x.png';
 import RecruiterDuoSvg from '../assets/images/svgs/recruiter-duo.svg';
 import SpotlightSvg from '../assets/images/svgs/spotlight.svg';
 
-import Wave1Tablet from '../assets/images/svgs/wave-1-tablet.svg';
 import Wave2Tablet from '../assets/images/svgs/wave-2-tablet.svg';
-import RecruitersTablet from '../assets/images/svgs/recruiters-tablet.svg';
 
 import WaveMobile from '../assets/images/svgs/subtract.svg';
-import RecruitersMobile from '../assets/images/svgs/recruiters-mobile.svg';
 import styles from './index.module.css';
+import MOV2 from '../assets/images/process.webm';
+import Gif2 from '../assets/images/process.gif';
+import logo1 from '../assets/images/logo-pomma.png';
+import logo2 from '../assets/images/logo-tim.png';
+import logo3 from '../assets/images/logo-ll.png';
+
+const References = () => {
+  const [currentSlide, setCurrentSlide] = useState(0);
+
+  const handleNext = () => {
+    setCurrentSlide(prev => prev + 1);
+  };
+
+  const handlePrevious = () => {
+    setCurrentSlide(prev => prev - 1);
+  };
+
+  const updateCurrentSlide = (index: number) => {
+    if (currentSlide !== index) {
+      setCurrentSlide(index);
+    }
+  };
+
+  return (
+    <div className="text-justify flex justify-center items-center space-x-2 md:space-x-6 lg:space-x-16">
+      <button
+        className="w-6 h-6 md:w-8 md:h-8 flex-shrink-0 bg-primary-1-tint hover:bg-primary-2-shade rounded-full flex items-center justify-center"
+        onClick={handlePrevious}
+      >
+        <MaterialIcon className="text-white text-xl md:text-2xl">arrow_back</MaterialIcon>
+      </button>
+      <Carousel
+        autoPlay={false}
+        onChange={updateCurrentSlide}
+        showThumbs={false}
+        selectedItem={currentSlide}
+        className="text-left max-w-85% md:max-w-2xl shadow-card-medium rounded-lg"
+        infiniteLoop={true}
+        showArrows={false}
+        showIndicators={false}
+        showStatus={false}
+      >
+        <div className="py-8 px-4 md:p-8 lg:p-16  text-xl  text-left">
+          <div className="text-primary-1-tint font-helvetica text-7xl leading-8 md:leading-10">“</div>
+          <h6 className="text-avenir text-primary-2-navy font-bold">
+            Our company had a very specific developer type in mind.
+          </h6>
+          <p className="text-lg md:text-xl text-primary-2-tint py-4 md:py-6">
+            We were able to use Hackers and Painters to find that person. As a company focused on diversity, it was
+            important for us to dig deeper than a person’s resume.
+          </p>
+          <p className="text-lg md:text-xl text-primary-2-navy font-medium">Hannah F.</p>
+          <p className="text-lg md:text-xl text-primary-2-tint">Pomma</p>
+        </div>
+        <div className="py-8 px-4 md:p-8 lg:p-16 text-xl  text-left">
+          <div className="text-primary-1-tint font-helvetica text-7xl leading-8 md:leading-10">“</div>
+          <h6 className="text-avenir text-primary-2-navy font-bold">
+            We used Hackers and Painter to source for candidates that we wouldn’t have otherwise found on LinkedIn.
+          </h6>
+          <p className="text-lg md:text-xl text-primary-2-tint py-4 md:py-6">
+            Our recruiting team mostly targets technical talent who don’t keep their LinkedIn profiles updated, so
+            it was important to find a tool that also sourced from other networks.
+          </p>
+          <p className="text-lg md:text-xl text-primary-2-navy font-medium">David B.</p>
+          <p className="text-lg md:text-xl text-primary-2-tint">TIM Group</p>
+        </div>
+        <div className="py-8 px-4 md:p-8 lg:p-16 text-xl  text-left">
+          <div className="text-primary-1-tint font-helvetica text-7xl leading-8 md:leading-10">“</div>
+          <h6 className="text-avenir text-primary-2-navy font-bold">
+            Hackers and Painters had great transparency into the portfolio work of candidates.
+          </h6>
+          <p className="text-lg md:text-xl text-primary-2-tint py-4 md:py-6">
+            Our focus included passive candidates in addition to active searchers, which are usually harder to
+            find. We were able to effectively reach out through H&P’s candidate portfolio insights.
+          </p>
+          <p className="text-lg md:text-xl text-primary-2-navy font-medium">Philip M.</p>
+          <p className="text-lg md:text-xl text-primary-2-tint">Luneta Labs</p>
+        </div>
+      </Carousel>
+      <button
+        className="w-6 h-6 md:w-8 md:h-8 flex-shrink-0 bg-primary-1-tint hover:bg-primary-2-shade rounded-full flex items-center justify-center"
+        onClick={handleNext}
+      >
+        <MaterialIcon className="text-white text-xl md:text-2xl">arrow_forward</MaterialIcon>
+      </button>
+    </div>
+  );
+};
 
 const Home = () => {
   return (
     <Fragment>
-      <section className="relative pt-4 md:pt-12 overflow-hidden" style={{ minHeight: 'calc(100vh - 80px)' }}>
-        <div className="max-w-screen-xxl mx-auto main-padding-x pt-4 relative z-10">
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl max-w-xl leading-snug font-bold">
-            Discover <span className="text-primary-3-shade">designers</span>,{' '}
-            <span className="text-primary-3-shade">developers</span>, &{' '}
-            <span className="text-primary-3-shade">data scientists</span>
-          </h1>
-          <p className="font-light text-primary-2-tint text-2xl my-10">
-            We help companies build entrepreneurially focused teams.
-          </p>
-          <Link href="#">
-            <button className="text-center py-3 px-10 font-medium text-white rounded-full bg-accent-orange mb-4 font-bold hover:bg-accent-shade">
-              Discover talent
-            </button>
-          </Link>
+      <section className="relative overflow-hidden" style={{ minHeight: 'calc(100vh - 80px)' }}>
+        <div
+          className="max-w-screen-xxl mx-auto flex items-center inner flex-col lg:flex-row text-center lg:text-left"
+          style={{ minHeight: 'calc(100vh - 80px)' }}
+        >
+          <div className="relative z-10 flex-1.2">
+            <h1 className="text-3xl sm:text-5xl lg:text-5xl max-w-xl leading-snug font-bold">
+              Discover <span className="text-primary-3-shade">designers</span>,{' '}
+              <span className="text-primary-3-shade">developers</span>, &{' '}
+              <span className="text-primary-3-shade">data scientists</span>
+            </h1>
+            <p className="font-light text-primary-2-tint text-xl md:text-2xl my-4 md:my-6 lg:my-10">
+              We help companies build entrepreneurially focused teams.
+            </p>
+            <Link href="#">
+              <button className="text-center py-2 px-6 md:py-3 md:px-10 font-medium text-white rounded-full bg-accent-orange mb-4 hover:bg-accent-shade text-sm md:text-base">
+                Discover talent
+              </button>
+            </Link>
+          </div>
+          <WaveDesktop
+            className="hidden lg:block opacity-50"
+            style={{ position: 'absolute', bottom: '0', left: '0', top: '0', height: '100%' }}
+            preserveAspectRatio="none"
+            width="100%"
+          />
+          <div className="flex max-w-screen-xxl mx-auto justify-center flex-2 lg:pl-16">
+            <video id="video" autoPlay={true} muted={true} loop={true} className="z-10" poster={Gif2}>
+              <source src={MOV2} type='video/webm; codecs="vp8, vorbis"' />
+            </video>
+          </div>
         </div>
-        <WaveDesktop
-          className="hidden lg:block"
-          style={{ position: 'absolute', bottom: '0', left: '0', top: '0', height: '100%' }}
-          preserveAspectRatio="none"
-          width="100%"
-        />
-        <Recruitersppl
-          className="hidden lg:block w-auto"
-          style={{ position: 'absolute', bottom: '0', top: '0', right: '8%', height: '100%' }}
-          preserveAspectRatio="xMaxYMin meet"
-        />
-        <Wave1Tablet
-          className="hidden md:block lg:hidden absolute bottom-0 left-0 right-0 top-0 w-full h-full -z-1"
-          preserveAspectRatio="none"
-        />
-        <RecruitersTablet
-          className="hidden md:block lg:hidden absolute bottom-0 left-0 right-0 w-95% h-full mx-auto"
-          preserveAspectRatio="xMidYMax meet"
-        />
         <WaveMobile
-          className="md:hidden"
+          className="lg:hidden"
           style={{ position: 'absolute', bottom: '0', left: '0', right: '0', top: '0' }}
           width="100%"
           height="100%"
           preserveAspectRatio="none"
-        />
-        <RecruitersMobile
-          className="md:hidden absolute bottom-0 left-0 right-0 w-60% h-full mx-auto"
-          preserveAspectRatio="xMidYMax meet"
         />
       </section>
       <section className="relative mb-12 lg:mb-10%">
@@ -91,8 +169,8 @@ const Home = () => {
           <div className="lg:ml-auto lg:max-w-xl">
             <h2 className="font-bold mb-6 sm:mb-6">Find hidden talent</h2>
             <p className="text-primary-2-tint text-lg sm:text-2xl font-thin">
-              Search the Hackers & Painters database of designers, developers, and data scientists. Take a closer
-              look at how we’ve gone about finding candidates off the beaten track.
+              Search the Hackers and Painters database for designers, developers, and data scientists. Take a
+              closer look at how we’ve gone about finding candidates off the beaten track.
             </p>
           </div>
         </div>
@@ -102,25 +180,25 @@ const Home = () => {
           <h2 className="font-bold mb-6 sm:mb-6">Our features</h2>
           <p className="text-primary-2-tint text-lg sm:text-2xl font-thin mb-12">
             Frustrated with sourcing through traditional networks? Take a look at what we do differently. We’re a
-            “show don’t tell” platform designed for you, to build your team. .
+            “show don’t tell” platform designed for you, to build your ideal team.
           </p>
           <ul className="md:flex space-x-8 mb-12">
             <li>
-              <h5 className="leading-snug font-bold mb-4">Create complex search filters</h5>
+              <h5 className="leading-snug font-bold mb-4">View candidate’s project portfolio</h5>
               <p className="text-primary-2-tint text-xl">
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit
+                Developer heat maps, designer case studies, data scientist’s datasets, and more
               </p>
             </li>
             <li>
-              <h5 className="leading-snug font-bold mb-4">Create complex search filters</h5>
+              <h5 className="leading-snug font-bold mb-4">Query multiple sources at once</h5>
               <p className="text-primary-2-tint text-xl">
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit
+                We aggregate from public profiles available on GitHub, Kaggle, Behance, and more
               </p>
             </li>
             <li>
-              <h5 className="leading-snug font-bold mb-4">Create complex search filters</h5>
+              <h5 className="leading-snug font-bold mb-4">Create search filters</h5>
               <p className="text-primary-2-tint text-xl">
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit
+                Get notified when a candidate fits your criteria. Build with diversity in mind
               </p>
             </li>
           </ul>
@@ -142,40 +220,18 @@ const Home = () => {
       </section>
       <section className="py-12 main-padding">
         <h2 className="font-bold mb-6 sm:mb-12 text-center">Trusted by clients everywhere</h2>
-        <div className="text-justify flex justify-center items-center space-x-2 md:space-x-8 lg:space-x-16">
-          <button className="w-6 h-6 md:w-8 md:h-8 flex-shrink-0 bg-primary-1-tint hover:bg-primary-2-shade rounded-full flex items-center justify-center">
-            <MaterialIcon className="text-white text-xl md:text-2xl">arrow_back</MaterialIcon>
-          </button>
-          <div className="py-8 px-4 md:p-8 lg:p-16 max-w-2xl shadow-card-medium rounded-lg text-xl">
-            <div className="text-primary-1-tint font-helvetica text-7xl leading-8 md:leading-10">“</div>
-            <h6 className="text-avenir text-primary-2-navy font-bold">
-              Our company fundamentally changed for the better after we started to use Hackers & Painters.
-            </h6>
-            <p className="text-lg md:text-xl text-primary-2-tint py-4 md:py-6">
-              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Numquam fugiat, sequi ex quia officia a
-              necessitatibus ab suscipit asperiores
-            </p>
-            <p className="text-lg md:text-xl text-primary-2-navy font-medium">John Doe</p>
-            <p className="text-lg md:text-xl text-primary-2-tint">Head of Recruting, Pomma</p>
-          </div>
-          <button className="w-6 h-6 md:w-8 md:h-8 flex-shrink-0 bg-primary-1-tint hover:bg-primary-2-shade rounded-full flex items-center justify-center">
-            <MaterialIcon className="text-white text-xl md:text-2xl">arrow_forward</MaterialIcon>
-          </button>
-        </div>
+        <References />
       </section>
-      <section className="py-12 flex justify-center main-padding">
-        <ul className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6 w-full md:w-auto">
-          <li className="text-primary-2-tint rounded-md text-lg md:text-xl inline-block border-1.5 border-primary-2-tint p-2 md:p-4">
-            LOGO PLACEH
+      <section className="pt-0 pb-6 flex justify-center main-padding">
+        <ul className="flex justify-center flex-wrap w-full md:w-auto md-py-8">
+          <li className="inline-flex items-center mx-2 md:mx-4 lg:mx-8 my-6 w-26% md:w-30% lg:w-64">
+            <img src={logo1} alt="logo" />
           </li>
-          <li className="text-primary-2-tint rounded-md text-lg md:text-xl inline-block border-1.5 border-primary-2-tint p-2 md:p-4">
-            LOGO PLACEH
+          <li className="inline-flex items-center mx-2 md:mx-4 lg:mx-8 my-6 w-26% md:w-30% lg:w-64">
+            <img src={logo2} alt="logo" />
           </li>
-          <li className="text-primary-2-tint rounded-md text-lg md:text-xl inline-block border-1.5 border-primary-2-tint p-2 md:p-4">
-            LOGO PLACEH
-          </li>
-          <li className="text-primary-2-tint rounded-md text-lg md:text-xl inline-block border-1.5 border-primary-2-tint p-2 md:p-4">
-            LOGO PLACEH
+          <li className="inline-flex items-center mx-2 md:mx-4 lg:mx-8 my-6 w-26% md:w-30% lg:w-64">
+            <img src={logo3} alt="logo" />
           </li>
         </ul>
       </section>
@@ -186,12 +242,14 @@ const Home = () => {
           <div className="space-x-4 md:space-x-8 flex md:block justify-center ">
             <Link href="/sign-up/waiting-list">
               <button className="text-center py-2 w-40 font-medium text-white text-sm md:text-base rounded-full bg-accent-orange hover:bg-accent-shade border border-accent-orange">
-                Sign up
+                Join waitlist
               </button>
             </Link>
-            <button className="text-center py-2 w-40 font-medium text-accent-orange text-sm md:text-base rounded-full border border-accent-orange hover:bg-primary-1-light">
-              View demo
-            </button>
+            <Link href="/contact">
+              <button className="text-center py-2 w-40 font-medium text-accent-orange text-sm md:text-base rounded-full border border-accent-orange hover:bg-primary-1-light">
+                Reach out
+              </button>
+            </Link>
           </div>
         </div>
       </section>

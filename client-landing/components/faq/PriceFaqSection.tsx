@@ -4,6 +4,7 @@ import PricingIcon from '../../assets/images/svgs/faq-pricing.svg';
 import FaqArticle from './FaqArticle';
 
 import styles from '../../pages/faq.module.css';
+import Link from 'next/link';
 
 interface Props {
   showTitle?: boolean;
@@ -18,31 +19,41 @@ const PriceFaqSection: FC<Props> = ({ showTitle = true }) => {
           <span className="align-middle"> Pricing & Plans</span>
         </div>
       )}
-      <FaqArticle key="5" header="Egestas sed tempus urna">
+      <FaqArticle key="5" header="What is Hackers and Painters’ pricing model?">
         <p className="pl-4 pb-5 text-primary-2-tint">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-          dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-          ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-          fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
-          mollit anim id est laborum.
+          We charge a monthly fee that is modular based on usage. To view fees, please visit our{' '}
+          <Link href="/pricing">
+            <a className="underline">Pricing page</a>
+          </Link>
+          .
         </p>
       </FaqArticle>
-      <FaqArticle key="6" header="Lorem ipsum dolor sit amet">
+      <FaqArticle key="6" header="What plan is the right one for me?">
         <p className="pl-4 pb-5 text-primary-2-tint">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-          dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-          ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-          fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
-          mollit anim id est laborum.
+          We suggest starting with our Pro tier and then adding or decreasing capacity depending on need.
         </p>
       </FaqArticle>
-      <FaqArticle key="7" header="Lorem dolor sed viverra ipsum">
+      <FaqArticle key="7" header="Do you offer a free trial?">
         <p className="pl-4 pb-5 text-primary-2-tint">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-          dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-          ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-          fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
-          mollit anim id est laborum.
+          We offer a money-back guarantee. If you are not happy with our service after two weeks of using it, we
+          will fully refund your subscription amount.
+        </p>
+      </FaqArticle>
+      <FaqArticle key="8" header="How do I upgrade or cancel my subscription?">
+        <p className="pl-4 pb-5 text-primary-2-tint">
+          This can be done at any time under the settings tab in your profile.
+        </p>
+      </FaqArticle>
+      <FaqArticle key="9" header="Is there any flexibility on pricing?">
+        <p className="pl-4 pb-5 text-primary-2-tint">
+          We feel our product is priced fairly, but are glad to accommodate enterprise level accounts with bulk
+          pricing.
+        </p>
+      </FaqArticle>
+      <FaqArticle key="10" header="Does viewing the same profile twice count against my monthly/year view limits?">
+        <p className="pl-4 pb-5 text-primary-2-tint">
+          View counts reset monthly. Recruiters are able to track how many candidates they’ve viewed in their
+          personal dashboard.
         </p>
       </FaqArticle>
     </Fragment>

@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React, { Fragment, useState } from 'react';
 import axios from 'axios';
 import Input from '../../components/forms/Input';
 import * as yup from 'yup';
@@ -6,11 +6,11 @@ import { Controller, useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers';
 import { useRouter } from 'next/router';
 import qs from 'querystring';
+import Link from 'next/link';
 
 interface IFormInputs {
   name: string;
   email: string;
-  isNewsletterChecked: boolean;
 }
 
 const schema = yup.object().shape({
@@ -19,19 +19,19 @@ const schema = yup.object().shape({
 
 const defaultValues = {
   name: '',
-  email: '',
-  isNewsletterChecked: false
+  email: ''
 };
 
 const WaitingList = () => {
-  const { handleSubmit, control, errors, register } = useForm<IFormInputs>({
+  const { handleSubmit, control, errors } = useForm<IFormInputs>({
     defaultValues,
     resolver: yupResolver(schema)
   });
+  const [subscribeError, setSubscribeError] = useState('');
   const router = useRouter();
 
   const handleValidFormSubmit = async (data: IFormInputs) => {
-    const waitingListRequest = axios.post(
+    const res = await axios.post(
       'https://www.lunetalabs.com/sendy/subscribe',
       qs.stringify({
         api_key: 'Ccb7TPCDWj572g2JtZlx',
@@ -42,21 +42,10 @@ const WaitingList = () => {
       })
     );
 
-    let newsletterRequest = null;
-    if (data.isNewsletterChecked) {
-      newsletterRequest = axios.post(
-        'https://www.lunetalabs.com/sendy/subscribe',
-        qs.stringify({
-          api_key: 'Ccb7TPCDWj572g2JtZlx',
-          list: '9vMQgdw7ujANN9wgDCuyOw',
-          name: data.name,
-          email: data.email,
-          boolean: true
-        })
-      );
+    if (res.data !== 1) {
+      setSubscribeError(res.data);
+      return;
     }
-
-    await Promise.all([waitingListRequest, newsletterRequest]);
 
     router.push('/sign-up/waiting-list-subscribed');
   };
@@ -65,6 +54,7 @@ const WaitingList = () => {
     <Fragment>
       <h3 className="text-center font-semibold mb-20 text-2xl md:text-4xl">Sign up for waiting list</h3>
       <div className="max-w-sm mx-auto">
+        {subscribeError && <div className="text-error font-bold text-center mb-4">{subscribeError}</div>}
         <form onSubmit={handleSubmit(handleValidFormSubmit)}>
           <Controller
             as={Input}
@@ -83,12 +73,14 @@ const WaitingList = () => {
             wrapperClassName="w-full"
             error={errors.email?.message}
           />
-          <label className="flex items-center -mt-2">
-            <input name="isNewsletterChecked" ref={register} type="checkbox" className="form-checkbox" />
-            <span className="ml-2 text-sm text-primary-2-tint">
-              Send me <b>Hackers & Painters</b> news, events and offers
-            </span>
-          </label>
+          <p className="text-xs">
+            After signing up for waiting list, you will also receive occasional surveys, newsletters and special
+            offers from Hackers & Painters via email. We will not sell or distribute your email address to any
+            third party at any time. View our{' '}
+            <Link href="/privacy-policy">
+              <a className="underline font-semibold hover:opacity-75">Privacy Policy</a>
+            </Link>
+          </p>
           <button className="block w-full text-center py-2 font-medium text-white rounded-full bg-accent-orange mt-8 mb-6 hover:bg-accent-shade">
             Sign up
           </button>

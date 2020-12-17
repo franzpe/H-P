@@ -48,3 +48,17 @@ button:focus {
     @apply px-8 py-12;
   }
 }
+
+/* Slider overrides */
+.slider .slide {
+  background: transparent !important;
+}
+
+/* Timeline overrideds */
+.events-wrapper {
+  /* overflow: visible !important; */
+}
+
+.timeline .buttons svg:not(:hover) {
+  fill: rgb(223, 223, 223) !important;
+}

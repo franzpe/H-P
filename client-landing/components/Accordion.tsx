@@ -24,7 +24,7 @@ class Accordion extends React.Component<{}, State> {
     };
   }
 
-  static Header: React.FC<Pick<any, Exclude<keyof any, keyof AccordionChildProps>>> = ({
+  static Header: React.FC<Pick<any, Exclude<any, keyof AccordionChildProps>>> = ({
     children,
     isCollapsed,
     onHeaderClick,

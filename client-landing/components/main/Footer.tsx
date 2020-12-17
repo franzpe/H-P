@@ -37,7 +37,7 @@ const Footer = () => {
             </li>
           </ul>
         </div>
-        <div>
+        {/* <div>
           <ul>
             <li className="font-medium py-2">Discover Talent</li>
             <li className="py-2">
@@ -56,7 +56,7 @@ const Footer = () => {
               </Link>
             </li>
           </ul>
-        </div>
+        </div> */}
         <div>
           <ul>
             <li className="font-medium py-2">Help & Support</li>
@@ -99,20 +99,14 @@ const Footer = () => {
         </div>
       </div>
       <div className="text-xs">
-        © Hackers & Painters™, 2020. All rights reserved |{' '}
-        <Link href="/terms-of-service">
+        © Hackers & Painters, 2020. All rights reserved |{' '}
+        <Link href="/terms-of-use">
           <a className="border-b border-transparent hover:border-primary-2-shade">Terms</a>
         </Link>{' '}
         |{' '}
         <Link href="/privacy-policy">
           <a className="border-b border-transparent hover:border-primary-2-shade">Privacy Policy</a>
-        </Link>{' '}
-        |{' '}
-        <Link href="/cookies-policy">
-          <a className="border-b border-transparent hover:border-primary-2-shade">Cookies Policy</a>
-        </Link>{' '}
-        <br />
-        Company Registration Number: 12345678
+        </Link>
       </div>
     </footer>
   );

@@ -4,9 +4,9 @@ import cx from 'classnames';
 
 import { getLayout } from '../../../components/layouts/SiteLayout';
 
-import DesignerImage from '../../assets/images/svgs/designer.svg';
-import DeveloperImage from '../../assets/images/svgs/developer.svg';
-import ScientistImage from '../../assets/images/svgs/data-scientist.svg';
+import DesignerImage from '../../../assets/images/svgs/designer.svg';
+import DeveloperImage from '../../../assets/images/svgs/developer.svg';
+import ScientistImage from '../../../assets/images/svgs/data-scientist.svg';
 import styles from './activation-complete.module.css';
 
 enum Expertise {

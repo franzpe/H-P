@@ -4,48 +4,41 @@ import MoreIcon from '../../assets/images/svgs/faq-more.svg';
 import FaqArticle from './FaqArticle';
 
 import styles from '../../pages/faq.module.css';
+import Link from 'next/link';
 
 const MoreFaqSection = () => {
   return (
     <Fragment>
       <div className={styles.title}>
         <MoreIcon width={25} height={25} className="inline-block mr-2" />{' '}
-        <span className="align-middle"> More</span>
+        <span className="align-middle">More</span>
       </div>
-      <FaqArticle header="Egestas sed tempus urna">
+      <FaqArticle header="How do you deal with data privacy? ">
         <p className="pl-4 pb-5 text-primary-2-tint">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-          dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-          ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-          fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
-          mollit anim id est laborum.
+          We keep your sensitive information encrypted, we also use secure hypertext transfer protocol to use
+          secure communication over a computer network, Firewall and most recent OS security updates to ensure your
+          data is safe.
         </p>
       </FaqArticle>
-      <FaqArticle header="Lorem ipsum dolor sit amet">
+      <FaqArticle header="What do I do if a candidate’s contact information isn’t listed?">
         <p className="pl-4 pb-5 text-primary-2-tint">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-          dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-          ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-          fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
-          mollit anim id est laborum.
+          We do our best to provide the contact information of every candidate in our database. If any information
+          is missing, it likely means that the candidate has not completed their profile.
         </p>
       </FaqArticle>
-      <FaqArticle header="Lorem dolor sed viverra ipsum">
+      <FaqArticle header="What email tools do you integrate with?">
         <p className="pl-4 pb-5 text-primary-2-tint">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-          dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-          ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-          fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
-          mollit anim id est laborum.
+          We integrate with Gmail, Microsoft Outlook, and macOS mail.
         </p>
       </FaqArticle>
-      <FaqArticle header="Egestas sed tempus urna">
+      <FaqArticle header="A recruiter reached out to me and I wish to not be contacted.">
         <p className="pl-4 pb-5 text-primary-2-tint">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-          dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-          ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-          fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
-          mollit anim id est laborum.
+          We do our best to match available candidates with recruiters with open roles. If you would like to opt
+          out of being contacted by recruiters, please send us a message on our{' '}
+          <Link href="/contact">
+            <a className="underline">Contact page</a>
+          </Link>
+          .
         </p>
       </FaqArticle>
     </Fragment>

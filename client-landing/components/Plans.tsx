@@ -80,7 +80,7 @@ const Plans: FC<Props> = ({ href }) => {
         </ul>
       </div>
       <div className="whitespace-no-wrap overflow-x-auto flex flex-1 ">
-        <div className="inline-block p-4 rounded-lg  shadow-card hover:shadow-card-medium-hov text-center mx-2 ml-3 align-top w-40 my-3">
+        <div className="inline-block p-4 rounded-lg  shadow-card text-center mx-2 ml-3 align-top w-40 my-3">
           <ul>
             <li className="h-56">
               <h5 className="font-semibold mb-4">Starter</h5>
@@ -124,7 +124,7 @@ const Plans: FC<Props> = ({ href }) => {
             </li>
           </ul>
         </div>
-        <div className="inline-block p-4 rounded-lg border-1.5 border-accent-shade align-top shadow-card hover:shadow-card-medium-hov text-center mx-2 w-40 my-3">
+        <div className="inline-block p-4 rounded-lg border-1.5 border-accent-shade align-top shadow-card text-center mx-2 w-40 my-3">
           <ul>
             <li className="h-56">
               <h5 className="font-semibold mb-4">Pro</h5>
@@ -172,7 +172,7 @@ const Plans: FC<Props> = ({ href }) => {
             </li>
           </ul>
         </div>
-        <div className="inline-block p-4 rounded shadow-card hover:shadow-card-medium-hov text-center align-top mx-2 w-40 my-3">
+        <div className="inline-block p-4 rounded shadow-card text-center align-top mx-2 w-40 my-3">
           <ul>
             <li className="h-56">
               <h5 className="font-semibold mb-4">Growth</h5>
@@ -224,7 +224,7 @@ const Plans: FC<Props> = ({ href }) => {
             </li>
           </ul>
         </div>
-        <div className="inline-block p-4 rounded shadow-card hover:shadow-card-medium-hov text-center ml-2 align-top w-40 mr-2 my-3">
+        <div className="inline-block p-4 rounded shadow-card text-center ml-2 align-top w-40 mr-2 my-3">
           <ul>
             <li className="h-56 flex flex-col">
               <h5 className="font-semibold mb-4">Enterprise</h5>

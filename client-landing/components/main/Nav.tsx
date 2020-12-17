@@ -35,8 +35,8 @@ const Nav = () => {
       >
         <ul className="lg:flex items-center justify-between text-primary-2-shade pt-0">
           <li>
-            <Link href="#">
-              <a className="lg:p-4 pb-3 pt-0 px-0 block font-avenir">Search Database</a>
+            <Link href="/about">
+              <a className="lg:p-4 pb-3 pt-0 px-0 block font-avenir">About</a>
             </Link>
           </li>
           <li>
@@ -50,7 +50,7 @@ const Nav = () => {
             </Link>
           </li>
           <li className="inline-block">
-            <Link href="#">
+            <Link href="/sign-up/waiting-list">
               <a className="lg:ml-6 lg:p-4 py-3 px-0  text-primary-2-tint">Log in</a>
             </Link>
           </li>

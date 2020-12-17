@@ -11,7 +11,7 @@ const NotFoundPage = () => {
         <h1 className="font-bold text-4xl sm:text-5xl lg:text-7xl">404 Error</h1>
         <h2 className="text-primary-2-tint text-2xl sm:text-3xl md:text-4x lg:text-5xl">Something's missing.</h2>
         <h4 className="text-primary-2-tint text-lg sm:text-1xl md:text-2xl lg:text-3xl">
-          We can't seem to find the page you're looking for
+          We can't seem to find the page you're looking for.
         </h4>
         <div className="space-x-4 mt-8 whitespace-no-wrap">
           <Link href="/">

@@ -5,7 +5,7 @@ import Footer from '../main/Footer';
 import SiteHead from '../main/SiteHead';
 import { useRouter } from 'next/router';
 
-const fullySizedPages = ['/', '/about', '/terms-of-service', '/privacy-policy', '/cookies-policy'];
+const fullySizedPages = ['/', '/about', '/terms-of-use', '/privacy-policy', '/cookies-policy'];
 
 const SiteLayout = ({ children }) => {
   const router = useRouter();
