@@ -102,7 +102,7 @@ const Featuers = () => {
               that can show you what they’ve built, more than any resume can.
             </p>
           </div>
-          <img className="h-124 flex-1.5 shadow-card-medium" src={profileViewImg} />
+          <img className="lg:h-124 flex-1.5 shadow-card-medium" src={profileViewImg} />
         </article>
         <ActiveIndexSwitcher
           render={({ activeIndex, onChangeIndex }) => (
@@ -112,7 +112,7 @@ const Featuers = () => {
             >
               <img
                 key={recruiterToolsSources[activeIndex]}
-                className={cx('h-124 flex-1 shadow-card-medium', styles.featureImage)}
+                className={cx('lg:h-124 flex-1 shadow-card-medium', styles.featureImage)}
                 src={recruiterToolsSources[activeIndex]}
               />
               <div className="flex flex-col text-center md:text-left justify-center flex-1.1">
@@ -186,7 +186,7 @@ const Featuers = () => {
               </div>
               <img
                 key={ratingSources[activeIndex]}
-                className={cx('h-124 flex-1.5 shadow-card-medium', styles.featureImage)}
+                className={cx('lg:h-124 flex-1.5 shadow-card-medium', styles.featureImage)}
                 src={ratingSources[activeIndex]}
               />
             </article>
@@ -196,7 +196,7 @@ const Featuers = () => {
           id="alerts"
           className="flex flex-col-reverse lg:flex-row space-y-8 space-y-reverse lg:space-y-0 lg:space-x-16"
         >
-          <img className="h-124 flex-1.5 shadow-card-medium" src={searchAlertsImg} />
+          <img className="lg:h-124 flex-1.5 shadow-card-medium" src={searchAlertsImg} />
           <div className="flex flex-col text-center md:text-left justify-center flex-1">
             <span className="font-avenir-black text-xl text-primary-2-navy uppercase">search alerts</span>
             <h2 className="text-3.5xl text-accent-shade font-bold my-4">

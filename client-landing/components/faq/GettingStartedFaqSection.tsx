@@ -21,8 +21,8 @@ const GettingStartedFaqSection = () => {
         </FaqArticle>
         <FaqArticle key="3" header="Can I import my profile from other networks?">
           <p className="pl-4 pb-5 text-primary-2-tint">
-            You can use single sign-on authentication with third party such as gmail, facebook or linkeding but
-            you're not able to import profile.
+            You can use single sign-on authentication with third parties such as Gmail, Facebook or LinkedIn but we
+            are not currently able to import profiles.
           </p>
         </FaqArticle>
       </section>

@@ -13,7 +13,7 @@ type Props = {
 };
 
 const Plans: FC<Props> = ({ href }) => {
-  const [state, setState] = useState(true);
+  const [isBilledAnually, setIsBilledAnnually] = useState(true);
 
   return (
     <div className="text-primary-3-shade flex">
@@ -25,7 +25,7 @@ const Plans: FC<Props> = ({ href }) => {
                 className={cx(
                   'text-accent-shade text-xs mb-2 block text-center ml-auto w-1/2 opacity-0 transition-opacity duration-500 ease',
                   {
-                    ['opacity-100']: state
+                    ['opacity-100']: isBilledAnually
                   }
                 )}
               >
@@ -33,17 +33,17 @@ const Plans: FC<Props> = ({ href }) => {
               </span>
               <div
                 className="rounded-full border border-primary-2-tint text-sm cursor-pointer flex justify-between px-2 py-2 relative text-primary-2-tint mb-4"
-                onClick={e => setState(!state)}
+                onClick={e => setIsBilledAnnually(!isBilledAnually)}
               >
                 <span className="w-50% text-center">Billed monthly</span>
                 <span className="w-50% text-center">Billed annually</span>
                 <div
                   className={cx(
                     'right-0 top-0 absolute w-1/2 rounded-full bg-primary-3-shade py-2 px-2 text-center text-white font-medium transform translate-x-0 duration-300 transition-transform ease',
-                    { ['-translate-x-full']: !state }
+                    { ['-translate-x-full']: !isBilledAnually }
                   )}
                 >
-                  {state ? 'Billed annually' : 'Billed monthly'}
+                  {isBilledAnually ? 'Billed annually' : 'Billed monthly'}
                 </div>
               </div>
             </div>
@@ -87,8 +87,10 @@ const Plans: FC<Props> = ({ href }) => {
               <div className="flex items-start justify-center h-24 mb-2">
                 <PuzzleStarter />
               </div>
-              <div className="font-avenir-heavy text-accent-orange font-semibold text-3xl">$208</div>
-              <div className="text-black">{state ? 'a year' : 'a month'}</div>
+              <div className="font-avenir-heavy text-accent-orange font-semibold text-3xl">
+                ${isBilledAnually ? 299 : 29}
+              </div>
+              <div className="text-black">{isBilledAnually ? 'a year' : 'a month'}</div>
             </li>
             <li className="h-14 flex items-center justify-center">250</li>
             <li className="h-14 flex items-center justify-center">
@@ -131,8 +133,10 @@ const Plans: FC<Props> = ({ href }) => {
               <div className="flex items-start justify-center h-24 mb-2">
                 <PuzzlePro width="83" />
               </div>
-              <div className="font-avenir-heavy text-accent-orange font-semibold text-3xl">$416</div>
-              <div className="text-black">{state ? 'a year' : 'a month'}</div>
+              <div className="font-avenir-heavy text-accent-orange font-semibold text-3xl">
+                ${isBilledAnually ? 599 : 59}
+              </div>
+              <div className="text-black">{isBilledAnually ? 'a year' : 'a month'}</div>
             </li>
             <li className="h-14 flex items-center justify-center">500</li>
             <li className="h-14 flex items-center justify-center">
@@ -179,8 +183,10 @@ const Plans: FC<Props> = ({ href }) => {
               <div className="flex items-start justify-center h-24 mb-2 ">
                 <PuzzleGrowth />
               </div>
-              <div className="font-avenir-heavy text-accent-orange font-semibold text-3xl">$833</div>
-              <div className="text-black">{state ? 'a year' : 'a month'}</div>
+              <div className="font-avenir-heavy text-accent-orange font-semibold text-3xl">
+                ${isBilledAnually ? 999 : 99}
+              </div>
+              <div className="text-black">{isBilledAnually ? 'a year' : 'a month'}</div>
             </li>
             <li className="h-14 flex items-center justify-center">1000</li>
             <li className="h-14 flex items-center justify-center">

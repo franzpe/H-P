@@ -74,12 +74,13 @@ const WaitingList = () => {
             error={errors.email?.message}
           />
           <p className="text-xs">
-            After signing up for waiting list, you will also receive occasional surveys, newsletters and special
+            After signing up for wait list, you will also receive occasional surveys, newsletters and special
             offers from Hackers & Painters via email. We will not sell or distribute your email address to any
-            third party at any time. View our{' '}
+            third party at any time. View our Privacy Policy{' '}
             <Link href="/privacy-policy">
-              <a className="underline font-semibold hover:opacity-75">Privacy Policy</a>
+              <a className="underline font-semibold hover:opacity-75">here</a>
             </Link>
+            .
           </p>
           <button className="block w-full text-center py-2 font-medium text-white rounded-full bg-accent-orange mt-8 mb-6 hover:bg-accent-shade">
             Sign up

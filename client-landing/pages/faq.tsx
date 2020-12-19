@@ -12,6 +12,7 @@ import FlyingRecruiters2 from '../assets/images/svgs/flying-recruiters-3.svg';
 import PriceFaqSection from '../components/faq/PriceFaqSection';
 import MoreFaqSection from '../components/faq/MoreFaqSection';
 import GettingStartedFaqSection from '../components/faq/GettingStartedFaqSection';
+import Link from 'next/link';
 
 const Faq = () => {
   const [active, setActive] = useState(0);
@@ -33,7 +34,11 @@ const Faq = () => {
       <div className={cx('text-center ', styles.wrapper)}>
         <h2 className="font-bold mb-6 sm:mb-6 text-3xl sm:text-5xl">Hello, how can we help?</h2>
         <p className="text-primary-2-tint text-lg my-2 sm:text-2xl font-light">
-          Don't see your question here? <span className="text-primary-3-shade">Ask us</span>!
+          Don't see your question here?{' '}
+          <Link href="/contact">
+            <a className="text-primary-3-shade">Ask us</a>
+          </Link>
+          !
         </p>
         <div className="max-w-3xl mx-auto ">
           <div className="grid grid-cols-12 gap-6 sm:gap-8 my-12">

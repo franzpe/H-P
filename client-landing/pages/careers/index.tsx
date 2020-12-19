@@ -1,7 +1,5 @@
 import React from 'react';
 
-import LikeIcon from '../../assets/images/svgs/twitter-like.svg';
-import PuzzlePieceIcon from '../../assets/images/svgs/puzzle-piece-2.svg';
 import Link from 'next/link';
 import { OpenPositions } from '../../models/OpenPosition';
 
@@ -84,7 +82,7 @@ const Careers = () => {
               <h3 className="mb-2 font-bold">{position.heading}</h3>
               {position.preview()}
               <div className="space-x-2 md:space-x-4">
-                <Link href={`/careers/[slug]`} as={`/careers/${position.slug}`} prefetch={true}>
+                <Link href={`/careers/[slug]`} as={`/careers/${position.slug}`}>
                   <button className="text-center py-2 w-32 md:w-40 xl:w-48 text-accent-orange text-sm md:text-base rounded-full border border-accent-orange font-avenir-heavy hover:bg-primary-1-light">
                     More details
                   </button>

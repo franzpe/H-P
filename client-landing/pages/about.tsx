@@ -74,17 +74,17 @@ const About = () => {
         <div className="inner text-center relative">
           <h2 className="text-white font-bold mb-12 md:mb-16">Some facts & figures</h2>
           <div className="grid grid-cols-4 row-gap-4 col-gap-4 lg:col-gap-8 mb-16">
-            <div className="col-span-2 md:col-span-1 flex flex-col justify-center bg-white rounded-lg h-40 p-2">
+            <div className="col-span-2 md:col-span-1 flex flex-col justify-start bg-white rounded-lg pt-6 pb-8 px-2">
               <span className="text-3xl md:text-2xl lg:text-4xl text-primary-3-shade leading-snug">100+</span>
               <span className="text-lg lg:text-xl text-primary-2-tint">Data sources we gather from</span>
             </div>
-            <div className="col-span-2 md:col-span-1 flex flex-col justify-center bg-white rounded-lg h-40 p-2">
+            <div className="col-span-2 md:col-span-1 flex flex-col justify-start bg-white rounded-lg pt-6 pb-8 px-2">
               <span className="text-3xl md:text-2xl lg:text-4xl text-primary-3-shade leading-snug">64%</span>
               <span className="text-lg lg:text-xl text-primary-2-tint">
                 Percent of tech employees who plan to leave their jobs in 2020
               </span>
             </div>
-            <div className="col-span-2 md:col-span-1 flex flex-col justify-center bg-white rounded-lg h-40 p-2">
+            <div className="col-span-2 md:col-span-1 flex flex-col justify-start bg-white rounded-lg pt-6 pb-8 px-2">
               <span className="text-3xl md:text-2xl lg:text-4xl text-primary-3-shade leading-snug">
                 8 out of 10
               </span>
@@ -92,7 +92,7 @@ const About = () => {
                 Recruiters say that diversity is their #1 priority when hiring
               </span>
             </div>
-            <div className="col-span-2 md:col-span-1 flex flex-col justify-center bg-white rounded-lg h-40 p-2">
+            <div className="col-span-2 md:col-span-1 flex flex-col justify-start bg-white rounded-lg pt-6 pb-8 px-2">
               <span className="text-3xl md:text-2xl lg:text-4xl text-primary-3-shade leading-snug">
                 50 million+
               </span>

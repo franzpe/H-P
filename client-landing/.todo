@@ -16,15 +16,20 @@ Features:
 	☐ Add CMS for jobs page
 
 Bugs & missings:
-	☐ Favicon
-	☐ Contact us page linked to the "ask a question"
-	☐ Waiting list text change
-		☐ "After signing up for wait list, you may also receive occasional surveys, newsletters, and special offers from Hackers & Painters via email. We will not sell or distribute your email address to any third party. View our Privacy Policy here."
-	☐ Pricing monthly / anually prices dont change
-		☐ $29, $59, $99 monthly
-		☐ $299, $599, $999 if billed annually
+	✔ Favicon @done(20-12-19 15:44)
+	✔ Contact us page linked to the "ask a question" @done(20-12-19 15:32)
+	✔ Waiting list text change @done(20-12-19 15:47)
+		✔ "After signing up for wait list, you may also receive occasional surveys, newsletters, and special offers from Hackers & Painters via email. We will not sell or distribute your email address to any third party. View our Privacy Policy here." @done(20-12-19 15:47)
+	✔ Pricing monthly / anually prices dont change @done(20-12-19 15:58)
+		✔ $29, $59, $99 monthly @done(20-12-19 15:58)
+		✔ $299, $599, $999 if billed annually @done(20-12-19 15:58)
+	✔ FAQS @done(20-12-19 16:05)
+		✔ You can use single sign-on authentication with third party such as gmail, facebook or linkeding but you're not able to import profile. @done(20-12-19 16:05)
+			✔ You can use single sign-on authentication with third parties such as Gmail, Facebook or LinkedIn but we are not currently able to import profiles. @done(20-12-19 16:05)
+	✔ Footer on mobile looks misaligned @done(20-12-19 16:20)
+	✔ Some facts & figures - titles not aligned @done(20-12-19 16:56)
+	✔ Condensed images in features @done(20-12-19 17:12)
 	☐ For more check H&P - general thread with live
-
 
 - logos added
 - images swapped
