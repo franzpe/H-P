@@ -1,4 +1,4 @@
-#ESLINT:
+# ESLINT:
 
 After editing .eslintrc or .eslintignore cache is automatically burst (configured in webpack) by eslintCacheIdentifier:
 
@@ -8,5 +8,6 @@ const eslintCacheIdentifier = JSON.stringify(
 );
 ```
 
-#CODEGEN:
+# CODEGEN:
+
 npm run generate -> generates schema types in src/\_generated
