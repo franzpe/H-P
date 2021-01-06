@@ -1,18 +1,26 @@
 import React, { useEffect, useRef } from 'react';
 import cx from 'classnames';
 import { Link } from 'react-router-dom';
-import Nav from './Nav';
 
-import styles from './Sidebar.module.css';
-import { ReactComponent as Logo } from '../assets/images/logo-small.svg';
 import avatar from 'assets/images/JohnDoe.jpg';
 import { MaterialIconType } from 'types/common';
 import MaterialIcon from 'components/MaterialIcon';
 import { useSidebar } from 'libs/ui/sidebarContext';
+import Nav from './Nav';
+
+import { ReactComponent as Logo } from '../assets/images/logo-small.svg';
+import styles from './Sidebar.module.css';
 
 const Sidebar = () => {
   const overlay = useRef<HTMLDivElement | null>(null);
   const [isOpen, setIsOpen] = useSidebar();
+
+  function handleClose() {
+    if (isOpen) {
+      setIsOpen(false);
+      document.body.style.setProperty('overflow', 'auto');
+    }
+  }
 
   /**
    * Overlay Hook for the animation exit
@@ -44,20 +52,12 @@ const Sidebar = () => {
         clearTimeout(id);
       }
     };
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isOpen]);
 
   const handleOpen = () => {
     setIsOpen(true);
     document.body.style.setProperty('overflow', 'hidden');
   };
-
-  function handleClose() {
-    if (isOpen) {
-      setIsOpen(false);
-      document.body.style.setProperty('overflow', 'auto');
-    }
-  }
 
   return (
     <div>
@@ -74,12 +74,12 @@ const Sidebar = () => {
           <img src={avatar} alt="Avatar" />
           <div className={cx('md:block', { 'lg:hidden': !isOpen })}>
             <span>Jane Doe</span>
-            <Link to="#">View profile</Link>
+            <Link to="/#">View profile</Link>
           </div>
         </div>
         <Nav isOpen={isOpen} onItemClick={handleClose} />
       </aside>
-      <div ref={overlay} className={styles.overlay} onClick={handleClose} />
+      <div ref={overlay} className={styles.overlay} aria-hidden onClick={handleClose} />
     </div>
   );
 };

@@ -2,11 +2,11 @@ import React, { FC } from 'react';
 import cx from 'classnames';
 import { NavLink } from 'react-router-dom';
 
+import MaterialIcon from 'components/MaterialIcon';
 import { AccountRoutes, Routes } from '../constants/routes';
 import { useLogout } from '../libs/auth/useLogout';
 import { MaterialIconType } from '../types/common';
 import styles from './Nav.module.css';
-import MaterialIcon from 'components/MaterialIcon';
 
 type Props = {
   isOpen: boolean;

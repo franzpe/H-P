@@ -19,6 +19,8 @@ export const showSnackbar = (text: string, options?: SnackbarOptions) =>
     ...options
   });
 
+var x = 5;
+
 export const showErrorSnackbar = (text: string, options?: SnackbarOptions) => {
   Snackbar.show({
     text,

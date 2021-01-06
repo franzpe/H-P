@@ -1,16 +1,17 @@
-/*eslint no-loop-func: 0*/
+/* eslint no-loop-func: 0, import/no-extraneous-dependencies: 0, no-restricted-syntax: 0, consistent-return: 0, no-console: 0 */
 import { ApolloClient, ApolloLink, createHttpLink, fromPromise, InMemoryCache } from '@apollo/client';
 import { onError } from '@apollo/client/link/error';
 import { setContext } from '@apollo/client/link/context';
-import { getAccessToken, setAccessToken } from './accessToken';
 import { useHistory } from 'react-router';
 import { History } from 'history';
+
+import { getAccessToken, setAccessToken } from './accessToken';
 import { Routes } from '../constants/routes';
 
 const ORIGIN = 'http://localhost:3001';
 
 const httpLink = createHttpLink({
-  uri: ORIGIN + '/graphql',
+  uri: `${ORIGIN}/graphql`,
   credentials: 'include'
 });
 
@@ -25,45 +26,45 @@ const resolvePendingRequests = () => {
 const errorLink = (history: History<unknown>) =>
   onError(({ graphQLErrors, networkError, operation, forward }) => {
     if (graphQLErrors) {
-      for (let { extensions } of graphQLErrors) {
-        switch (extensions?.code) {
-          case 'UNAUTHENTICATED':
-            let forward$;
+      for (const { extensions } of graphQLErrors) {
+        if (extensions?.code === 'UNAUTHENTICATED') {
+          let forward$;
 
-            if (!isRefreshing) {
-              isRefreshing = true;
+          if (!isRefreshing) {
+            isRefreshing = true;
 
-              forward$ = fromPromise(
-                fetch(ORIGIN + '/api/v1/refresh_token', { method: 'GET', credentials: 'include' })
-                  .then(res => res.json())
-                  .then(({ accessToken }) => {
-                    setAccessToken(accessToken);
-                    resolvePendingRequests();
-                    return accessToken;
-                  })
-                  .catch(() => {
-                    // invalid or missing refresh token
-                    pendingRequests = []; // eslint-disable-next-line no-loop-func
-                    console.log('Refresh token invalid');
-                    history.push(Routes.DASHBOARD);
-                    return null;
-                  })
-                  .finally(() => {
-                    isRefreshing = false;
-                  })
-              ).filter(value => Boolean(value));
-            } else {
-              forward$ = fromPromise(
-                new Promise(resolve => {
-                  pendingRequests.push(() => resolve());
+            forward$ = fromPromise(
+              fetch(`${ORIGIN}/api/v1/refresh_token`, { method: 'GET', credentials: 'include' })
+                .then(res => res.json())
+                .then(({ accessToken }) => {
+                  setAccessToken(accessToken);
+                  resolvePendingRequests();
+                  return accessToken;
                 })
-              );
-            }
+                .catch(() => {
+                  // invalid or missing refresh token
+                  pendingRequests = []; // eslint-disable-next-line no-loop-func
+                  console.log('Refresh token invalid');
+                  history.push(Routes.DASHBOARD);
+                  return null;
+                })
+                .finally(() => {
+                  isRefreshing = false;
+                })
+            ).filter(value => Boolean(value));
+          } else {
+            forward$ = fromPromise(
+              new Promise(resolve => {
+                pendingRequests.push(() => resolve(true));
+              })
+            );
+          }
 
-            return forward$.flatMap(() => forward(operation));
+          return forward$.flatMap(() => forward(operation));
         }
       }
     }
+
     if (networkError) {
       console.log(`[Network error]: ${networkError}`);
       history.push(Routes.NETWORK_ERROR);

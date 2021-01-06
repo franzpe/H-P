@@ -1,6 +1,7 @@
 import React, { FC } from 'react';
-import Button, { ButtonProps } from './Button';
 import cx from 'classnames';
+
+import Button, { ButtonProps } from './Button';
 
 type FontType = 'medium' | 'heavy';
 
@@ -17,7 +18,7 @@ const OrangeButton: FC<Props> = ({ className, fontType = 'heavy', py = 2, ...res
         className
       )}
       {...restProps}
-    ></Button>
+    />
   );
 };
 

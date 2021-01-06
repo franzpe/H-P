@@ -57,9 +57,7 @@ const ForgotPasswordPage = () => {
               </OrangeButton>
             </form>
             <Button
-              className={
-                'border border-accent-orange w-full py-2 mt-4 text-accent-orange font-avenir-heavy hover:filter-darken-80'
-              }
+              className="border border-accent-orange w-full py-2 mt-4 text-accent-orange font-avenir-heavy hover:filter-darken-80"
               onClick={() => history.push(Routes.LOGIN)}
             >
               Cancel

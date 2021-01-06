@@ -1,0 +1,63 @@
+{
+  "env": {
+    "browser": true,
+    "commonjs": true,
+    "es2020": true
+  },
+  "extends": ["react-app", "airbnb"],
+  "plugins": ["react-hooks", "babel"],
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "project": "./tsconfig.json",
+    "ecmaVersion": 2018,
+    "sourceType": "module"
+  },
+  "settings": {
+    "import/resolver": {
+      "node": {
+        "extensions": [".js", ".jsx", ".ts", ".tsx"],
+        "paths": ["./src"]
+      }
+    }
+  },
+  "rules": {
+    "no-unused-vars": "warn",
+    "jsx-a11y/anchor-is-valid": "warn",
+    "babel/no-unused-expressions": "error",
+    "no-unused-expressions": 0,
+    "arrow-parens": 0,
+    "react/jsx-filename-extension": 0,
+    "linebreak-style": 0,
+    "jsx-quotes": 0,
+    "object-curly-newline": 0,
+    "react/prop-types": 0,
+    "react/destructuring-assignment": 0,
+    "comma-dangle": 0,
+    "arrow-body-style": 0,
+    "implicit-arrow-linebreak": 0,
+    "no-else-return": 0,
+    "array-bracket-spacing": 0,
+    "react/button-has-type": 0,
+    "import/prefer-default-export": 0,
+    "func-names": 0,
+    "no-underscore-dangle": 0,
+    "react/jsx-one-expression-per-line": 0,
+    "react/jsx-props-no-spreading": 0,
+    "operator-linebreak": 0,
+    "jsx-a11y/media-has-caption": 0,
+    "max-len": 0,
+    "import/extensions": [
+      "error",
+      "ignorePackages",
+      {
+        "js": "never",
+        "jsx": "never",
+        "ts": "never",
+        "tsx": "never"
+      }
+    ],
+    "react-hooks/exhaustive-deps": 0
+  }
+}

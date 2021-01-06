@@ -1,3 +1,0 @@
-mutation UpdateBasicSection($section: BasicSectionInput!) {
-  updateBasicSection(data: $section)
-}

@@ -8,10 +8,10 @@ type Props = {
   className?: string;
 };
 
-const Tabs: FC<Props> = ({ children, active = 0, className, ...restProps }) => {
+const Tabs: FC<Props> = ({ children, className, ...restProps }) => {
   return (
     <ul className={cx(styles.tabs, className)} {...restProps}>
-      {React.Children.map(children, (child, index) => {
+      {React.Children.map(children, child => {
         return child && cloneElement(child as any, {});
       })}
     </ul>

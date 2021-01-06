@@ -1,14 +1,15 @@
 import cx from 'classnames';
-import React, { Fragment, useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useForm } from 'react-hook-form';
 
-import accountStyles from '../AccountPage.module.css';
 import { useUserGeneralInfoQuery, useUpdateUserBasicInfoMutation } from '_generated/graphql.output';
+import { showErrorSnackbar, showSnackbar } from 'libs/snackbar';
+import ControllerInput from 'components/forms/ControllerInput';
+
+import accountStyles from '../AccountPage.module.css';
 import styles from './GeneralInformation.module.css';
 import PasswordSettingsForm from './PasswordSettingsForm';
 import ChangeEmailModal from './ChangeEmailModal';
-import { showErrorSnackbar, showSnackbar } from 'libs/snackbar';
-import ControllerInput from 'components/forms/ControllerInput';
 
 interface IFormInputs {
   name: string | null;
@@ -35,7 +36,7 @@ const GeneralInformation = () => {
     watch,
     formState: { isDirty }
   } = useForm<IFormInputs>({
-    defaultValues: defaultValues,
+    defaultValues,
     mode: 'onBlur'
   });
   const [isEditing, setIsEditing] = useState(false);
@@ -67,7 +68,7 @@ const GeneralInformation = () => {
   if (isProfileLoading) return null;
 
   return (
-    <Fragment>
+    <>
       <ChangeEmailModal isOpen={isEditEmailModalOpen} onRequestClose={() => setIsEditEmailModalOpen(false)} />
       <section className="pb-2">
         <div className="mb-4">
@@ -149,7 +150,7 @@ const GeneralInformation = () => {
       <section className="py-4 max-w-sm">
         <PasswordSettingsForm />
       </section>
-    </Fragment>
+    </>
   );
 };
 

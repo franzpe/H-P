@@ -2,10 +2,10 @@ import React from 'react';
 import cx from 'classnames';
 import { Controller, useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers';
+import { useHistory } from 'react-router';
 
 import Input from '../../components/forms/Input';
 import yup from '../../libs/yupMethods';
-import { useHistory } from 'react-router';
 import { Routes } from '../../constants/routes';
 import { useLogin } from '../../libs/auth/useLogin';
 import styles from './Login.module.css';
@@ -68,8 +68,8 @@ const LoginPage = () => {
               error={errors.password?.message}
             />
             <div className="flex justify-between mb-8">
-              <label className="flex items-center">
-                <input type="checkbox" className="form-checkbox" />
+              <label htmlFor="remember" className="flex items-center">
+                <input id="remember" type="checkbox" className="form-checkbox" />
                 <span className="ml-2">Remember me</span>
               </label>
               <a href={Routes.FORGOT_PASSWORD} className="text-primary-3-shade font-bold hover:filter-darken-80 ">
@@ -85,7 +85,10 @@ const LoginPage = () => {
           </form>
           <hr className="border-primary-1-tint my-4" />
           <p>New to Hackers and Painters?</p>
-          <a href="#" className="text-primary-3-shade font-bold hover:filter-darken-80">
+          <a
+            href="https://hackersandpainters.io/sign-up/waiting-list"
+            className="text-primary-3-shade font-bold hover:filter-darken-80"
+          >
             Create an account
           </a>
         </div>

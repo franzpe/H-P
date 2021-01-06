@@ -3,6 +3,8 @@ import * as ApolloReactCommon from '@apollo/react-common';
 import * as ApolloReactHooks from '@apollo/react-hooks';
 export type Maybe<T> = T | null;
 export type Exact<T extends { [key: string]: unknown }> = { [K in keyof T]: T[K] };
+export type MakeOptional<T, K extends keyof T> = Omit<T, K> & { [SubKey in K]?: Maybe<T[SubKey]> };
+export type MakeMaybe<T, K extends keyof T> = Omit<T, K> & { [SubKey in K]: Maybe<T[SubKey]> };
 /** All built-in and custom scalars, mapped to their actual values */
 export type Scalars = {
   ID: string;
@@ -16,6 +18,9 @@ export type Query = {
   __typename?: 'Query';
   exampleQuery: Scalars['String'];
   me: User;
+  currencies: Array<Currency>;
+  languages: Array<Language>;
+  countries: Array<Country>;
 };
 
 export type User = {
@@ -32,16 +37,44 @@ export type User = {
 export type Profile = {
   __typename?: 'Profile';
   id: Scalars['Int'];
-  basicSection: BasicSection;
+  firstName?: Maybe<Scalars['String']>;
+  lastName?: Maybe<Scalars['String']>;
+  company?: Maybe<Scalars['String']>;
+  address: Address;
+  phoneNumber?: Maybe<Scalars['String']>;
+  fullName: Scalars['String'];
 };
 
-export type BasicSection = {
-  __typename?: 'BasicSection';
+export type Address = {
+  __typename?: 'Address';
+  id: Scalars['Float'];
+  street: Scalars['String'];
+  city: Scalars['String'];
+  state: Scalars['String'];
+  postalCode: Scalars['String'];
+  country: Country;
+};
+
+export type Country = {
+  __typename?: 'Country';
   id: Scalars['Int'];
-  name?: Maybe<Scalars['String']>;
-  company?: Maybe<Scalars['String']>;
-  location?: Maybe<Scalars['String']>;
-  phoneNumber?: Maybe<Scalars['String']>;
+  code: Scalars['String'];
+  name: Scalars['String'];
+  capital?: Maybe<Scalars['String']>;
+  isEU?: Maybe<Scalars['Boolean']>;
+};
+
+export type Currency = {
+  __typename?: 'Currency';
+  id: Scalars['String'];
+  name: Scalars['String'];
+  symbol: Scalars['String'];
+};
+
+export type Language = {
+  __typename?: 'Language';
+  code: Scalars['String'];
+  name: Scalars['String'];
 };
 
 export type Mutation = {
@@ -56,7 +89,7 @@ export type Mutation = {
   changeEmail: Scalars['Boolean'];
   changePassword: Scalars['Boolean'];
   updateUserBasicInfo: Scalars['Boolean'];
-  updateBasicSection: Scalars['Boolean'];
+  updateProfile: Scalars['Boolean'];
 };
 
 
@@ -104,11 +137,6 @@ export type MutationUpdateUserBasicInfoArgs = {
   data: UserBasicInfoUpdateInput;
 };
 
-
-export type MutationUpdateBasicSectionArgs = {
-  data: BasicSectionInput;
-};
-
 export type LoginResponse = {
   __typename?: 'LoginResponse';
   accessToken: Scalars['String'];
@@ -141,21 +169,6 @@ export type UserBasicInfoUpdateInput = {
   location?: Maybe<Scalars['String']>;
   phoneNumber?: Maybe<Scalars['String']>;
 };
-
-export type BasicSectionInput = {
-  id: Scalars['Int'];
-  name?: Maybe<Scalars['String']>;
-  company?: Maybe<Scalars['String']>;
-  location?: Maybe<Scalars['String']>;
-  phoneNumber?: Maybe<Scalars['String']>;
-};
-
-export type UpdateBasicSectionMutationVariables = Exact<{
-  section: BasicSectionInput;
-}>;
-
-
-export type UpdateBasicSectionMutation = { __typename?: 'Mutation', updateBasicSection: boolean };
 
 export type LoginMutationVariables = Exact<{
   email: Scalars['String'];
@@ -225,36 +238,6 @@ export type UserGeneralInfoQueryVariables = Exact<{ [key: string]: never; }>;
 export type UserGeneralInfoQuery = { __typename?: 'Query', me: { __typename?: 'User', email: string, name?: Maybe<string>, company?: Maybe<string>, location?: Maybe<string>, phoneNumber?: Maybe<string> } };
 
 
-export const UpdateBasicSectionDocument = gql`
-    mutation UpdateBasicSection($section: BasicSectionInput!) {
-  updateBasicSection(data: $section)
-}
-    `;
-export type UpdateBasicSectionMutationFn = ApolloReactCommon.MutationFunction<UpdateBasicSectionMutation, UpdateBasicSectionMutationVariables>;
-
-/**
- * __useUpdateBasicSectionMutation__
- *
- * To run a mutation, you first call `useUpdateBasicSectionMutation` within a React component and pass it any options that fit your needs.
- * When your component renders, `useUpdateBasicSectionMutation` returns a tuple that includes:
- * - A mutate function that you can call at any time to execute the mutation
- * - An object with fields that represent the current status of the mutation's execution
- *
- * @param baseOptions options that will be passed into the mutation, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options-2;
- *
- * @example
- * const [updateBasicSectionMutation, { data, loading, error }] = useUpdateBasicSectionMutation({
- *   variables: {
- *      section: // value for 'section'
- *   },
- * });
- */
-export function useUpdateBasicSectionMutation(baseOptions?: ApolloReactHooks.MutationHookOptions<UpdateBasicSectionMutation, UpdateBasicSectionMutationVariables>) {
-        return ApolloReactHooks.useMutation<UpdateBasicSectionMutation, UpdateBasicSectionMutationVariables>(UpdateBasicSectionDocument, baseOptions);
-      }
-export type UpdateBasicSectionMutationHookResult = ReturnType<typeof useUpdateBasicSectionMutation>;
-export type UpdateBasicSectionMutationResult = ApolloReactCommon.MutationResult<UpdateBasicSectionMutation>;
-export type UpdateBasicSectionMutationOptions = ApolloReactCommon.BaseMutationOptions<UpdateBasicSectionMutation, UpdateBasicSectionMutationVariables>;
 export const LoginDocument = gql`
     mutation Login($email: String!, $password: String!) {
   login(data: {email: $email, password: $password}) {

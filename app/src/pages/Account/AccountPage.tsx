@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import { Route, Switch } from 'react-router';
 
 import Tab from 'components/tabs/Tab';
@@ -13,7 +13,7 @@ import MembershipSettings from './membership/MembershipSettings';
 
 const AccountPage = () => {
   return (
-    <Fragment>
+    <>
       <Tabs>
         <Tab to={AccountRoutes.GENERAL}>General</Tab>
         <Tab to={AccountRoutes.MEMBERSHIP}>Membership</Tab>
@@ -26,7 +26,7 @@ const AccountPage = () => {
           <Route path={AccountRoutes.MEMBERSHIP} component={MembershipSettings} />
         </Switch>
       </section>
-    </Fragment>
+    </>
   );
 };
 

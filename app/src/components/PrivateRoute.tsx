@@ -1,17 +1,9 @@
 import React, { FC } from 'react';
-import { Route, Redirect } from 'react-router-dom';
+import { Route, Redirect, RouteProps } from 'react-router-dom';
 import { Routes } from '../constants/routes';
 import { useUserQuery } from '../_generated/graphql.output';
 
-type Props = {
-  component: React.FC<any> | React.ComponentClass<any>;
-  path: string;
-  exact?: boolean;
-  strict?: boolean;
-  redirectTo?: string;
-};
-
-const PrivateRoute: FC<Props> = props => {
+const PrivateRoute: FC<RouteProps> = props => {
   const { loading, data } = useUserQuery();
 
   if (loading) return null;

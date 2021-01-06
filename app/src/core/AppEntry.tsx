@@ -1,7 +1,8 @@
 import React, { lazy, Suspense } from 'react';
 import { ApolloProvider } from '@apollo/client';
-import useApolloClient from '../libs/apolloClient';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+
+import useApolloClient from '../libs/apolloClient';
 import { Routes } from '../constants/routes';
 import LoginPage from '../pages/Login/LoginPage';
 import PrivateRoute from '../components/PrivateRoute';
@@ -19,8 +20,8 @@ function AppEntry() {
       <Suspense fallback={<div />}>
         <Router>
           <Switch>
-            <Route exact={true} path={Routes.LOGIN} component={LoginPage} />
-            <Route exact={true} path={Routes.FORGOT_PASSWORD} component={ForgotPassword} />
+            <Route exact path={Routes.LOGIN} component={LoginPage} />
+            <Route exact path={Routes.FORGOT_PASSWORD} component={ForgotPassword} />
             <Route path={Routes.CHANGE_EMAIL_VERIFICATION} component={ChangeEmail} />
             <Route path={Routes.RESET_PASSWORD} component={ResetPassword} />
             <PrivateRoute path="/" component={App} />

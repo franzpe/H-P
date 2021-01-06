@@ -15,7 +15,6 @@ const ChangeEmailVerification = () => {
 
   useEffect(() => {
     let intervalId: NodeJS.Timeout;
-    console.log(token);
 
     if (token) {
       changeEmail({ variables: { token } })
@@ -42,7 +41,7 @@ const ChangeEmailVerification = () => {
     }
   }, [countdown]);
 
-  if (loading)
+  if (loading) {
     return (
       <div className="h-full flex flex-col justify-center items-center px-4">
         <p className="max-w-md text-center sm:text-xl text-2xl text-primary-2-tint font-helvetica font-thin mt-2">
@@ -50,6 +49,7 @@ const ChangeEmailVerification = () => {
         </p>
       </div>
     );
+  }
 
   return (
     <div className="h-full flex flex-col justify-center items-center px-4">

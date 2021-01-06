@@ -40,6 +40,11 @@ const isExtendingEslintConfig = process.env.EXTEND_ESLINT === 'true';
 
 const imageInlineSizeLimit = parseInt(process.env.IMAGE_INLINE_SIZE_LIMIT || '10000');
 
+// To clear eslint cache after .eslintrc or .eslintignore file is changed
+const eslintCacheIdentifier = JSON.stringify(
+  fs.statSync(paths.eslintRc).mtimeMs + fs.statSync(paths.eslintIgnore).mtimeMs
+);
+
 // Check if TypeScript is setup
 const useTypeScript = fs.existsSync(paths.appTsConfig);
 
@@ -335,9 +340,11 @@ module.exports = function (webpackEnv) {
             {
               options: {
                 cache: true,
+                cacheIdentifier: eslintCacheIdentifier,
                 formatter: require.resolve('react-dev-utils/eslintFormatter'),
                 eslintPath: require.resolve('eslint'),
-                resolvePluginsRelativeTo: __dirname
+                resolvePluginsRelativeTo: __dirname,
+                useEslintrc: true
               },
               loader: require.resolve('eslint-loader')
             }

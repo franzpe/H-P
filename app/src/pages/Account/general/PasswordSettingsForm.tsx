@@ -1,17 +1,17 @@
 import React from 'react';
 import cx from 'classnames';
+import { Controller, useForm } from 'react-hook-form';
+import { yupResolver } from '@hookform/resolvers';
 
 import { Link } from 'react-router-dom';
 import { Routes } from 'constants/routes';
 import OrangeButton from 'components/buttons/OrangeButton';
 import yup from 'libs/yupMethods';
-import { Controller, useForm } from 'react-hook-form';
-import { yupResolver } from '@hookform/resolvers';
 import { useChangePasswordMutation } from '_generated/graphql.output';
 import { showErrorSnackbar, showSnackbar } from 'libs/snackbar';
+import Input from 'components/forms/Input';
 
 import accountStyles from '../AccountPage.module.css';
-import Input from 'components/forms/Input';
 
 const schema = yup.object().shape({
   currentPassword: yup.string().label('Password').required().password(),
