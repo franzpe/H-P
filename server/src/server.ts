@@ -1,4 +1,5 @@
 import 'reflect-metadata';
+import { container } from 'tsyringe';
 import { Express } from 'express';
 import { ApolloServer } from 'apollo-server-express';
 import { buildSchema } from 'type-graphql';
@@ -7,7 +8,7 @@ import { applyMiddleware, applyRoutes } from './utils';
 import middleware from './middleware';
 import { routes, resolvers } from './modules';
 import errorHandlers from './middleware/errorHandlers';
-import { container } from 'tsyringe';
+import publicAssets from './middleware/publicAssets';
 
 export default class Server {
   private _app: Express;
@@ -19,6 +20,7 @@ export default class Server {
   setup = async () => {
     this.setupRest();
     await this.setupGraphql();
+    applyMiddleware(publicAssets, this._app);
     applyMiddleware(errorHandlers, this._app);
   };
 

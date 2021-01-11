@@ -1,3 +1,4 @@
+import 'reflect-metadata';
 import express, { Router } from 'express';
 import request from 'supertest';
 

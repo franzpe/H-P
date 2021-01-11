@@ -41,7 +41,9 @@ class AuthService {
 
     try {
       payload = verify(token, config.auth.refreshTokenSecret);
-    } catch (err) {}
+    } catch (err) {
+      console.log(err);
+    }
 
     return payload;
   };

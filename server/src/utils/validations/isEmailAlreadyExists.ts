@@ -19,12 +19,12 @@ export class IsEmailAlreadyExistsConstraint implements ValidatorConstraintInterf
 
   async validate(email: string) {
     const user = await this.userRepository.findOne({ where: { email } });
-    return !!!user;
+    return !user;
   }
 }
 
 export function IsEmailAlreadyExists(validationOptions?: ValidationOptions) {
-  return function (object: Object, propertyName: string) {
+  return function (object: Record<string, any>, propertyName: string) {
     registerDecorator({
       target: object.constructor,
       propertyName: propertyName,

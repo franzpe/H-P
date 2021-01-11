@@ -16,7 +16,7 @@ type Route = {
   handler: Handler | Handler[];
 };
 
-export const applyRoutes = (routes: Route[], router: Router, basePath: string = '') => {
+export const applyRoutes = (routes: Route[], router: Router, basePath = '') => {
   for (const route of routes) {
     const { method, path, handler } = route;
     (router as any)[method](basePath + path, handler);
@@ -35,16 +35,17 @@ export const tryParseJSON = (json: string) => {
 };
 
 export const generatePassword = (length: number, an?: 'a' | 'n') => {
-  var str = '',
-    i = 0,
-    min = an == 'a' ? 10 : 0,
+  let str = '',
+    i = 0;
+
+  const min = an == 'a' ? 10 : 0,
     max = an == 'n' ? 10 : 62;
   for (; i++ < length; ) {
-    var r = (Math.random() * (max - min) + min) << 0;
+    let r = (Math.random() * (max - min) + min) << 0;
     str += String.fromCharCode((r += r > 9 ? (r < 36 ? 55 : 61) : 48));
   }
 
   return str;
 };
 
-export type Lazy<T extends object> = Promise<T> | T;
+export type Lazy<T extends Record<string, any>> = Promise<T> | T;

@@ -8,5 +8,7 @@ export class seedUsers1602351906518 implements MigrationInterface {
     await User.save(usersSeed);
   }
 
-  public async down(queryRunner: QueryRunner): Promise<void> {}
+  public async down(queryRunner: QueryRunner): Promise<void> {
+    // Todo
+  }
 }

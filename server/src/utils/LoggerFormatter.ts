@@ -31,7 +31,7 @@ class LoggerFormatter {
   };
 
   static printF = format.printf(info => {
-    let jsonObj: any = tryParseJSON(info.message);
+    const jsonObj: any = tryParseJSON(info.message);
 
     return jsonObj
       ? JSON.stringify({ timestamp: info.timestamp, level: info.level, ...jsonObj })

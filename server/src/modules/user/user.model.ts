@@ -37,19 +37,19 @@ export class User extends BaseEntity {
 
   @Column({ nullable: true })
   @Field({ nullable: true })
-  name?: string;
+  name: string;
 
   @Column({ nullable: true })
   @Field({ nullable: true })
-  company?: string;
+  company: string;
 
   @Column({ nullable: true })
   @Field({ nullable: true })
-  location?: string;
+  location: string;
 
   @Column({ nullable: true })
   @Field({ nullable: true })
-  phoneNumber?: string;
+  phoneNumber: string;
 
   @OneToOne(() => Profile, { lazy: true })
   @JoinColumn()

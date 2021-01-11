@@ -4,4 +4,6 @@
  * Run migrations
  * Close connection
  */
-module.exports = async (): Promise<void> => {};
+module.exports = async (): Promise<void> => {
+  // No empty
+};

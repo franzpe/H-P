@@ -1,6 +1,3 @@
-#CLIENT-LANDING
-
-
 #SERVER
 package-lock.json
 node_modules
@@ -8,3 +5,9 @@ dist
 __coverage
 __logs
 .env
+
+#PUBLIC IMAGES 
+public_images/company/*.*
+public_images/school/*.*
+public_images/icon/*.*
+public_images/user/*.*

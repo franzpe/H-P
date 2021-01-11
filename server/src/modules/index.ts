@@ -1,4 +1,5 @@
 import { container } from 'tsyringe';
+
 import searchRoutes from './search/routes';
 import { AuthResolver } from './auth/auth.resolver';
 import { UserResolver } from './user/user.resolver';

@@ -1,3 +1,6 @@
+☐ Linting with eslint
+	- https://khalilstemmler.com/blogs/typescript/eslint-for-typescript/
+
 LOGGING:
 	✔ custom loggin format ('combined') @done(20-05-23 22:07)
 	✔ unite loggin formats between morgan and winston @done(20-05-24 02:03)
@@ -11,8 +14,13 @@ LOGGING:
 
 CHECK:
 	☐ Sentry error tracking sentry.io
-	☐ Dependency injection for TypeORM https://www.youtube.com/watch?v=5YYsfkl2UCM&list=PLN3n1USn4xlma1bBu3Tloe4NyYn9Ko8Gs&index=14&ab_channel=BenAwad
+	✔ Dependency injection for TypeORM https://www.youtube.com/watch?v=5YYsfkl2UCM&list=PLN3n1USn4xlma1bBu3Tloe4NyYn9Ko8Gs&index=14&ab_channel=BenAwad @done(21-01-11 11:37)
 	☐ Great testing solution (unit, integration, e2e) - https://github.com/seandearnaley/brainstrike-typescript-starter/blob/master/server/src/jest.globalSetup.ts
-	
+	☐ Caching, Batching
+		☐ Solve n + 1 problem
+		☐ https://www.npmjs.com/package/type-graphql-dataloader Caching
+		☐ https://www.apollographql.com/docs/apollo-server/data/data-sources/ very important! 
+
 BEFORE PRODUCTION:
 	☐ Implement graphql-query-complexity https://www.youtube.com/watch?v=mgxNeYjHbsI&list=PLN3n1USn4xlma1bBu3Tloe4NyYn9Ko8Gs&index=13&ab_channel=BenAwad
+

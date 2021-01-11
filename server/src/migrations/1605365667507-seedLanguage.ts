@@ -8,5 +8,7 @@ export class seedLanguage1605365667507 implements MigrationInterface {
     await Language.save(countries as Language[]);
   }
 
-  public async down(queryRunner: QueryRunner): Promise<void> {}
+  public async down(queryRunner: QueryRunner): Promise<void> {
+    // Todo
+  }
 }

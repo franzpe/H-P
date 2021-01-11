@@ -8,5 +8,7 @@ export class seedCurrency1605358863447 implements MigrationInterface {
     await Currency.save(currencies as Currency[]);
   }
 
-  public async down(queryRunner: QueryRunner): Promise<void> {}
+  public async down(queryRunner: QueryRunner): Promise<void> {
+    // Todo
+  }
 }

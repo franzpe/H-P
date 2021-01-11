@@ -1,0 +1,4 @@
+__coverage
+__logs
+dist
+node_modules
