@@ -47,5 +47,3 @@ export const generatePassword = (length: number, an?: 'a' | 'n') => {
 
   return str;
 };
-
-export type Lazy<T extends Record<string, any>> = Promise<T> | T;

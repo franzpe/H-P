@@ -1,7 +1,8 @@
 import { BaseEntity, Column, Entity, JoinColumn, OneToOne, PrimaryGeneratedColumn } from 'typeorm';
 import { ObjectType, Field, Int, Root } from 'type-graphql';
 import { Address } from '../common/address/address.model';
-import { Lazy } from '../../utils';
+import { Lazy } from '../../types/common';
+import { Company } from '../company/company.model';
 
 @ObjectType()
 @Entity('profile')
@@ -18,9 +19,10 @@ export class Profile extends BaseEntity {
   @Field({ nullable: true })
   lastName: string;
 
-  @Column('varchar')
-  @Field({ nullable: true })
-  company: string;
+  @OneToOne(type => Company, company => company.id, { lazy: true, nullable: true })
+  @Field(type => Company, { nullable: true })
+  @JoinColumn()
+  company?: Lazy<Company>;
 
   @OneToOne(type => Address, address => address.id, { lazy: true })
   @Field(type => Address)
