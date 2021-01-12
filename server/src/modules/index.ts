@@ -8,6 +8,7 @@ import { ProfileResolver } from './profile/profile.resolver';
 import { CodelistResolver } from './codelist/codelist.resolver';
 import { CompanyResolver } from './company/company.resolver';
 import AuthRouter from './auth/auth.router';
+import { ExperienceResolver } from './profile/sections/experience/experience.resolver';
 
 export const routes = () => {
   const authRouter = container.resolve(AuthRouter);
@@ -19,6 +20,7 @@ export const resolvers: NonEmptyArray<Function> | NonEmptyArray<string> = [
   AuthResolver,
   UserResolver,
   ProfileResolver,
+  ExperienceResolver,
   CodelistResolver,
   CompanyResolver
 ];

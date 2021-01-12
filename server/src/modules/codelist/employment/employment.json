@@ -1,0 +1,34 @@
+[
+  {
+    "type": "fut",
+    "name": "Full-time"
+  },
+  {
+    "type": "pat",
+    "name": "Part-time"
+  },
+  {
+    "type": "see",
+    "name": "Self-employed"
+  },
+  {
+    "type": "fre",
+    "name": "Freelance"
+  },
+  {
+    "type": "con",
+    "name": "Contract"
+  },
+  {
+    "type": "int",
+    "name": "Internship"
+  },
+  {
+    "type": "app",
+    "name": "Apprenticeship"
+  },
+  {
+    "type": "sea",
+    "name": "Seasonal"
+  }
+]

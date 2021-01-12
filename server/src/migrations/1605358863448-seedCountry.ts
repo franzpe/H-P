@@ -4,8 +4,7 @@ import { Country } from '../modules/codelist/country/country.model';
 
 export class seedCountry1605358863448 implements MigrationInterface {
   public async up(queryRunner: QueryRunner): Promise<void> {
-    const countries: any[] = createCountrySeed();
-
+    const countries = createCountrySeed();
     await Country.save(countries as Country[]);
   }
 

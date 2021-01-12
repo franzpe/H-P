@@ -14,8 +14,8 @@ export class Skill extends BaseEntity {
   @Column()
   name: string;
 
-  @Field(type => SkillType, { name: 'skillType' })
-  @ManyToOne(type => SkillType, skillType => skillType.type, { lazy: true })
+  @Field(() => SkillType, { name: 'skillType' })
+  @ManyToOne(() => SkillType, skillType => skillType.type, { lazy: true })
   @JoinColumn({ name: 'type' })
   type: Lazy<SkillType>;
 

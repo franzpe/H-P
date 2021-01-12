@@ -15,7 +15,7 @@ const ormOptions: ConnectionOptions = {
   subscribers: ['dist/subscriber/**/*.{js,ts}'],
   cli: {
     entitiesDir: 'dist/**/*.model.js',
-    migrationsDir: 'dist/migrations',
+    migrationsDir: 'src/migrations',
     subscribersDir: 'src/subscriber'
   }
 };

@@ -3,6 +3,7 @@ import { Resolver, Query } from 'type-graphql';
 import CodelistService from './codelist.service';
 import { Country } from './country/country.model';
 import { Currency } from './currency/currency.model';
+import { Employment } from './employment/employment.model';
 import { Language } from './language/language.model';
 import { Skill } from './skill/skill.model';
 
@@ -15,7 +16,7 @@ export class CodelistResolver {
    * QUERIES
    */
   @Query(() => [Currency])
-  async currencies() {
+  currencies() {
     return this.service.getAllCurrencies();
   }
 
@@ -32,6 +33,11 @@ export class CodelistResolver {
   @Query(() => [Skill])
   skills() {
     return this.service.getAllSkills();
+  }
+
+  @Query(() => [Employment])
+  employmentTypes() {
+    return this.service.getAllEmploymentTypes();
   }
 
   /**

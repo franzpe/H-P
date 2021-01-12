@@ -13,7 +13,7 @@
     "test": "npm run build && jest --coverage --silent --passWithNoTests",
     "test-watch": "npm run build && jest --watch",
     "typeorm": "ts-node ./node_modules/.bin/typeorm --config src/config/orm.ts",
-    "migrate:create": "npm run typeorm migration:create -n",
+    "migrate:create": "ts-node ./node_modules/.bin/typeorm --config src/config/orm.ts migration:create -n",
     "migrate:up": "npm run typeorm migration:run",
     "migrate:down": "npm run typeorm migration:revert"
   },
