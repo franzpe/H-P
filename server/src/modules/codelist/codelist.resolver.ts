@@ -4,6 +4,7 @@ import CodelistService from './codelist.service';
 import { Country } from './country/country.model';
 import { Currency } from './currency/currency.model';
 import { Language } from './language/language.model';
+import { Skill } from './skill/skill.model';
 
 @Resolver()
 @injectable()
@@ -26,6 +27,11 @@ export class CodelistResolver {
   @Query(() => [Country])
   countries() {
     return this.service.getAllCountries();
+  }
+
+  @Query(() => [Skill])
+  skills() {
+    return this.service.getAllSkills();
   }
 
   /**

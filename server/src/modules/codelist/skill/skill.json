@@ -1,0 +1,20 @@
+[
+  {
+    "id": "python",
+    "name": "Python",
+    "type": { "type": "pgl" },
+    "imgPathname": ""
+  },
+  {
+    "id": "c++",
+    "name": "C++",
+    "type": { "type": "pgl" },
+    "imgPathname": ""
+  },
+  {
+    "id": "ruby",
+    "name": "Ruby",
+    "type": { "type": "pgl" },
+    "imgPathname": ""
+  }
+]

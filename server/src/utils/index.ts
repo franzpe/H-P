@@ -47,3 +47,7 @@ export const generatePassword = (length: number, an?: 'a' | 'n') => {
 
   return str;
 };
+
+export const assertNever = (value: never): never => {
+  throw new Error(`Unexpected value '${value}'`);
+};
