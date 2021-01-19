@@ -1,0 +1,13 @@
+query UserGeneralInfo {
+  me {
+    email
+    name
+    company
+    location
+    phoneNumber
+  }
+}
+
+mutation UpdateUserBasicInfo($info: UserBasicInfoUpdateInput!) {
+  updateUserBasicInfo(data: $info)
+}

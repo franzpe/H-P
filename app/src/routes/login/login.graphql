@@ -1,0 +1,16 @@
+query User {
+  me {
+    id
+    email
+  }
+}
+
+mutation Login($email: String!, $password: String!) {
+  login(data: { email: $email, password: $password }) {
+    accessToken
+  }
+}
+
+mutation Logout {
+  logout
+}

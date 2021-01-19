@@ -1,7 +1,7 @@
 import React from 'react';
 import cx from 'classnames';
 
-import MaterialIcon from '../MaterialIcon';
+import MaterialIcon from '../icons/MaterialIcon';
 
 export type InputProps = {
   wrapperClassName?: string;

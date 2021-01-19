@@ -1,0 +1,11 @@
+mutation ChangePassword($currentPassword: String!, $newPassword: String!) {
+  changePassword(data: { currentPassword: $currentPassword, newPassword: $newPassword })
+}
+
+mutation ChangeEmailRequest($email: String!) {
+  changeEmailRequest(email: $email)
+}
+
+mutation ChangeEmail($token: String!) {
+  changeEmail(token: $token)
+}

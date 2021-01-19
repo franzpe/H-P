@@ -1,0 +1,87 @@
+import React, { useEffect, useRef } from 'react';
+import cx from 'classnames';
+import { Link } from 'react-router-dom';
+
+import avatar from 'assets/images/JohnDoe.jpg';
+import { MaterialIconType } from 'types';
+import MaterialIcon from 'components/icons/MaterialIcon';
+import { useSidebar } from 'modules/sidebar/SidebarContext';
+import { ReactComponent as Logo } from 'assets/images/logo-small.svg';
+
+import Nav from '../navigation/Nav';
+import styles from './Sidebar.module.css';
+
+const Sidebar = () => {
+  const overlay = useRef<HTMLDivElement | null>(null);
+  const [isOpen, setIsOpen] = useSidebar();
+
+  function handleClose() {
+    if (isOpen) {
+      setIsOpen(false);
+      document.body.style.setProperty('overflow', 'auto');
+    }
+  }
+
+  /**
+   * Overlay Hook for the animation exit
+   */
+  useEffect(() => {
+    let id: NodeJS.Timeout;
+
+    const handleKeyUp = (e: any) => {
+      if (e.key === 'Escape') {
+        handleClose();
+      }
+    };
+
+    if (isOpen) {
+      document.addEventListener('ckeyup', handleKeyUp);
+      overlay.current?.classList.add(styles.open);
+      overlay.current!.style.opacity = '0.5';
+    } else {
+      document.removeEventListener('keyup', handleKeyUp);
+      overlay.current!.style.opacity = '0';
+
+      id = setTimeout(() => {
+        overlay.current?.classList.remove(styles.open);
+      }, 350);
+    }
+
+    return () => {
+      if (id) {
+        clearTimeout(id);
+      }
+    };
+  }, [isOpen]);
+
+  const handleOpen = () => {
+    setIsOpen(true);
+    document.body.style.setProperty('overflow', 'hidden');
+  };
+
+  return (
+    <div>
+      <aside className={cx(styles.container, { [styles.open]: isOpen })}>
+        {!isOpen && (
+          <MaterialIcon type={MaterialIconType.Round} className={styles.hamburger} onClick={handleOpen}>
+            menu
+          </MaterialIcon>
+        )}
+        <div className={styles.logo}>
+          <Logo width="100%" height="100%" preserveAspectRatio="xMinYMid" />
+        </div>
+        <div className={styles.profileWrapper}>
+          <img src={avatar} alt="Avatar" />
+          <div className={cx('md:block', { 'lg:hidden': !isOpen })}>
+            <span>Jane Doe</span>
+            <Link to="/#">View profile</Link>
+          </div>
+        </div>
+        <Nav isOpen={isOpen} onItemClick={handleClose} />
+      </aside>
+      <div ref={overlay} className={styles.overlay} aria-hidden onClick={handleClose} />
+    </div>
+  );
+};
+
+export default Sidebar;
