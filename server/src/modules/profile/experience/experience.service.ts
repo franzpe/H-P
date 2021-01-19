@@ -4,18 +4,18 @@ import { Experience } from './experience.model';
 
 @singleton()
 class ExperienceService {
-  private experienceRepository: Repository<Experience>;
+  private repository: Repository<Experience>;
 
   constructor(@inject(Connection) connection: Connection) {
-    this.experienceRepository = connection.getRepository(Experience);
+    this.repository = connection.getRepository(Experience);
   }
 
   getAll = () => {
-    return this.experienceRepository.find();
+    return this.repository.find();
   };
 
   getAllByProfile = async (profileId: number) => {
-    return this.experienceRepository.find({ where: { profile: { id: profileId } } });
+    return this.repository.find({ where: { profile: { id: profileId } } });
   };
 }
 

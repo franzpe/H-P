@@ -10,23 +10,23 @@ export class User extends BaseEntity {
   @PrimaryGeneratedColumn()
   id: number;
 
-  @Column('text')
+  @Column()
   @Field()
   email: string;
 
-  @Column({ type: 'text', nullable: true })
+  @Column({ nullable: true })
   changeEmail: string;
 
-  @Column({ type: 'text', nullable: true })
+  @Column({ nullable: true })
   changeEmailToken: string;
 
   @Column({ nullable: true })
   changeEmailExpires: Date;
 
-  @Column('text')
+  @Column()
   password: string;
 
-  @Column({ type: 'text', nullable: true })
+  @Column({ nullable: true })
   resetPasswordToken: string;
 
   @Column({ nullable: true })

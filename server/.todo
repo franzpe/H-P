@@ -1,7 +1,5 @@
-- typeorm & mysql types - https://github.com/typeorm/typeorm/blob/master/docs/entities.md#column-types
-
-☐ Linting with eslint
-	- https://khalilstemmler.com/blogs/typescript/eslint-for-typescript/
+LINTING:
+	☐ Linting with eslint (https://khalilstemmler.com/blogs/typescript/eslint-for-typescript/)
 
 LOGGING:
 	✔ custom loggin format ('combined') @done(20-05-23 22:07)
@@ -26,3 +24,5 @@ CHECK:
 BEFORE PRODUCTION:
 	☐ Implement graphql-query-complexity https://www.youtube.com/watch?v=mgxNeYjHbsI&list=PLN3n1USn4xlma1bBu3Tloe4NyYn9Ko8Gs&index=13&ab_channel=BenAwad
 
+NOTES:
+	- typeorm & mysql types - https://github.com/typeorm/typeorm/blob/master/docs/entities.md#column-types

@@ -3,7 +3,9 @@ import { ObjectType, Field, Int, Root } from 'type-graphql';
 import { Address } from '../common/address/address.model';
 import { Lazy } from '../../types/common';
 import { Company } from '../company/company.model';
-import { Experience } from './sections/experience/experience.model';
+import { Experience } from './experience/experience.model';
+import { VolunteerExperience } from './volunteer/volunteerExperience.model';
+import { Website } from './website/website.model';
 
 @ObjectType()
 @Entity('profile')
@@ -20,13 +22,13 @@ export class Profile extends BaseEntity {
   @Field({ nullable: true })
   lastName: string;
 
-  @OneToOne(type => Company, company => company.id, { lazy: true, nullable: true })
-  @Field(type => Company, { nullable: true })
+  @OneToOne(() => Company, company => company.id, { lazy: true, nullable: true })
+  @Field(() => Company, { nullable: true })
   @JoinColumn()
   company?: Lazy<Company>;
 
-  @OneToOne(type => Address, address => address.id, { lazy: true })
-  @Field(type => Address)
+  @OneToOne(() => Address, address => address.id, { lazy: true })
+  @Field(() => Address)
   @JoinColumn()
   address: Lazy<Address>;
 
@@ -41,6 +43,14 @@ export class Profile extends BaseEntity {
   @OneToMany(() => Experience, experience => experience.profile, { lazy: true, nullable: true })
   @Field(() => [Experience], { nullable: true })
   experiences?: Lazy<Experience[]>;
+
+  @OneToMany(() => VolunteerExperience, volunteer => volunteer.profile, { lazy: true, nullable: true })
+  @Field(() => [VolunteerExperience], { nullable: true })
+  volunteerExperiences?: Lazy<VolunteerExperience[]>;
+
+  @OneToMany(() => Website, website => website.url, { lazy: true, nullable: true })
+  @Field(() => [Website], { nullable: true })
+  websites?: Lazy<Website[]>;
 
   /**
    * Computed fields

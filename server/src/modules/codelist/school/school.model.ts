@@ -1,18 +1,18 @@
+import { Field, Int, ObjectType } from 'type-graphql';
 import { BaseEntity, Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
-import { ObjectType, Field, Int } from 'type-graphql';
 
 @ObjectType()
-@Entity('company')
-export class Company extends BaseEntity {
+@Entity('school')
+export class School extends BaseEntity {
   @Field(() => Int)
   @PrimaryGeneratedColumn()
   id: number;
 
-  @Column()
   @Field()
+  @Column()
   name: string;
 
-  @Column()
   @Field()
+  @Column()
   imgPathname: string;
 }

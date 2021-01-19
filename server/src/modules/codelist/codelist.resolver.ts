@@ -40,6 +40,15 @@ export class CodelistResolver {
     return this.service.getAllEmploymentTypes();
   }
 
+  @Query(() => [Employment])
+  schools() {
+    return this.service.getAllSchools();
+  }
+
+  @Query(() => [Employment])
+  degrees() {
+    return this.service.getAllDegrees();
+  }
   /**
    * MUTATIONS
    */

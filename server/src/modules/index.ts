@@ -4,11 +4,11 @@ import searchRoutes from './search/routes';
 import { AuthResolver } from './auth/auth.resolver';
 import { UserResolver } from './user/user.resolver';
 import { NonEmptyArray } from 'type-graphql';
-import { ProfileResolver } from './profile/profile.resolver';
 import { CodelistResolver } from './codelist/codelist.resolver';
 import { CompanyResolver } from './company/company.resolver';
 import AuthRouter from './auth/auth.router';
-import { ExperienceResolver } from './profile/sections/experience/experience.resolver';
+import { ExperienceResolver } from './profile/experience/experience.resolver';
+import profileResolvers from './profile';
 
 export const routes = () => {
   const authRouter = container.resolve(AuthRouter);
@@ -17,9 +17,9 @@ export const routes = () => {
 };
 
 export const resolvers: NonEmptyArray<Function> | NonEmptyArray<string> = [
+  ...profileResolvers,
   AuthResolver,
   UserResolver,
-  ProfileResolver,
   ExperienceResolver,
   CodelistResolver,
   CompanyResolver

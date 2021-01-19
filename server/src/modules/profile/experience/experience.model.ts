@@ -1,10 +1,10 @@
 import { BaseEntity, Column, Entity, JoinColumn, ManyToOne, PrimaryGeneratedColumn } from 'typeorm';
 import { ObjectType, Field, Int, Root } from 'type-graphql';
-import { Lazy } from '../../../../types/common';
-import { Company } from '../../../company/company.model';
-import { Employment } from '../../../codelist/employment/employment.model';
-import { monthDiff } from '../../../../utils/date';
-import { Profile } from '../../profile.model';
+import { Lazy } from '../../../types/common';
+import { Company } from '../../company/company.model';
+import { Employment } from '../../codelist/employment/employment.model';
+import { monthDiff } from '../../../utils/date';
+import { Profile } from '../profile.model';
 
 @ObjectType()
 @Entity('experience')
