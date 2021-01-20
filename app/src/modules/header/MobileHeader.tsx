@@ -1,24 +1,30 @@
-import MaterialIcon from 'components/icons/MaterialIcon';
-import { useSidebar } from 'modules/sidebar/SidebarContext';
 import React from 'react';
+import MaterialIcon from 'components/icons/MaterialIcon';
+import { useMainSidebar, useRightSidebar } from 'modules/sidebar/SidebarContext';
 
-import { MaterialIconType } from 'types';
 import { ReactComponent as Logo } from 'assets/images/logo.svg';
 
 const MobileHeader = () => {
-  const [, openSidebar] = useSidebar();
+  const [, openMainSidebar] = useMainSidebar();
+  const [, openRightSidebar] = useRightSidebar();
 
   return (
     <div className="hidden md:flex items-center justify-between h-16 fixed top-0 z-10 w-full shadow-sidebar px-2">
       <MaterialIcon
-        type={MaterialIconType.Round}
+        type="round"
         className="text-center text-3xl text-primary-1-shade cursor-pointer"
-        onClick={() => openSidebar(true)}
+        onClick={() => openMainSidebar(true)}
       >
         menu
       </MaterialIcon>
       <Logo />
-      <MaterialIcon className="text-3xl invisible">menu</MaterialIcon>
+      <MaterialIcon
+        type="round"
+        className="text-center text-3xl text-primary-1-shade cursor-pointer"
+        onClick={() => openRightSidebar(true)}
+      >
+        read_more
+      </MaterialIcon>
     </div>
   );
 };

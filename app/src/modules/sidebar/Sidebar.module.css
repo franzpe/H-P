@@ -25,6 +25,10 @@
     transform: translate(-102%);
     will-change: transform;
     transition: transform cubic-bezier(0.24, 0.88, 0.47, 1) 0.35s;
+
+    &.right {
+      transform: translate(0);
+    }
   }
 
   &.open {
@@ -32,10 +36,18 @@
 
     @screen lg {
       @apply fixed;
+
+      &.right {
+        transform: translateX(-100%);
+      }
     }
 
     @screen md {
       transform: translateX(0%);
+
+      &.right {
+        transform: translateX(-100%);
+      }
     }
   }
 }

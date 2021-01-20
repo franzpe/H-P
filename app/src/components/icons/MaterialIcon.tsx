@@ -5,14 +5,14 @@ import { MaterialIconType } from '../../types';
 
 const getMaterialClass = (type: MaterialIconType): string => {
   switch (type) {
-    case MaterialIconType.Outlined:
+    case 'outlined':
       return 'material-icons-outlined';
-    case MaterialIconType.TwoTone:
+    case 'two-tone':
       return 'material-icons-two-tone';
-    case MaterialIconType.Round:
+    case 'round':
       return 'material-icons-round';
     case 'sharp':
-      return MaterialIconType.Sharp;
+      return 'material-icons-sharp';
     default:
       return '';
   }
@@ -22,11 +22,11 @@ type Props = {
   type?: MaterialIconType;
 } & HTMLProps<HTMLElement>;
 
-const MaterialIcon: FC<Props> = ({ children, type, className, ...restProps }) => {
+const MaterialIcon: FC<Props> = ({ children, type = '', className, ...restProps }) => {
   return (
     <i
       className={cx('material-icons', className, {
-        [getMaterialClass(type || MaterialIconType.None)]: type
+        [getMaterialClass(type)]: type
       })}
       {...restProps}
     >

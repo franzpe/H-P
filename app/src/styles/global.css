@@ -1,7 +1,6 @@
 html,
 body,
-#root,
-.app {
+#root {
   height: 100%;
 }
 
@@ -10,24 +9,16 @@ body,
   -moz-osx-font-smoothing: grayscale;
 }
 
+.main-content {
+  @apply flex-1 p-8;
+
+  @screen md {
+    @apply p-4;
+  }
+}
+
 button:focus {
   @apply outline-none;
-}
-
-.app {
-  @apply flex;
-
-  @screen md {
-    @apply pt-16;
-  }
-}
-
-.main-content {
-  @apply flex-1 m-8;
-
-  @screen md {
-    @apply m-4;
-  }
 }
 
 .underlined-link {
