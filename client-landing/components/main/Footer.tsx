@@ -99,7 +99,7 @@ const Footer = () => {
         </div>
       </div>
       <div className="text-xs">
-        © Hackers & Painters, 2020. All rights reserved |{' '}
+        © Talentito, 2020. All rights reserved |{' '}
         <Link href="/terms-of-use">
           <a className="border-b border-transparent hover:border-primary-2-shade">Terms</a>
         </Link>{' '}

@@ -11,7 +11,7 @@ const UserType = () => {
   return (
     <div className="text-center mx-auto pt-8 ">
       <div className="mx-auto max-w-xl w-full text-center mb-8">
-        <h3 className="font-semibold mb-4 text-2xl md:text-4xl">Join Hackers & Painters</h3>
+        <h3 className="font-semibold mb-4 text-2xl md:text-4xl">Join Talentito</h3>
       </div>
       <p className="text-primary-1-shade text-xl my-2 sm:text-3.5xl font-light">I am...</p>
       <div

@@ -231,8 +231,8 @@ const sections = [
     content: (
       <Fragment>
         <p className="text-lg text-primary-2-shade">
-          The Site is controlled by Hackers and Painters, LLC., located at 455 N Whisman Rd #400, Mountain View, CA
-          94043. You may contact us by sending correspondence to that address or by emailing us at
+          The Site is controlled by Talentito, LLC., located at 455 N Whisman Rd #400, Mountain View, CA 94043. You
+          may contact us by sending correspondence to that address or by emailing us at
           contact@hackersandpainters.io.
         </p>
       </Fragment>
@@ -250,10 +250,10 @@ const TermsOfUse = () => {
   return (
     <div>
       <PolicyHeader heading="Terms of Service">
-        Welcome, and thank you for your interest in Hackers and Painters, LLC. (“H&P,” “we,” or “us”) and our
-        website at www.hackersandpainters.io (the “Site”). By accessing or using the Site, you agree to these Terms
-        of Use (the “Terms”) which are a legally binding contract between you and H&P regarding your use of the
-        Site. If you do not wish to accept the Terms, do not access or use the Site.
+        Welcome, and thank you for your interest in Talentito, LLC. (“H&P,” “we,” or “us”) and our website at
+        www.hackersandpainters.io (the “Site”). By accessing or using the Site, you agree to these Terms of Use
+        (the “Terms”) which are a legally binding contract between you and H&P regarding your use of the Site. If
+        you do not wish to accept the Terms, do not access or use the Site.
       </PolicyHeader>
       <div className="inner max-w-6xl flex flex-col lg:flex-row lg:space-x-12 relative">
         <div className="hidden lg:block">

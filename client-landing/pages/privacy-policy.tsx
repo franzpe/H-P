@@ -454,7 +454,7 @@ const sections = [
           by email to: privacy@hackersandpainters.io
           <br />
           <br />
-          by mail to: Hackers and Painters, 455 N Whisman Rd #400, Mountain View, CA, 94043, USA or
+          by mail to: Talentito, 455 N Whisman Rd #400, Mountain View, CA, 94043, USA or
           <br />
           <br />
           via our website.
@@ -567,9 +567,9 @@ const PrivacyPolicy = () => {
         </div>
         <div>
           <p className="text-lg text-primary-2-shade">
-            Hackers and Painters, LLC (“H&P,” “we,” or “us”) is a web-based software solution that allows
-            recruiting professionals to recruit faster, smarter and better by using predictive algorithms and
-            data-backed insights.
+            Talentito, LLC (“H&P,” “we,” or “us”) is a web-based software solution that allows recruiting
+            professionals to recruit faster, smarter and better by using predictive algorithms and data-backed
+            insights.
             <br />
             <br />
             We at H&P know you care about how your personal information is used and shared, and we take your
@@ -581,11 +581,11 @@ const PrivacyPolicy = () => {
             <br />
             In this Privacy Notice, personal information (“PI”) means information that identifies, relates to,
             describes, is capable of being associated with, or could reasonably be linked, directly or indirectly,
-            with a particular individual. The words “our,” “us,” “we,” and “H&P” refer to Hackers and Painters,
-            LLC, and our affiliates, if any, (which includes any person or entity that controls us, is controlled
-            by us, or is under common control with us, such as our subsidiary (if applicable), parent company (if
-            applicable), or our employees). This Privacy Notice does not cover the practices of companies we don’t
-            own or control.
+            with a particular individual. The words “our,” “us,” “we,” and “H&P” refer to Talentito, LLC, and our
+            affiliates, if any, (which includes any person or entity that controls us, is controlled by us, or is
+            under common control with us, such as our subsidiary (if applicable), parent company (if applicable),
+            or our employees). This Privacy Notice does not cover the practices of companies we don’t own or
+            control.
           </p>
           {sections.map((section, index) => (
             <section key={index} ref={el => (sectionRefs.current[index] = el)} className="mb-16">

@@ -17,7 +17,7 @@ export class WebsiteResolver {
   }
 
   @Query(() => [Website])
-  profileExperiences(@Arg('profileId') profileId: number) {
+  profileWebsites(@Arg('profileId') profileId: number) {
     return this.service.getAllByProfile(profileId);
   }
 

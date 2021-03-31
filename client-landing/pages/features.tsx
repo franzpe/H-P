@@ -11,8 +11,9 @@ import FeatureRatingSvg from '../assets/images/svgs/features-rating.svg';
 import FeatureSourcingSvg from '../assets/images/svgs/features-sourcing.svg';
 import FeatureToolsSvg from '../assets/images/svgs/features-tools.svg';
 import styles from './features.module.css';
-import aggrVideoWebm from '../assets/images/process.webm';
-import aggrVideoGif from '../assets/images/process.gif';
+import aggrVideoWebm from '../assets/images/Talentito.webm';
+// import aggrVideoWebm from '../assets/images/process.webm';
+import aggrVideoGif from '../assets/images/Talentito.gif';
 
 import profileViewImg from '../assets/images/profile-view.jpg';
 import profileSnapshotImg from '../assets/images/profile-snapshot.jpg';
@@ -50,8 +51,8 @@ const Featuers = () => {
         <div className="max-w-4xl z-10 relative">
           <h1>Revolutionize your team</h1>
           <div className="text-2xl lg:text-3xl text-primary-2-tint avenir-roman mb-8 mt-2">
-            Hackers and Painters has all of the tools you need to help propel your company forward by hiring hidden
-            diverse talent.
+            Talentito has all of the tools you need to help propel your company forward by hiring hidden diverse
+            talent.
           </div>
           <div className="flex space-x-4 md:space-x-6">
             <Link href="/sign-up/waiting-list">
@@ -98,8 +99,8 @@ const Featuers = () => {
             <span className="font-avenir-black text-xl text-primary-2-navy uppercase">candidate search</span>
             <h2 className="text-3.5xl text-accent-shade font-bold my-4">Find underrepresented talent</h2>
             <p className="text-2xl text-primary-1-shade font-light">
-              Hackers and Painters aggregates from hundreds of sources, searching and rating millions of candidates
-              that can show you what they’ve built, more than any resume can.
+              Talentito aggregates from hundreds of sources, searching and rating millions of candidates that can
+              show you what they’ve built, more than any resume can.
             </p>
           </div>
           <img className="lg:h-124 flex-1.5 shadow-card-medium" src={profileViewImg} />
@@ -162,8 +163,8 @@ const Featuers = () => {
               <div className="flex flex-col text-center md:text-right justify-center flex-1 ">
                 <span className="font-avenir-black text-xl text-primary-2-navy uppercase">rating system</span>
                 <h2 className="text-3.5xl text-accent-shade font-bold my-4">
-                  Hackers and Painters uses machine learning to calculate a score for each candidate that
-                  determines the likelihood of a potential match
+                  Talentito uses machine learning to calculate a score for each candidate that determines the
+                  likelihood of a potential match
                 </h2>
                 <div className="flex space-x-6 mt-8">
                   <button
@@ -216,9 +217,9 @@ const Featuers = () => {
             </span>
             <h2 className="text-3.5xl text-accent-shade font-bold my-4">Data aggregated from 100+ sources</h2>
             <p className="text-2xl text-primary-1-shade font-light">
-              Hackers and Painters is a “show don’t tell” platform. We go out and find candidates who can point to
-              what they’ve built, when they built it, and how they did it. View snapshots from networks such as
-              GitHub, Dribbble, Kaggle, and more.
+              Talentito is a “show don’t tell” platform. We go out and find candidates who can point to what
+              they’ve built, when they built it, and how they did it. View snapshots from networks such as GitHub,
+              Dribbble, Kaggle, and more.
             </p>
           </div>
           <div className="h-152 flex flex-1.5">

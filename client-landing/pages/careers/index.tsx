@@ -16,7 +16,7 @@ const Careers = () => {
       <div className="flex-1">
         <h1 className="font-bold mb-4 -mt-2">Careers</h1>
         <p className="text-2xl mb-10">
-          Hackers & Painters is expanding and we are looking for talented people to join our team!
+          Talentito is expanding and we are looking for talented people to join our team!
         </p>
         <ul className="font-avenir-book text-primary-1-shade grid grid-cols-2 gap-6">
           <li className="mb-2">

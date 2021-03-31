@@ -15,8 +15,8 @@ import Wave2Tablet from '../assets/images/svgs/wave-2-tablet.svg';
 
 import WaveMobile from '../assets/images/svgs/subtract.svg';
 import styles from './index.module.css';
-import MOV2 from '../assets/images/process.webm';
-import Gif2 from '../assets/images/process.gif';
+import MOV2 from '../assets/images/Talentito.webm';
+import Gif2 from '../assets/images/Talentito.gif';
 import logo1 from '../assets/images/logo-pomma.png';
 import logo2 from '../assets/images/logo-tim.png';
 import logo3 from '../assets/images/logo-ll.png';
@@ -63,8 +63,8 @@ const References = () => {
             Our company had a very specific developer type in mind.
           </h6>
           <p className="text-lg md:text-xl text-primary-2-tint py-4 md:py-6">
-            We were able to use Hackers and Painters to find that person. As a company focused on diversity, it was
-            important for us to dig deeper than a person’s resume.
+            We were able to use Talentito to find that person. As a company focused on diversity, it was important
+            for us to dig deeper than a person’s resume.
           </p>
           <p className="text-lg md:text-xl text-primary-2-navy font-medium">Hannah F.</p>
           <p className="text-lg md:text-xl text-primary-2-tint">Pomma</p>
@@ -84,7 +84,7 @@ const References = () => {
         <div className="py-8 px-4 md:p-8 lg:p-16 text-xl  text-left">
           <div className="text-primary-1-tint font-helvetica text-7xl leading-8 md:leading-10">“</div>
           <h6 className="text-avenir text-primary-2-navy font-bold">
-            Hackers and Painters had great transparency into the portfolio work of candidates.
+            Talentito had great transparency into the portfolio work of candidates.
           </h6>
           <p className="text-lg md:text-xl text-primary-2-tint py-4 md:py-6">
             Our focus included passive candidates in addition to active searchers, which are usually harder to
@@ -169,8 +169,8 @@ const Home = () => {
           <div className="lg:ml-auto lg:max-w-xl">
             <h2 className="font-bold mb-6 sm:mb-6">Find hidden talent</h2>
             <p className="text-primary-2-tint text-lg sm:text-2xl font-thin">
-              Search the Hackers and Painters database for designers, developers, and data scientists. Take a
-              closer look at how we’ve gone about finding candidates off the beaten track.
+              Search the Talentito database for designers, developers, and data scientists. Take a closer look at
+              how we’ve gone about finding candidates off the beaten track.
             </p>
           </div>
         </div>

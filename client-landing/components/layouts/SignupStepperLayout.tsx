@@ -18,13 +18,13 @@ export type SignupStepProps = {
 };
 
 const recruiterSteps: SignupStep[] = [
-  { path: '/sign-up/recruiter/info', heading: 'Join Hackers & Painters', label: 'My Info' },
+  { path: '/sign-up/recruiter/info', heading: 'Join Talentito', label: 'My Info' },
   { path: '/sign-up/recruiter/membership-plan', heading: 'Select Membership Plan', label: 'Membership Plan' },
   { path: '/sign-up/recruiter/payment', heading: 'Enter Payment Details', label: 'Payment' }
 ];
 
 const candidateSteps: SignupStep[] = [
-  { path: '/sign-up/candidate/info', heading: 'Join Hackers & Painters', label: 'Basic Info' },
+  { path: '/sign-up/candidate/info', heading: 'Join Talentito', label: 'Basic Info' },
   { path: '/sign-up/candidate/profile', heading: 'Create Your Profile', label: 'Your Profile' },
   {
     path: '/sign-up/candidate/equal-opportunity',

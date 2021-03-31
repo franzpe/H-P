@@ -3,7 +3,7 @@ import HorizontalTimeline from 'react-horizontal-timeline';
 
 const VALUES = [
   { date: '2019-01-01', heading: '2019', description: '' },
-  { date: '2019-09-01', heading: 'September', description: 'The idea for Hackers and Painters takes form' },
+  { date: '2019-09-01', heading: 'September', description: 'The idea for Talentito takes form' },
   { date: '2019-11-01', heading: 'November', description: 'Customer research with recruiters and sourcers' },
   { date: '2020-01-01', heading: '2020', description: '' },
   { date: '2019-01-02', heading: 'January', description: 'Early data models take form' },

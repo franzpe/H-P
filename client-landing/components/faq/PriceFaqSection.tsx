@@ -19,7 +19,7 @@ const PriceFaqSection: FC<Props> = ({ showTitle = true }) => {
           <span className="align-middle"> Pricing & Plans</span>
         </div>
       )}
-      <FaqArticle key="5" header="What is Hackers and Painters’ pricing model?">
+      <FaqArticle key="5" header="What is Talentito’ pricing model?">
         <p className="pl-4 pb-5 text-primary-2-tint">
           We charge a monthly fee that is modular based on usage. To view fees, please visit our{' '}
           <Link href="/pricing">

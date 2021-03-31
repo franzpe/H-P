@@ -43,7 +43,7 @@ const About = () => {
         </div>
         <div className="table mx-auto collapse border-space-0-14">
           <p className="text-3xl md:text-4xl font-thin text-primary-2-shade text-center mb-16 table-row w-1px">
-            Hackers and Painters is a modern tool built to simplify your sourcing
+            Talentito is a modern tool built to simplify your sourcing
             <LeftDrop className="absolute left-0 hidden lg:block" />
           </p>
           <div className="text-xl md:text-2xl font-thin text-primary-2-tint table-cell w-1px relative">

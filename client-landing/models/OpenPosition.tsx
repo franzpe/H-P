@@ -37,8 +37,8 @@ export const OpenPositions: Array<OpenPosition> = [
       {
         heading: 'Overview',
         data: [
-          'The Hackers and Painters team is growing, and we’re looking for our Chief Marketing Officer.',
-          'We feel recruiting software is inherently ineffective at finding the best candidates, and often the people most suitable for positions focused on building products go overlooked.  To solve this, Hackers and Painters sources developers, designers, and data scientists in an effort to emphasize profiles that can show a proven track record of building',
+          'The Talentito team is growing, and we’re looking for our Chief Marketing Officer.',
+          'We feel recruiting software is inherently ineffective at finding the best candidates, and often the people most suitable for positions focused on building products go overlooked.  To solve this, Talentito sources developers, designers, and data scientists in an effort to emphasize profiles that can show a proven track record of building',
           'We thoroughly believe in “show don’t tell” and highlight people that have done work publicly, whether that’s contributing to open source projects, throwing up microsites, prototyped experimental product designs, or otherwise.',
           'To further this mission, we are looking for someone that embraces learning by doing, and embodies a “let’s just try it” mentality.'
         ]
@@ -70,7 +70,7 @@ export const OpenPositions: Array<OpenPosition> = [
       },
       {
         data: [
-          'Note: all of the above requirements are purely recommendations.  If you feel you can succeed at Hackers and Painters, but might not have the exact experience we’re looking for, please still apply with an additional 100 word supplement on how you might set yourself apart.  We encourage career paths that have taken some unique twists and turns, which we feel broadens the scope of perspectives we look for in people that aren’t afraid to approach challenges differently.'
+          'Note: all of the above requirements are purely recommendations.  If you feel you can succeed at Talentito, but might not have the exact experience we’re looking for, please still apply with an additional 100 word supplement on how you might set yourself apart.  We encourage career paths that have taken some unique twists and turns, which we feel broadens the scope of perspectives we look for in people that aren’t afraid to approach challenges differently.'
         ]
       },
       {
@@ -113,8 +113,8 @@ export const OpenPositions: Array<OpenPosition> = [
       {
         heading: 'Overview',
         data: [
-          'The Hackers and Painters team is growing, and we’re looking for our Head of Sales.',
-          'We feel recruiting software is inherently ineffective at finding the best candidates, and often the people most suitable for positions focused on building products go overlooked.  To solve this, Hackers and Painters sources developers, designers, and data scientists in an effort to emphasize profiles that can show a proven track record of building',
+          'The Talentito team is growing, and we’re looking for our Head of Sales.',
+          'We feel recruiting software is inherently ineffective at finding the best candidates, and often the people most suitable for positions focused on building products go overlooked.  To solve this, Talentito sources developers, designers, and data scientists in an effort to emphasize profiles that can show a proven track record of building',
           'We thoroughly believe in “show don’t tell” and highlight people that have done work publicly, whether that’s contributing to open source projects, throwing up microsites, prototyped experimental product designs, or otherwise.',
           'To further this mission, we are looking for someone that embraces learning by doing, and embodies a “let’s just try it” mentality.'
         ]
@@ -147,7 +147,7 @@ export const OpenPositions: Array<OpenPosition> = [
       },
       {
         data: [
-          'Note: all of the above requirements are purely recommendations.  If you feel you can succeed at Hackers and Painters, but might not have the exact experience we’re looking for, please still apply with an additional 100 word supplement on how you might set yourself apart.  We encourage career paths that have taken some unique twists and turns, which we feel broadens the scope of perspectives we look for in people that aren’t afraid to approach challenges differently.'
+          'Note: all of the above requirements are purely recommendations.  If you feel you can succeed at Talentito, but might not have the exact experience we’re looking for, please still apply with an additional 100 word supplement on how you might set yourself apart.  We encourage career paths that have taken some unique twists and turns, which we feel broadens the scope of perspectives we look for in people that aren’t afraid to approach challenges differently.'
         ]
       },
       {
@@ -190,8 +190,8 @@ export const OpenPositions: Array<OpenPosition> = [
       {
         heading: 'Overview',
         data: [
-          'The Hackers and Painters team is growing, and we’re looking for our Head of Design.',
-          'We feel recruiting software is inherently ineffective at finding the best candidates, and often the people most suitable for positions focused on building products go overlooked.  To solve this, Hackers and Painters sources developers, designers, and data scientists in an effort to emphasize profiles that can show a proven track record of building',
+          'The Talentito team is growing, and we’re looking for our Head of Design.',
+          'We feel recruiting software is inherently ineffective at finding the best candidates, and often the people most suitable for positions focused on building products go overlooked.  To solve this, Talentito sources developers, designers, and data scientists in an effort to emphasize profiles that can show a proven track record of building',
           'We thoroughly believe in “show don’t tell” and highlight people that have done work publicly, whether that’s contributing to open source projects, throwing up microsites, prototyped experimental product designs, or otherwise.',
           'To further this mission, we are looking for someone that embraces learning by doing, and embodies a “let’s just try it” mentality.'
         ]
@@ -227,7 +227,7 @@ export const OpenPositions: Array<OpenPosition> = [
       },
       {
         data: [
-          'Note: all of the above requirements are purely recommendations.  If you feel you can succeed at Hackers and Painters, but might not have the exact experience we’re looking for, please still apply with an additional 100 word supplement on how you might set yourself apart.  We encourage career paths that have taken some unique twists and turns, which we feel broadens the scope of perspectives we look for in people that aren’t afraid to approach challenges differently.'
+          'Note: all of the above requirements are purely recommendations.  If you feel you can succeed at Talentito, but might not have the exact experience we’re looking for, please still apply with an additional 100 word supplement on how you might set yourself apart.  We encourage career paths that have taken some unique twists and turns, which we feel broadens the scope of perspectives we look for in people that aren’t afraid to approach challenges differently.'
         ]
       },
       {

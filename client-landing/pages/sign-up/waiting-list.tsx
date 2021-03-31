@@ -1,4 +1,4 @@
-import React, { Fragment, useState } from 'react';
+import React, { useState } from 'react';
 import axios from 'axios';
 import Input from '../../components/forms/Input';
 import * as yup from 'yup';
@@ -22,6 +22,7 @@ const defaultValues = {
   email: ''
 };
 
+// TODO: Protection against robot
 const WaitingList = () => {
   const { handleSubmit, control, errors } = useForm<IFormInputs>({
     defaultValues,
@@ -51,7 +52,7 @@ const WaitingList = () => {
   };
 
   return (
-    <Fragment>
+    <>
       <h3 className="text-center font-semibold mb-20 text-2xl md:text-4xl">Sign up for waiting list</h3>
       <div className="max-w-sm mx-auto">
         {subscribeError && <div className="text-error font-bold text-center mb-4">{subscribeError}</div>}
@@ -75,8 +76,8 @@ const WaitingList = () => {
           />
           <p className="text-xs">
             After signing up for wait list, you will also receive occasional surveys, newsletters and special
-            offers from Hackers & Painters via email. We will not sell or distribute your email address to any
-            third party at any time. View our Privacy Policy{' '}
+            offers from Talentito via email. We will not sell or distribute your email address to any third party
+            at any time. View our Privacy Policy{' '}
             <Link href="/privacy-policy">
               <a className="underline font-semibold hover:opacity-75">here</a>
             </Link>
@@ -87,7 +88,7 @@ const WaitingList = () => {
           </button>
         </form>
       </div>
-    </Fragment>
+    </>
   );
 };
 
